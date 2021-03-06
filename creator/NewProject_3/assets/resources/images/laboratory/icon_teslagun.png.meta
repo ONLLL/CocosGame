@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.5",
+  "uuid": "31e6fc7d-7a78-40c6-9382-8e4f840ce0b7",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 68,
+  "height": 73,
+  "platformSettings": {},
+  "subMetas": {
+    "icon_teslagun": {
+      "ver": "1.0.4",
+      "uuid": "99da67f4-95da-4a90-8d06-0790c4c9de1d",
+      "rawTextureUuid": "31e6fc7d-7a78-40c6-9382-8e4f840ce0b7",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 68,
+      "height": 73,
+      "rawWidth": 68,
+      "rawHeight": 73,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

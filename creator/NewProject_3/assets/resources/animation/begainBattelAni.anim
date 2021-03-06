@@ -1,0 +1,141 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "begainBattelAni",
+  "_objFlags": 0,
+  "_native": "",
+  "_duration": 0.8333333333333334,
+  "sample": 60,
+  "speed": 1,
+  "wrapMode": 1,
+  "curveData": {
+    "paths": {
+      "button_desant/skill1": {
+        "props": {
+          "y": [
+            {
+              "frame": 0.5,
+              "value": -669.874
+            },
+            {
+              "frame": 0.8333333333333334,
+              "value": -425
+            }
+          ]
+        }
+      },
+      "button_desant/skill2": {
+        "props": {
+          "y": [
+            {
+              "frame": 0.5,
+              "value": -665.429
+            },
+            {
+              "frame": 0.8333333333333334,
+              "value": -425
+            }
+          ]
+        }
+      },
+      "box/box": {
+        "props": {
+          "y": [
+            {
+              "frame": 0.5,
+              "value": -653.319
+            },
+            {
+              "frame": 0.8333333333333334,
+              "value": -425
+            }
+          ]
+        }
+      },
+      "box/item1": {
+        "props": {
+          "y": [
+            {
+              "frame": 0.5,
+              "value": -647.31
+            },
+            {
+              "frame": 0.8333333333333334,
+              "value": -425
+            }
+          ]
+        }
+      },
+      "box/item2": {
+        "props": {
+          "y": [
+            {
+              "frame": 0.5,
+              "value": -647.31
+            },
+            {
+              "frame": 0.8333333333333334,
+              "value": -425
+            }
+          ]
+        }
+      },
+      "box/item3": {
+        "props": {
+          "y": [
+            {
+              "frame": 0.5,
+              "value": -654.404
+            },
+            {
+              "frame": 0.8333333333333334,
+              "value": -425
+            }
+          ]
+        }
+      },
+      "box/button_itemshop": {
+        "props": {
+          "y": [
+            {
+              "frame": 0.5,
+              "value": -662.616
+            },
+            {
+              "frame": 0.8333333333333334,
+              "value": -425
+            }
+          ]
+        }
+      },
+      "icon_pause": {
+        "props": {
+          "y": [
+            {
+              "frame": 0.5,
+              "value": 629.552
+            },
+            {
+              "frame": 0.8333333333333334,
+              "value": 469.054
+            }
+          ]
+        }
+      },
+      "scrollview/view/content/map": {
+        "props": {
+          "y": [
+            {
+              "frame": 0.16666666666666666,
+              "value": 167.603
+            },
+            {
+              "frame": 0.5,
+              "value": 0
+            }
+          ]
+        }
+      }
+    }
+  },
+  "events": []
+}

@@ -1,0 +1,34 @@
+{
+  "ver": "1.2.4",
+  "uuid": "5500074d-2dee-4559-9767-4663f5d52cab",
+  "rawTextureUuid": "50b30e3f-7da5-4cd7-a75a-ec2fa1d33c09",
+  "size": {
+    "width": 1024,
+    "height": 1024
+  },
+  "type": "Texture Packer",
+  "subMetas": {
+    "Path.png": {
+      "ver": "1.0.4",
+      "uuid": "1b41f6c1-0c1a-4189-992d-ab6d01804fe2",
+      "rawTextureUuid": "50b30e3f-7da5-4cd7-a75a-ec2fa1d33c09",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": -76,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 960,
+      "height": 488,
+      "rawWidth": 960,
+      "rawHeight": 640,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "spriteType": "normal",
+      "subMetas": {}
+    }
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "ver": "1.2.4",
+  "uuid": "0eacb35c-6ec2-46fe-be41-125c8d33bfdd",
+  "size": {
+    "width": 77,
+    "height": 242
+  },
+  "type": "Texture Packer",
+  "subMetas": {
+    "Ice-0001.png": {
+      "ver": "1.0.4",
+      "uuid": "f0470000-b0ec-4ab2-9a89-94cbf626e079",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 2,
+      "trimY": 2,
+      "width": 73,
+      "height": 126,
+      "rawWidth": 73,
+      "rawHeight": 126,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "spriteType": "normal",
+      "subMetas": {}
+    },
+    "Ice-0002.png": {
+      "ver": "1.0.4",
+      "uuid": "d046b4bc-46cc-4f59-9a71-8518c90ef704",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": -8,
+      "trimX": 2,
+      "trimY": 130,
+      "width": 73,
+      "height": 110,
+      "rawWidth": 73,
+      "rawHeight": 126,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "spriteType": "normal",
+      "subMetas": {}
+    }
+  }
+}

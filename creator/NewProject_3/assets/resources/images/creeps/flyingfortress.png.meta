@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.5",
+  "uuid": "af2231e3-bd56-4d33-aad9-9603fc3e646c",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 100,
+  "height": 50,
+  "platformSettings": {},
+  "subMetas": {
+    "flyingfortress": {
+      "ver": "1.0.4",
+      "uuid": "9f5d37de-69ea-43f7-8ef6-7fbabc063767",
+      "rawTextureUuid": "af2231e3-bd56-4d33-aad9-9603fc3e646c",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 100,
+      "height": 50,
+      "rawWidth": 100,
+      "rawHeight": 50,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

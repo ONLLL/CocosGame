@@ -1,0 +1,29 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "shopAnimRe",
+  "_objFlags": 0,
+  "_native": "",
+  "_duration": 0.3333333333333333,
+  "sample": 60,
+  "speed": 1,
+  "wrapMode": 1,
+  "curveData": {
+    "props": {
+      "y": [
+        {
+          "frame": 0,
+          "value": -42.71
+        },
+        {
+          "frame": 0.16666666666666666,
+          "value": 22.5
+        },
+        {
+          "frame": 0.3333333333333333,
+          "value": -1073.024
+        }
+      ]
+    }
+  },
+  "events": []
+}

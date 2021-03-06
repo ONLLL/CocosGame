@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "e62733d7-e200-4901-9cb1-7099c1db0094",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 86,
+  "height": 10,
+  "platformSettings": {},
+  "subMetas": {
+    "fight_blood_bg": {
+      "ver": "1.0.4",
+      "uuid": "1d560ad5-6385-4cb0-b5b9-55403f878434",
+      "rawTextureUuid": "e62733d7-e200-4901-9cb1-7099c1db0094",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 86,
+      "height": 10,
+      "rawWidth": 86,
+      "rawHeight": 10,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

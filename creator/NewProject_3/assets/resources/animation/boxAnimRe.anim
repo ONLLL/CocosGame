@@ -1,0 +1,85 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "boxAnimRe",
+  "_objFlags": 0,
+  "_native": "",
+  "_duration": 0.16666666666666666,
+  "sample": 60,
+  "speed": 1,
+  "wrapMode": 1,
+  "curveData": {
+    "paths": {
+      "box_bg": {
+        "props": {
+          "scaleX": [
+            {
+              "frame": 0,
+              "value": 1
+            },
+            {
+              "frame": 0.16666666666666666,
+              "value": 0
+            }
+          ]
+        }
+      },
+      "item3": {
+        "props": {
+          "x": [
+            {
+              "frame": 0,
+              "value": 361.652
+            },
+            {
+              "frame": 0.16666666666666666,
+              "value": 817.014
+            }
+          ]
+        }
+      },
+      "item2": {
+        "props": {
+          "x": [
+            {
+              "frame": 0,
+              "value": 503.668
+            },
+            {
+              "frame": 0.16666666666666666,
+              "value": 821.191
+            }
+          ]
+        }
+      },
+      "item1": {
+        "props": {
+          "x": [
+            {
+              "frame": 0,
+              "value": 659.197
+            },
+            {
+              "frame": 0.16666666666666666,
+              "value": 821.65
+            }
+          ]
+        }
+      },
+      "button_itemshop": {
+        "props": {
+          "y": [
+            {
+              "frame": 0,
+              "value": -273.658
+            },
+            {
+              "frame": 0.16666666666666666,
+              "value": -428.289
+            }
+          ]
+        }
+      }
+    }
+  },
+  "events": []
+}

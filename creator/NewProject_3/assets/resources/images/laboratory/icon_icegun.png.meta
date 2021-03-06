@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.5",
+  "uuid": "4204b69c-414f-4c1b-941d-9d8fb42ca207",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 68,
+  "height": 73,
+  "platformSettings": {},
+  "subMetas": {
+    "icon_icegun": {
+      "ver": "1.0.4",
+      "uuid": "94ad0b30-6d60-4071-abf0-b7d669045851",
+      "rawTextureUuid": "4204b69c-414f-4c1b-941d-9d8fb42ca207",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 68,
+      "height": 73,
+      "rawWidth": 68,
+      "rawHeight": 73,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

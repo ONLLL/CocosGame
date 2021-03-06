@@ -1,0 +1,34 @@
+{
+  "ver": "1.2.4",
+  "uuid": "fde98d95-fa5c-4173-a581-8b744ba3938f",
+  "rawTextureUuid": "1fa4fc8b-c200-445f-a45c-190c8e395f44",
+  "size": {
+    "width": 28,
+    "height": 47
+  },
+  "type": "Texture Packer",
+  "subMetas": {
+    "potion00.png": {
+      "ver": "1.0.4",
+      "uuid": "e62cae9f-827b-4576-824a-836cedcee731",
+      "rawTextureUuid": "1fa4fc8b-c200-445f-a45c-190c8e395f44",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 2,
+      "trimY": 2,
+      "width": 24,
+      "height": 43,
+      "rawWidth": 24,
+      "rawHeight": 43,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "spriteType": "normal",
+      "subMetas": {}
+    }
+  }
+}
