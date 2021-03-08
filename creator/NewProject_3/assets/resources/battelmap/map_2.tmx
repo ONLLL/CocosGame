@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="1" height="1" tilewidth="1920" tileheight="1400" nextobjectid="7">
+ <tileset firstgid="1" name="map2" tilewidth="1920" tileheight="1400" tilecount="1">
+  <image source="../images/maps/map2.jpg" width="1920" height="1440"/>
+ </tileset>
+ <layer name="map" width="1" height="1">
+  <data encoding="csv">
+1
+</data>
+ </layer>
+ <objectgroup name="base">
+  <object id="1" x="1000" y="436.364"/>
+  <object id="2" x="560.606" y="684.848"/>
+  <object id="3" x="696.97" y="1063.64"/>
+  <object id="4" x="263.636" y="1254.55"/>
+  <object id="5" x="1636.36" y="800"/>
+  <object id="6" x="1633.33" y="1166.67"/>
+ </objectgroup>
+</map>

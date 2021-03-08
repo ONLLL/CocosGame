@@ -60,6 +60,8 @@ export default class NewClass extends cc.Component {
         this.skill1 = this.skill.getChildByName('skill1');
         this.skill2 = this.skill.getChildByName('skill2');
         this.skill3 = this.skill.getChildByName('skill3');
+
+        console.log('start');
     }
 
     //道具按钮
@@ -153,13 +155,36 @@ export default class NewClass extends cc.Component {
             // });
         }
         else{
+            
             this.isCkilckSkill = -1;
             cc.resources.load('images/gamescene/button_desant_1',cc.SpriteFrame,function(err,spriteFrame:cc.SpriteFrame){
                 cc.log(self.skill1.name);
                 self.skill1.getComponent(cc.Sprite).spriteFrame = spriteFrame;
             });
         }
+
+       
     }
+
+    onLoad()
+    {
+       
+    }
+
+    onEnable(){
+      //  console.log('onEnable');
+    }
+    onDestroy(){
+       // console.log('onDestroy');
+    }
+    update()
+    {
+     //   console.log('upadte');
+    }
+    lateUpdate(){
+       // console.log('lateUpdate');
+    }
+
 
     //技能按钮 1 
     onClickSkill2() {
