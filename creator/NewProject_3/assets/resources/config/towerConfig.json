@@ -1,0 +1,182 @@
+[
+    {
+        "id": 1,
+        "name": "ARROW",
+        "icon":"images/laboratroy/icon_minigun",
+        "menu_selectable":"images/gamescene/menucreatetower/menu_minigun1",
+        "menu_noselectable":"images/gamescene/menucreatetower/menu_minigun2",
+        "describe":"attacks ground and flaying enemies.",
+        "config": [
+            {
+                "atlas": "images/towers/minigun/1",
+                "sprite_frame": "Archer-tower-L1-0001",
+                "lv": 1,
+                "upgrand_price": 99,
+                "lv_price": 120,
+                "att": 2,
+                "rang": 4,
+                "speed": 7
+            },
+            {
+                "atlas": "images/towers/minigun/2",
+                "sprite_frame": "Archer-tower-L2-0001",
+                "lv": 2,
+                "upgrand_price": 140,
+                "lv_price": 120,
+                "att": 3,
+                "rang": 5,
+                "speed": 7
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "name": "KITTY LITTER",
+        "icon":"images/laboratroy/icon_icegun",
+        "menu_selectable":"images/gamescene/menucreatetower/menu_icegun1",
+        "menu_noselectable":"images/gamescene/menucreatetower/menu_icegun2",
+        "describe":"slows down ground enemies.",
+        "config": [
+            {
+                "atlas": "images/towers/icegun/1",
+                "sprite_frame": "Kitty-litter-tower-L1-0001",
+                "lv": 1,
+                "upgrand_price": 88,
+                "lv_price": 120,
+                "att": 2,
+                "rang": 4,
+                "speed": 2
+            },
+            {
+                "atlas": "images/towers/icegun/2",
+                "sprite_frame": "Kitty-litter-tower-L2-0001",
+                "lv": 2,
+                "upgrand_price": 120,
+                "lv_price": 120,
+                "att": 3,
+                "rang": 5,
+                "speed": 2
+            }
+        ]
+    },
+    {
+        "id": 3 ,
+        "name": "YARN",
+        "icon":"images/laboratroy/icon_teslagun",
+        "menu_selectable":"images/gamescene/menucreatetower/menu_teslagun1",
+        "menu_noselectable":"images/gamescene/menucreatetower/menu_teslagun2",
+        "describe":"attacjs several grond enemies at onec.effective against vehicles.attacks ground enenies only.",
+        "config": [
+            {
+                "atlas": "images/towers/teslagun/1",
+                "sprite_frame": "Ball-of-yarn-tower-L1-0001",
+                "lv": 1,
+                "upgrand_price": 110,
+                "lv_price": 120,
+                "att": 2,
+                "rang": 4,
+                "speed": 2
+            },
+            {
+                "atlas": "images/towers/teslagun/2",
+                "sprite_frame": "Ball-of-yarn-tower-L2-0001",
+                "lv": 2,
+                "upgrand_price": 180,
+                "lv_price": 120,
+                "att": 3,
+                "rang": 5,
+                "speed": 2
+            }
+        ]
+    },
+    {
+        "id": 4 ,
+        "name": "MAGIC",
+        "icon":"images/laboratroy/icon_roketgun",
+        "menu_selectable":"images/gamescene/menucreatetower/menu_roketgun1",
+        "menu_noselectable":"images/gamescene/menucreatetower/menu_roketgun2",
+        "describe":"powerful attacks against single ground and flying enenies.",
+        "config": [
+            {
+                "atlas": "images/towers/roketgun/1",
+                "sprite_frame": "Magic-wizard-tower-L1-0001",
+                "lv": 1,
+                "upgrand_price": 90,
+                "lv_price": 120,
+                "att": 2,
+                "rang": 5,
+                "speed": 7
+            },
+            {
+                "atlas": "images/towers/roketgun/2",
+                "sprite_frame": "Magic-wizard-tower-L2-0001",
+                "lv": 2,
+                "upgrand_price": 180,
+                "lv_price": 120,
+                "att": 3,
+                "rang": 5,
+                "speed": 2
+            }
+        ]
+    },
+    {
+        "id": 5 ,
+        "name": "FIRE",
+        "icon":"images/laboratroy/icon_firegun",
+        "menu_selectable":"images/gamescene/menucreatetower/menu_firegun1",
+        "menu_noselectable":"images/gamescene/menucreatetower/menu_firegun2",
+        "describe":"attacks multiple ground enemies at once",
+        "config": [
+            {
+                "atlas": "images/towers/firegun/1",
+                "sprite_frame": "Fire-tower-L1-0001",
+                "lv": 1,
+                "upgrand_price": 120,
+                "lv_price": 120,
+                "att": 2,
+                "rang": 4,
+                "speed": 5
+            },
+            {
+                "atlas": "images/towers/firegun/2",
+                "sprite_frame": "Fire-tower-L2-0001",
+                "lv": 2,
+                "upgrand_price": 180,
+                "lv_price": 120,
+                "att": 3,
+                "rang": 5,
+                "speed": 2
+            }
+        ]
+    },
+    {
+        "id": 6 ,
+        "name": "LASER",
+        "icon":"images/laboratroy/icon_laser",
+        "menu_selectable":"images/gamescene/menucreatetower/menu_laser1",
+        "menu_noselectable":"images/gamescene/menucreatetower/menu_laser2",
+        "describe":"heavy power attacks aganinst single enemies from long range.attacks ground and flying enemies.",
+        "config": [
+            {
+                "atlas": "images/towers/laser/laser.1",
+                "sprite_frame": "Sniper-tower-L1-0001",
+                "lv": 1,
+                "upgrand_price": 150,
+                "lv_price": 120,
+                "att": 2,
+                "rang": 7,
+                "speed": 1
+            },
+            {
+                "atlas": "images/towers/laser/laser.2",
+                "sprite_frame": "Sniper-tower-L2-0001",
+                "lv": 2,
+                "upgrand_price": 180,
+                "lv_price": 120,
+                "att": 3,
+                "rang": 5,
+                "speed": 2
+            }
+        ]
+    }
+]

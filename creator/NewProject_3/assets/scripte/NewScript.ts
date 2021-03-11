@@ -25,23 +25,51 @@ export default class NewClass extends cc.Component {
 
   onClickRoomBack() {
     this.anim.play('heroHomeAnimRe');
-    this.mask.active = !this.mask.active;
+   
+    let act = cc.delayTime(0.1);
+    let callfunc = cc.callFunc(()=>{
+      this.mask.active = !this.mask.active;
+      this.bg.parent.active = false;
+    });
+    this.bg.runAction(cc.sequence(act,callfunc));
   }
 
   onClickPowerBack() {
     this.anim.play('powerupsAnimRe');
     this.mask.active = !this.mask.active;
+    this.bg.parent.active = false;
+
+    let act = cc.delayTime(0.1);
+    let callfunc = cc.callFunc(()=>{
+      this.mask.active = !this.mask.active;
+      this.bg.parent.active = false;
+    });
+    this.bg.runAction(cc.sequence(act,callfunc));
   }
 
   onClickShopBack() {
     this.anim.play('shopAnimRe');
     this.mask.active = !this.mask.active;
+    this.bg.parent.active = false;
+
+    let act = cc.delayTime(0.1);
+    let callfunc = cc.callFunc(()=>{
+      this.mask.active = !this.mask.active;
+      this.bg.parent.active = false;
+    });
+    this.bg.runAction(cc.sequence(act,callfunc));
   }
 
   onClickTowerBack() {
     this.anim.play('shopAnimRe');
     this.mask.active = !this.mask.active;
+    this.bg.parent.active = false;
+
+    let act = cc.delayTime(0.1);
+    let callfunc = cc.callFunc(()=>{
+      this.mask.active = !this.mask.active;
+      this.bg.parent.active = false;
+    });
+    this.bg.runAction(cc.sequence(act,callfunc));
   }
-
-
 }

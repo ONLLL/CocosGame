@@ -20,5 +20,4 @@ export default class NewClass extends cc.Component {
     onClickPlayButton(){
         cc.director.loadScene('GameScene');
     }
-    // update (dt) {}
 }

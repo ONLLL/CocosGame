@@ -1,30 +1,65 @@
-// Learn TypeScript:
-//  - https://docs.cocos.com/creator/manual/en/scripting/typescript.html
-// Learn Attribute:
-//  - https://docs.cocos.com/creator/manual/en/scripting/reference/attributes.html
-// Learn life-cycle callbacks:
-//  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 
-const {ccclass, property} = cc._decorator;
+
+const { ccclass, property } = cc._decorator;
+
+interface TowerConfig {
+    id: number;
+    name: string;
+    icon: string;
+    menu_selectable: string;
+    menu_noselectable: string;
+    describe: string;
+    config: tower[];
+}
+interface tower {
+    atlas: string;
+    sprite_frame: string;
+    lv: number;
+    upgrand_price: number;
+    lv_price: number;
+    att: number; 1
+    rang: number;
+    speed: number;
+}
 
 @ccclass
-export default class NewClass extends cc.Component {
+export default class BaseCreate extends cc.Component {
 
-    private toggleContainer:cc.Node = null;
+    @property(cc.Node)
+    lifes:cc.Node = null;
 
-    private menu1:cc.Node = null;
-    private menu2:cc.Node = null;
-    private menu3:cc.Node = null;
-    private menu4:cc.Node = null;
-    private menu5:cc.Node = null;
-    private menu6:cc.Node = null;
+    @property(cc.Node)
+    gold:cc.Node =null;
 
-    private land:cc.Node = null;
-    private hint:cc.Node = null;    
-    private tower:cc.Node = null;
-    private show:cc.Node =null;
+    @property(cc.Node)
+    wave:cc.Node = null;
 
-    onLoad(){
+    private toggleContainer: cc.Node = null;
+
+    private menu1: cc.Node = null;
+    private menu2: cc.Node = null;
+    private menu3: cc.Node = null;
+    private menu4: cc.Node = null;
+    private menu5: cc.Node = null;
+    private menu6: cc.Node = null;
+    private choice_tower: cc.Node = null;
+    private land: cc.Node = null;
+    private hint: cc.Node = null;
+
+    private show: cc.Node = null;
+
+    private towerConfig: TowerConfig[] = [];
+    private tower_lv: number = 1;
+
+    private choice_tower_id: number;
+
+
+    private gold_count: number = 3740;
+    private lifes_count:number;
+    private wave_count:number ;
+
+    onLoad() {
+        console.log("onload");
         this.toggleContainer = this.node.getChildByName('toggleContainer');
 
         this.menu1 = this.toggleContainer.getChildByName('menu1');
@@ -36,218 +71,245 @@ export default class NewClass extends cc.Component {
 
         this.land = this.node.getChildByName('land');
         this.hint = this.node.getChildByName('hint_panel');
-        this.tower = this.node.getChildByName('tower');
+        this.choice_tower = this.node.getChildByName('tower');
         this.show = this.node.getChildByName('show');
 
-
+        
     }
-    start () {
-       
+    start() {
+        cc.resources.load("config/towerConfig", cc.JsonAsset, (err, jsonAsset: cc.JsonAsset) => {
+
+            this.towerConfig = jsonAsset.json;
+
+            console.log(this.towerConfig[0].config[0].upgrand_price);
+        
+            let menu1_price: cc.Label = this.menu1.getComponentInChildren(cc.Label);
+            menu1_price.string = "" + this.towerConfig[0].config[0].upgrand_price;
+    
+           let menu2_price: cc.Label = this.menu2.getComponentInChildren(cc.Label);
+           menu2_price.string = "" + this.towerConfig[1].config[0].upgrand_price;
+    
+           let menu3_price: cc.Label = this.menu3.getComponentInChildren(cc.Label);
+           menu3_price.string = "" + this.towerConfig[2].config[0].upgrand_price;
+    
+           let menu4_price: cc.Label = this.menu4.getComponentInChildren(cc.Label);
+           menu4_price.string = "" + this.towerConfig[3].config[0].upgrand_price;
+    
+           let menu5_price: cc.Label = this.menu5.getComponentInChildren(cc.Label);
+           menu5_price.string = "" + this.towerConfig[4].config[0].upgrand_price;
+    
+           let menu6_price: cc.Label = this.menu6.getComponentInChildren(cc.Label);
+           menu6_price.string = "" + this.towerConfig[5].config[0].upgrand_price;
+
+        });
+
+        cc.resources.load("config/mapConfig",cc.JsonAsset,(err:Error,jsonAsset:cc.JsonAsset)=>{
+            let map = jsonAsset.json;
+            //this.lifes_count = map[]
+        });
     }
 
     //点击基地
-    onClickLand(){
-       
-        if(!this.toggleContainer.active)
-        {
-            this.toggleContainer.active = ! this.toggleContainer.active;
+    onClickLand() {
+      
+        if (!this.toggleContainer.active) {
+            this.toggleContainer.active = !this.toggleContainer.active;
             this.toggleContainer.getComponent(cc.Animation).play('showWeaponAnim')
         }
-        else
-        {
+        else {
             this.toggleContainer.getComponent(cc.Animation).play('showWeaponAnimRe')
             let act = cc.delayTime(0.1);
-            let callfunc = cc.callFunc(function(){
-            this.toggleContainer.active = ! this.toggleContainer.active;
-            },this);
-            this.toggleContainer.runAction(cc.sequence(act,callfunc));
+            let callfunc = cc.callFunc(() => {
+                this.toggleContainer.active = !this.toggleContainer.active;
+                this.hint.active = false;
+            }, this);
+            this.toggleContainer.runAction(cc.sequence(act, callfunc));
         }
-        
+
+    }
+
+    loadTower(id: number) {
+    
+    console.log( this.tower_lv);
+        cc.resources.load(this.towerConfig[id - 1].config[0].atlas, cc.SpriteAtlas, (err, atlas: cc.SpriteAtlas) => {
+            if (this.gold_count >= this.towerConfig[id - 1].config[0].upgrand_price) {
+                this.gold_count -= this.towerConfig[id - 1].config[0].upgrand_price;
+                let fram = atlas.getSpriteFrame(this.towerConfig[id - 1].config[0].sprite_frame);
+                this.choice_tower.getComponent(cc.Sprite).spriteFrame = fram;
+
+                this.tower_lv++;
+                this.hint.active = false;
+                this.land.active = false;
+                this.choice_tower.active = true;
+                this.choice_tower_id = id;
+            }
+        });
+      
+    }
+
+    loadBaseAnimRe() {
+        this.toggleContainer.getComponent(cc.Animation).play('showWeaponAnimRe')
+        let act = cc.delayTime(0.1);
+        let callfunc = cc.callFunc(function () {
+            this.toggleContainer.active = !this.toggleContainer.active;
+        }, this);
+        this.toggleContainer.runAction(cc.sequence(act, callfunc));
+    }
+
+    loadHintPanel(id: number) {
+        this.hint.active = true;
+        this.hint.getChildByName("name").getComponent(cc.Label).string = this.towerConfig[id - 1].name;
+        this.hint.getChildByName("detail").getComponent(cc.Label).string = this.towerConfig[id - 1].describe;
+        this.hint.getChildByName("atk").getComponent(cc.Label).string = "" + this.towerConfig[id - 1].config[this.tower_lv - 1].att;
+        this.hint.getChildByName("speed").getComponent(cc.Label).string = "" + this.towerConfig[id - 1].config[this.tower_lv - 1].speed;
+        this.hint.getChildByName("rang").getComponent(cc.Label).string = "" + this.towerConfig[id - 1].config[this.tower_lv - 1].rang;
     }
 
     //建塔选择
-    onClickMenu1(){
-        if(!this.menu1.getComponent(cc.Toggle).isChecked)
-        {
-            this.toggleContainer.getComponent(cc.Animation).play('showWeaponAnimRe')
-            let act = cc.delayTime(0.1);
-            let callfunc = cc.callFunc(function(){
-            this.toggleContainer.active = ! this.toggleContainer.active;
-            },this);
-            this.toggleContainer.runAction(cc.sequence(act,callfunc));
+    onClickMenu1() {
+        if (!this.menu1.getComponent(cc.Toggle).isChecked) {
+            this.loadBaseAnimRe();
 
+            this.loadTower(1);
 
-            let self = this;
-            cc.resources.load('images/towers/minigun/1',cc.SpriteAtlas,function(err,atlas:cc.SpriteAtlas){
-                let fram = atlas.getSpriteFrame('Archer-tower-L1-0001');
-                self.tower.getComponent(cc.Sprite).spriteFrame = fram;
-            });
-            this.land.active =false;
-            this.tower.active = true;
+            this.menu1.getComponent(cc.Toggle).isChecked = false;
+        }
+        else {
+            this.loadHintPanel(1);
         }
     }
 
-    onClickMenu2(){
-        if(!this.menu2.getComponent(cc.Toggle).isChecked)
-        {
-            this.toggleContainer.getComponent(cc.Animation).play('showWeaponAnimRe')
-            let act = cc.delayTime(0.1);
-            let callfunc = cc.callFunc(function(){
-            this.toggleContainer.active = ! this.toggleContainer.active;
-            },this);
-            this.toggleContainer.runAction(cc.sequence(act,callfunc));
+    onClickMenu2() {
+        if (!this.menu2.getComponent(cc.Toggle).isChecked) {
+            this.loadBaseAnimRe();
 
+            this.loadTower(2);
 
-            let self = this;
-            cc.resources.load('images/towers/icegun/1',cc.SpriteAtlas,function(err,atlas:cc.SpriteAtlas){
-                let fram = atlas.getSpriteFrame('Kitty-litter-tower-L1-0007');
-                self.tower.getComponent(cc.Sprite).spriteFrame = fram;
-            });
-            this.land.active =false;
-            this.tower.active = true;
+            this.menu2.getComponent(cc.Toggle).isChecked = false;
+        }
+        else {
+            this.loadHintPanel(2);
         }
     }
 
-    onClickMenu3(){
-        
-    }
+    onClickMenu3() {
+        if (!this.menu3.getComponent(cc.Toggle).isChecked) {
+            this.loadBaseAnimRe();
 
-    onClickMenu4(){
-        
-    }
+            this.loadTower(3);
 
-    onClickMenu5(){
-        
-    }
-
-    onClickMenu6(){
-
-
-    //    let n = this.f(3);
-    //    console.log(n);
-
-    //    let arr = [4,50,6,20,1,-9,5];
-    //    this.selectSort(arr);
-    //    for(const i of arr){
-    //        console.log(i);
-    //    }
-
-    //    this.nineTable();
-    
-    }
-
-    /*
-    f(n:number):number{
-        if(n<=0){
-            return 0;
+            this.menu3.getComponent(cc.Toggle).isChecked = false;
         }
-        if(n === 2 || n ===1)
-        {
-            return 1;
-        }
-        return this.f(n-1) + this.f(n-2);
-    }
-
-    selectSort(arr:number[]):void{
-        for(let i:number = 0; i<arr.length -1;i++)
-        {
-            let min:number = i;
-            for(let j:number = i; j<arr.length; j++)
-            {
-                if(arr[min] > arr[j])
-                {
-                    min = j;
-                }
-            }
-            let tmp = arr[min];
-            arr[min] = arr[i]
-            arr[i] = tmp;
+        else {
+            this.loadHintPanel(3);
         }
     }
 
-    nineTable():void{
-        for(let i:number = 9; i>0;i--)
-        {
-            for(let j = 0; j<=i;j++)
-            {
-                console.log(i+'*',j+'=',i*j+ " ")
-            }
-            console.log('\n');
+    onClickMenu4() {
+        if (!this.menu4.getComponent(cc.Toggle).isChecked) {
+            this.loadBaseAnimRe();
+
+            this.loadTower(4);
+
+            this.menu4.getComponent(cc.Toggle).isChecked = false;
+        }
+        else {
+            this.loadHintPanel(4);
         }
     }
 
-    sum(n:number):number{
-        if(n % 2 ===0)
-        {
-            return this.sum(n-1) - 1.0/n;
+    onClickMenu5() {
+        if (!this.menu5.getComponent(cc.Toggle).isChecked) {
+            this.loadBaseAnimRe();
+
+            this.loadTower(5);
+
+            this.menu5.getComponent(cc.Toggle).isChecked = false;
         }
-        else
-        {
-            return this.sum(n-1) + n;
+        else {
+            this.loadHintPanel(5);
         }
     }
-    */
+
+    onClickMenu6() {
+        if (!this.menu6.getComponent(cc.Toggle).isChecked) {
+            this.loadBaseAnimRe();
+
+            this.loadTower(6);
+
+            this.menu6.getComponent(cc.Toggle).isChecked = false;
+        }
+        else {
+            this.loadHintPanel(6);
+        }
+    }
 
     //点击塔
-    onClickTower(){
-        if(!this.show.active)
-        {
-            this.show.active = ! this.show.active;
+    onClickTower() {
+        if (!this.show.active) {
+            this.show.active = !this.show.active;
             this.show.getComponent(cc.Animation).play('clickTowerAnim')
+        }
+        else {
+            this.show.getComponent(cc.Animation).play('clickTowerAnimRe')
+            let act = cc.delayTime(0.1);
+            let callfunc = cc.callFunc(() => {
+                this.hint.active = false;
+                this.show.active = false;
+            }, this);
+            this.show.runAction(cc.sequence(act, callfunc));
+        }
+    }
+
+    //升级
+    onClickUpgrand() {
+        if (!this.show.getChildByName('upgrand').getComponent(cc.Toggle).isChecked) {
+            if (this.gold_count >= this.towerConfig[this.choice_tower_id - 1].config[this.tower_lv - 1].upgrand_price) {
+                this.gold_count -= this.towerConfig[this.choice_tower_id - 1].config[this.tower_lv - 1].upgrand_price;
+                cc.resources.load(this.towerConfig[this.choice_tower_id - 1].config[this.tower_lv - 1].atlas, cc.SpriteAtlas, (err, atlas: cc.SpriteAtlas) => {
+                    let fram = atlas.getSpriteFrame(this.towerConfig[this.choice_tower_id - 1].config[this.tower_lv - 1].sprite_frame);
+                    this.choice_tower.getComponent(cc.Sprite).spriteFrame = fram;
+
+                    this.tower_lv++;
+                });
+            }
+            this.show.getComponent(cc.Animation).play('clickTowerAnimRe')
+            let act = cc.delayTime(0.1);
+            let callfunc = cc.callFunc(() => {
+                this.show.active = false;
+            });
+            this.show.runAction(cc.sequence(act, callfunc));
+
+            this.hint.active = false;
+           
         }
         else
         {
-            this.show.getComponent(cc.Animation).play('clickTowerAnimRe')
-            let act = cc.delayTime(0.1);
-            let callfunc = cc.callFunc(function(){
-            this.show.active = ! this.show.active;
-            },this);
-            this.show.runAction(cc.sequence(act,callfunc));
+            this.loadHintPanel(this.choice_tower_id);
         }
     }
+    onClickDelet() {
 
-    onClickDelet(){
-        
-        if(!this.show.getChildByName('delete').getComponent(cc.Toggle).isChecked)
-        {
+        if (!this.show.getChildByName('delete').getComponent(cc.Toggle).isChecked) {
+
             this.show.getComponent(cc.Animation).play('clickTowerAnimRe')
             let act = cc.delayTime(0.1);
-            let callfunc = cc.callFunc(function(){
-            this.show.active = ! this.show.active;
-            },this);
-            this.show.runAction(cc.sequence(act,callfunc));
+            let callfunc = cc.callFunc(() => {
+                this.show.active = !this.show.active;
+                this.tower_lv = 1;
+            });
+            this.show.runAction(cc.sequence(act, callfunc));
 
-            this.land.active =true;
-            this.tower.active = false;
+
+            this.land.active = true;
+            this.choice_tower.active = false;
+            this.hint.active = false;
+            this.gold_count += this.towerConfig[this.choice_tower_id - 1].config[this.tower_lv - 1].upgrand_price * 0.8;
+            
         }
-
-        let rect  = new Rect(3,4);
-       console.log(rect.area());
+        else{
+            this.hint.active = false;
+        }
     }
 }
 
-
-class Rect {
-    private _l:number;
-    set l(l:number){
-        this._l = l;
-    }
-    get l(){
-        return this._l;
-    }
-
-    private _w:number;
-    set w(l:number){
-        this._l = w;
-    }
-    get w(){
-        return this._w;
-    }
-    constructor(l:number,w:number){
-        this._l = l;
-        this._w = w;
-    }
-    area():number{
-        return this._l * this._w;
-    }
-}

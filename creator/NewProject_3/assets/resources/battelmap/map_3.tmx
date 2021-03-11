@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="1" height="1" tilewidth="1920" tileheight="1440" nextobjectid="9">
+ <tileset firstgid="1" name="map3" tilewidth="1920" tileheight="1440" tilecount="1">
+  <image source="../images/maps/map3.jpg" width="1920" height="1440"/>
+ </tileset>
+ <layer name="map" width="1" height="1">
+  <data encoding="csv">
+1
+</data>
+ </layer>
+ <objectgroup name="base">
+  <object id="1" x="1224" y="200"/>
+  <object id="2" x="400" y="208"/>
+  <object id="3" x="1124" y="596"/>
+  <object id="4" x="788" y="576"/>
+  <object id="5" x="508" y="596"/>
+  <object id="6" name="stone" x="480" y="768"/>
+  <object id="7" x="864" y="912"/>
+  <object id="8" x="1228" y="1028"/>
+ </objectgroup>
+</map>

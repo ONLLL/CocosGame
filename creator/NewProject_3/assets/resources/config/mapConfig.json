@@ -1,0 +1,257 @@
+[
+    {
+        "lv": 1,
+        "sprite_frame": "images/maps/map1",
+        "map":"battelmap/map_1",
+        "nomal": {
+            "money": 50,
+            "gear": 375,
+            "wave": 8,
+            "lifes": 20
+        },
+        "hard":{
+            "money": 80,
+            "gear": 250,
+            "wave": 10,
+            "lifes": 1
+        }
+    },
+    {
+        "lv": 2,
+        "sprite_frame": "images/maps/map2",
+        "map":"battelmap/map_2",
+        "nomal": {
+            "money": 60,
+            "gear": 375,
+            "wave": 8,
+            "lifes": 20
+        },
+        "hard":{
+            "money": 90,
+            "gear": 250,
+            "wave": 10,
+            "lifes": 1
+        }
+    },
+    {
+        "lv": 3,
+        "sprite_frame": "images/maps/map3",
+        "map":"battelmap/map_3",
+        "nomal": {
+            "money": 70,
+            "gear": 480,
+            "wave": 8,
+            "lifes": 20
+        },
+        "hard":{
+            "money": 100,
+            "gear": 350,
+            "wave": 9,
+            "lifes": 5
+        }
+    },
+    {
+        "lv": 4,
+        "sprite_frame": "images/maps/map4",
+        "map":"battelmap/map_4",
+        "nomal": {
+            "money": 70,
+            "gear": 530,
+            "wave": 8,
+            "lifes": 20
+        },
+        "hard":{
+            "money": 110,
+            "gear": 430,
+            "wave": 9,
+            "lifes": 3
+        }
+    },
+    {
+        "lv": 5,
+        "sprite_frame": "images/maps/map5",
+        "map":"battelmap/map_5",
+        "nomal": {
+            "money": 80,
+            "gear": 550,
+            "wave": 7,
+            "lifes": 20
+        },
+        "hard":{
+            "money": 130,
+            "gear": 350,
+            "wave": 16,
+            "lifes": 2
+        }
+    },
+    {
+        "lv": 6,
+        "sprite_frame": "images/maps/map6",
+        "map":"battelmap/map_6",
+        "nomal": {
+            "money": 120,
+            "gear": 435,
+            "wave": 8,
+            "lifes": 20
+        },
+        "hard":{
+            "money": 150,
+            "gear": 350,
+            "wave": 8,
+            "lifes": 4
+        }
+    },
+    {
+        "lv": 7,
+        "sprite_frame": "images/maps/map7",
+        "map":"battelmap/map_7",
+        "nomal": {
+            "money": 130,
+            "gear": 900,
+            "wave": 8,
+            "lifes": 20
+        },
+        "hard":{
+            "money": 160,
+            "gear": 750,
+            "wave": 12,
+            "lifes": 2
+        }
+    },
+    {
+        "lv": 8,
+        "sprite_frame": "images/maps/map2",
+        "map":"battelmap/map_2",
+        "nomal": {
+            "money": 150,
+            "gear": 560,
+            "wave": 8,
+            "lifes": 20
+        },
+        "hard":{
+            "money": 90,
+            "gear": 250,
+            "wave": 10,
+            "lifes": 1
+        }
+    },
+    {
+        "lv": 9,
+        "sprite_frame": "images/maps/map2",
+        "map":"battelmap/map_2",
+        "nomal": {
+            "money": 60,
+            "gear": 375,
+            "wave": 8,
+            "lifes": 20
+        },
+        "hard":{
+            "money": 90,
+            "gear": 250,
+            "wave": 10,
+            "lifes": 1
+        }
+    },
+    {
+        "lv": 10,
+        "sprite_frame": "images/maps/map2",
+        "map":"battelmap/map_2",
+        "nomal": {
+            "money": 60,
+            "gear": 375,
+            "wave": 8,
+            "lifes": 20
+        },
+        "hard":{
+            "money": 90,
+            "gear": 250,
+            "wave": 10,
+            "lifes": 1
+        }
+    },
+    {
+        "lv": 11,
+        "sprite_frame": "images/maps/map2",
+        "map":"battelmap/map_2",
+        "nomal": {
+            "money": 60,
+            "gear": 375,
+            "wave": 8,
+            "lifes": 20
+        },
+        "hard":{
+            "money": 90,
+            "gear": 250,
+            "wave": 10,
+            "lifes": 1
+        }
+    },
+    {
+        "lv": 12,
+        "sprite_frame": "images/maps/map2",
+        "map":"battelmap/map_2",
+        "nomal": {
+            "money": 60,
+            "gear": 375,
+            "wave": 8,
+            "lifes": 20
+        },
+        "hard":{
+            "money": 90,
+            "gear": 250,
+            "wave": 10,
+            "lifes": 1
+        }
+    },
+    {
+        "lv": 13,
+        "sprite_frame": "images/maps/map2",
+        "map":"battelmap/map_2",
+        "nomal": {
+            "money": 60,
+            "gear": 375,
+            "wave": 8,
+            "lifes": 20
+        },
+        "hard":{
+            "money": 90,
+            "gear": 250,
+            "wave": 10,
+            "lifes": 1
+        }
+    },
+    {
+        "lv": 14,
+        "sprite_frame": "images/maps/map2",
+        "map":"battelmap/map_2",
+        "nomal": {
+            "money": 60,
+            "gear": 375,
+            "wave": 8,
+            "lifes": 20
+        },
+        "hard":{
+            "money": 90,
+            "gear": 250,
+            "wave": 10,
+            "lifes": 1
+        }
+    },
+    {
+        "lv": 15,
+        "sprite_frame": "images/maps/map2",
+        "map":"battelmap/map_2",
+        "nomal": {
+            "money": 60,
+            "gear": 375,
+            "wave": 8,
+            "lifes": 20
+        },
+        "hard":{
+            "money": 90,
+            "gear": 250,
+            "wave": 10,
+            "lifes": 1
+        }
+    }
+]

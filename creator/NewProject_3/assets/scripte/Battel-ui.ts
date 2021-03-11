@@ -8,7 +8,7 @@
 const { ccclass, property } = cc._decorator;
 
 @ccclass
-export default class NewClass extends cc.Component {
+export default class BattelUi extends cc.Component {
 
     //遮挡界面
     @property(cc.Node)
@@ -54,6 +54,9 @@ export default class NewClass extends cc.Component {
     //点击技能
     private isCkilckSkill: number = -1;
 
+    @property(cc.Node)
+    birthplace:cc.Node = null;
+
     start() {
         this.boxAnim = this.box.getComponent(cc.Animation);
 
@@ -61,7 +64,7 @@ export default class NewClass extends cc.Component {
         this.skill2 = this.skill.getChildByName('skill2');
         this.skill3 = this.skill.getChildByName('skill3');
 
-        console.log('start');
+
     }
 
     //道具按钮
@@ -88,14 +91,14 @@ export default class NewClass extends cc.Component {
 
     //重新开始
     onClickRestart() {
-        cc.log('restart');
-      //  cc.director.loadScene('BattelScene');
+    
+     
     }
 
     //返回主界面
     onClickQuit() {
-        cc.log('quit');
-        cc.director.loadScene('StartScene');
+
+        cc.director.loadScene('GameScene');
     }
 
     //取消暂停界面

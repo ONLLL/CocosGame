@@ -61,8 +61,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 1900,
-      "height": 1400
+      "width": 0,
+      "height": 0
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -73,8 +73,8 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        0,
-        0,
+        35.322,
+        9.301,
         0,
         0,
         0,
@@ -5522,10 +5522,12 @@
   },
   {
     "__type__": "cc.ClickEvent",
-    "target": null,
+    "target": {
+      "__id__": 1
+    },
     "component": "",
-    "_componentId": "",
-    "handler": "",
+    "_componentId": "29d43HJLzBIwaMczJLlWBM/",
+    "handler": "onClickUpgrand",
     "customEventData": ""
   },
   {
@@ -6018,6 +6020,9 @@
       "__id__": 1
     },
     "_enabled": true,
+    "lifes": null,
+    "gold": null,
+    "wave": null,
     "_id": ""
   },
   {
