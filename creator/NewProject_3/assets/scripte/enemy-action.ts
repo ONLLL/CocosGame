@@ -16,6 +16,8 @@ export default class EnemyAction extends cc.Component {
 
     speed: number = 3;
 
+    hp:number = 20;
+
     setRoad(road: cc.Vec2[]) {
 
         let num = Math.floor(Math.random() * 10 * 2);
@@ -30,23 +32,17 @@ export default class EnemyAction extends cc.Component {
         if (Math.abs(x) > 30) {
             for (let i = 0; i < road.length; i++) {
                 this.road.push(new cc.Vec2(road[i].x,road[i].y + num));
-                this.newMethod(i);
             }
         } else if (Math.abs(y) > 30) {
             for (let i = 0; i < road.length; i++) {
                 this.road.push(new cc.Vec2(road[i].x + num,road[i].y));
-                console.log(this.road[i].x," ",this.road[i].y)
-
-                console.log(road.length);
             }
         }
 
         this.node.setPosition(this.road[0]);
     }
 
-    private newMethod(i: number) {
-        console.log(this.road[i].x, " ", this.road[i].y);
-    }
+
 
     startMove() {
         this.schedule(() => {

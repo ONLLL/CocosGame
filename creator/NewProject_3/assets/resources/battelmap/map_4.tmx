@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="1" height="1" tilewidth="1920" tileheight="1440" nextobjectid="2">
+ <tileset firstgid="1" name="map4" tilewidth="1920" tileheight="1440" tilecount="1">
+  <image source="../images/maps/map4.jpg" width="1920" height="1440"/>
+ </tileset>
+ <layer name="map" width="1" height="1">
+  <data encoding="csv">
+1
+</data>
+ </layer>
+ <objectgroup name="base"/>
+</map>

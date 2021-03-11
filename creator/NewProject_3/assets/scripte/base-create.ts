@@ -58,10 +58,13 @@ export default class BaseCreate extends cc.Component {
     private lifes_count:number;
     private wave_count:number ;
 
-    onLoad() {
-        console.log("onload");
-        this.toggleContainer = this.node.getChildByName('toggleContainer');
+    //当前基地
+    private base_now:number;
 
+    onLoad() {
+       
+        this.toggleContainer = this.node.getChildByName('toggleContainer');
+      
         this.menu1 = this.toggleContainer.getChildByName('menu1');
         this.menu2 = this.toggleContainer.getChildByName('menu2');
         this.menu3 = this.toggleContainer.getChildByName('menu3');
@@ -73,15 +76,11 @@ export default class BaseCreate extends cc.Component {
         this.hint = this.node.getChildByName('hint_panel');
         this.choice_tower = this.node.getChildByName('tower');
         this.show = this.node.getChildByName('show');
-
-        
     }
     start() {
         cc.resources.load("config/towerConfig", cc.JsonAsset, (err, jsonAsset: cc.JsonAsset) => {
 
             this.towerConfig = jsonAsset.json;
-
-            console.log(this.towerConfig[0].config[0].upgrand_price);
         
             let menu1_price: cc.Label = this.menu1.getComponentInChildren(cc.Label);
             menu1_price.string = "" + this.towerConfig[0].config[0].upgrand_price;
@@ -111,8 +110,25 @@ export default class BaseCreate extends cc.Component {
 
     //点击基地
     onClickLand() {
+        let count = Number(localStorage.getItem("tower_count"));
+        this.node.zIndex = 20;
+        for(let i=0; i < count; i++)
+        {
+            let tower_other =  this.node.parent.getChildByName(String(i))
+           let t = tower_other.name;
+           if(t != this.node.name)
+           {
+            tower_other.zIndex = 18;
+            tower_other.getChildByName("toggleContainer").active = false;
+            tower_other.getChildByName("hint_panel").active = false;
+            tower_other.getChildByName("show").active = false;
+           }
+        }
       
         if (!this.toggleContainer.active) {
+            localStorage.setItem("isChoice_base",String(1));
+
+            localStorage.setItem("isChoice_base",String(0));
             this.toggleContainer.active = !this.toggleContainer.active;
             this.toggleContainer.getComponent(cc.Animation).play('showWeaponAnim')
         }
@@ -246,6 +262,19 @@ export default class BaseCreate extends cc.Component {
 
     //点击塔
     onClickTower() {
+        let count = Number(localStorage.getItem("tower_count"));
+        for(let i=0; i < count; i++)
+        {
+           let t = this.node.parent.getChildByName(String(i)).name;
+           if(t != this.node.name)
+           {
+            this.node.parent.getChildByName(String(i)).getChildByName("toggleContainer").active =false;
+            this.node.parent.getChildByName(String(i)).getChildByName("hint_panel").active =false;
+            this.node.parent.getChildByName(String(i)).getChildByName("show").active =false;
+           }
+        }
+      
+
         if (!this.show.active) {
             this.show.active = !this.show.active;
             this.show.getComponent(cc.Animation).play('clickTowerAnim')
@@ -311,5 +340,6 @@ export default class BaseCreate extends cc.Component {
             this.hint.active = false;
         }
     }
+
 }
 

@@ -76,15 +76,17 @@ export default class LoadingBattel extends cc.Component {
                 let mapGroup = map.getObjectGroup("base");
                 let arr = mapGroup.getObjects();
         
+                //塔的数量
+                localStorage.setItem("tower_count",String(arr.length));
                 for (let i = 0; i < arr.length; i++) {
                     let value: cc.Object = arr[i];
                     let bas = cc.instantiate(this.prefab);
         
-
                     bas.x = value['x']// - this.node.getContentSize().width / 2;
                     bas.y = value['y']// - this.node.getContentSize().height / 2 - 10;
         
-                    this.node.addChild(bas);
+                    this.node.addChild(bas,20);
+                    bas.name = String(i);
                 }
                 
                 let wayGroup = map.getObjectGroup("way");
@@ -111,10 +113,10 @@ export default class LoadingBattel extends cc.Component {
         this.schedule(()=>{
             let enemy = cc.instantiate(this.enemyprefab);
             enemy.parent = this.node;
-            
+
             let e:EnemyAction = enemy.getComponent("enemy-action")
             e.setRoad(this.road);
-            e.startMove();
+          //  e.startMove();
 
         },1,7,0);
     }
