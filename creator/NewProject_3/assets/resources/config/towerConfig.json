@@ -39,7 +39,7 @@
         "config": [
             {
                 "atlas": "images/towers/icegun/1",
-                "sprite_frame": "Kitty-litter-tower-L1-0001",
+                "sprite_frame": "Kitty-litter-tower-L1-0008",
                 "lv": 1,
                 "upgrand_price": 88,
                 "lv_price": 120,

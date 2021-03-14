@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="1" height="1" tilewidth="1920" tileheight="1440" nextobjectid="9">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="1" height="1" tilewidth="1920" tileheight="1440" nextobjectid="10">
  <tileset firstgid="1" name="map3" tilewidth="1920" tileheight="1440" tilecount="1">
   <image source="../images/maps/map3.jpg" width="1920" height="1440"/>
  </tileset>
@@ -8,7 +8,7 @@
 1
 </data>
  </layer>
- <objectgroup name="base">
+ <objectgroup name="base" visible="0">
   <object id="1" x="1224" y="200"/>
   <object id="2" x="400" y="208"/>
   <object id="3" x="1124" y="596"/>
@@ -17,5 +17,10 @@
   <object id="6" name="stone" x="480" y="768"/>
   <object id="7" x="864" y="912"/>
   <object id="8" x="1228" y="1028"/>
+ </objectgroup>
+ <objectgroup name="way">
+  <object id="9" name="111" x="1476" y="-24">
+   <polyline points="0,0 -4,260 -56,372 -216,440 -1048,432 -1204,612 -1216,924 -1096,1128 -1000,1152 -484,1148 -364,1212 -304,1296 -300,1464"/>
+  </object>
  </objectgroup>
 </map>

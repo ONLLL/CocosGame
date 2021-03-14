@@ -127,6 +127,7 @@ export default class MapButton extends cc.Component {
 
   //Hero Room 按钮
   onClickHeroRoomButton() {
+
     this.mask.active = !this.mask.active;
     console.log(this.heroRoomAnim.name);
     this.heroRoomBg.parent.active =true;
@@ -157,9 +158,9 @@ export default class MapButton extends cc.Component {
   }
 
   onClickMask(){
-    if(this.show.parent.active){
-      this.show.parent.active = false;
-    }
+    // if(this.show.parent.active){
+    //   this.show.parent.active = false;
+    // }
 
   }
 }

@@ -97,8 +97,8 @@ export default class BattelUi extends cc.Component {
 
     //返回主界面
     onClickQuit() {
-
-        cc.director.loadScene('GameScene');
+        cc.director.resume();
+        cc.director.loadScene('StartScene');
     }
 
     //取消暂停界面

@@ -22,6 +22,16 @@ interface tower {
     speed: number;
 }
 
+
+enum towerDir{
+    none,
+    left_down,
+    right_down,
+    left_up,
+    right_up
+}
+
+
 @ccclass
 export default class BaseCreate extends cc.Component {
 
@@ -51,15 +61,31 @@ export default class BaseCreate extends cc.Component {
     private towerConfig: TowerConfig[] = [];
     private tower_lv: number = 1;
 
-    private choice_tower_id: number;
+    choice_tower_id: number = 0;
 
 
     private gold_count: number = 3740;
     private lifes_count:number;
     private wave_count:number ;
 
+    private anim:cc.Animation = null;
+
+    //是否攻击
+     is_attack:Boolean = false;
+
     //当前基地
     private base_now:number;
+
+    //左下攻击
+    private anim_LD:string = null;
+    //右下攻击
+    private anim_RD:string = null;
+    //左上攻击
+    private anim_LU:string = null;
+    //右上攻击
+    private anim_RU:string = null;
+
+    private tower_dir:towerDir = towerDir.none;
 
     onLoad() {
        
@@ -76,6 +102,8 @@ export default class BaseCreate extends cc.Component {
         this.hint = this.node.getChildByName('hint_panel');
         this.choice_tower = this.node.getChildByName('tower');
         this.show = this.node.getChildByName('show');
+
+        this.anim = this.choice_tower.getComponent(cc.Animation);
     }
     start() {
         cc.resources.load("config/towerConfig", cc.JsonAsset, (err, jsonAsset: cc.JsonAsset) => {
@@ -144,13 +172,13 @@ export default class BaseCreate extends cc.Component {
 
     }
 
-    loadTower(id: number) {
+loadTower(id: number) {
     
-    console.log( this.tower_lv);
         cc.resources.load(this.towerConfig[id - 1].config[0].atlas, cc.SpriteAtlas, (err, atlas: cc.SpriteAtlas) => {
             if (this.gold_count >= this.towerConfig[id - 1].config[0].upgrand_price) {
                 this.gold_count -= this.towerConfig[id - 1].config[0].upgrand_price;
                 let fram = atlas.getSpriteFrame(this.towerConfig[id - 1].config[0].sprite_frame);
+                this.choice_tower.getComponent(cc.Sprite)
                 this.choice_tower.getComponent(cc.Sprite).spriteFrame = fram;
 
                 this.tower_lv++;
@@ -181,7 +209,7 @@ export default class BaseCreate extends cc.Component {
         this.hint.getChildByName("rang").getComponent(cc.Label).string = "" + this.towerConfig[id - 1].config[this.tower_lv - 1].rang;
     }
 
-    //建塔选择
+    //Archer-tower
     onClickMenu1() {
         if (!this.menu1.getComponent(cc.Toggle).isChecked) {
             this.loadBaseAnimRe();
@@ -189,12 +217,15 @@ export default class BaseCreate extends cc.Component {
             this.loadTower(1);
 
             this.menu1.getComponent(cc.Toggle).isChecked = false;
+
+            this.arrowAnimation();
         }
         else {
             this.loadHintPanel(1);
         }
     }
 
+    //Kitty-litter-tower
     onClickMenu2() {
         if (!this.menu2.getComponent(cc.Toggle).isChecked) {
             this.loadBaseAnimRe();
@@ -202,12 +233,14 @@ export default class BaseCreate extends cc.Component {
             this.loadTower(2);
 
             this.menu2.getComponent(cc.Toggle).isChecked = false;
+            this.kittyAnimation();
         }
         else {
             this.loadHintPanel(2);
         }
     }
 
+    //Ball-of-yarn-tower 
     onClickMenu3() {
         if (!this.menu3.getComponent(cc.Toggle).isChecked) {
             this.loadBaseAnimRe();
@@ -215,12 +248,15 @@ export default class BaseCreate extends cc.Component {
             this.loadTower(3);
 
             this.menu3.getComponent(cc.Toggle).isChecked = false;
+
+            this.ballAnimation();
         }
         else {
             this.loadHintPanel(3);
         }
     }
 
+    //Magic-wizard-tower
     onClickMenu4() {
         if (!this.menu4.getComponent(cc.Toggle).isChecked) {
             this.loadBaseAnimRe();
@@ -228,12 +264,15 @@ export default class BaseCreate extends cc.Component {
             this.loadTower(4);
 
             this.menu4.getComponent(cc.Toggle).isChecked = false;
+
+            this.magicAnimation();
         }
         else {
             this.loadHintPanel(4);
         }
     }
 
+    //Fire-tower
     onClickMenu5() {
         if (!this.menu5.getComponent(cc.Toggle).isChecked) {
             this.loadBaseAnimRe();
@@ -241,12 +280,15 @@ export default class BaseCreate extends cc.Component {
             this.loadTower(5);
 
             this.menu5.getComponent(cc.Toggle).isChecked = false;
+
+            this.fireAnimation();
         }
         else {
             this.loadHintPanel(5);
         }
     }
 
+    //Sniper-tower
     onClickMenu6() {
         if (!this.menu6.getComponent(cc.Toggle).isChecked) {
             this.loadBaseAnimRe();
@@ -254,6 +296,8 @@ export default class BaseCreate extends cc.Component {
             this.loadTower(6);
 
             this.menu6.getComponent(cc.Toggle).isChecked = false;
+
+            this.sniperAnimation();
         }
         else {
             this.loadHintPanel(6);
@@ -263,32 +307,40 @@ export default class BaseCreate extends cc.Component {
     //点击塔
     onClickTower() {
         let count = Number(localStorage.getItem("tower_count"));
+        this.node.zIndex = 20;
         for(let i=0; i < count; i++)
         {
-           let t = this.node.parent.getChildByName(String(i)).name;
+            let tower_other =  this.node.parent.getChildByName(String(i))
+           let t = tower_other.name;
            if(t != this.node.name)
            {
-            this.node.parent.getChildByName(String(i)).getChildByName("toggleContainer").active =false;
-            this.node.parent.getChildByName(String(i)).getChildByName("hint_panel").active =false;
-            this.node.parent.getChildByName(String(i)).getChildByName("show").active =false;
+            tower_other.zIndex = 18;
+            tower_other.getChildByName("toggleContainer").active = false;
+            tower_other.getChildByName("hint_panel").active = false;
+            tower_other.getChildByName("show").active = false;
            }
         }
       
 
         if (!this.show.active) {
-            this.show.active = !this.show.active;
+            this.show.active = true;
             this.show.getComponent(cc.Animation).play('clickTowerAnim')
         }
         else {
+
             this.show.getComponent(cc.Animation).play('clickTowerAnimRe')
             let act = cc.delayTime(0.1);
             let callfunc = cc.callFunc(() => {
                 this.hint.active = false;
                 this.show.active = false;
+                this.show.getChildByName('upgrand').getComponent(cc.Toggle).isChecked = false;
+                this.show.getChildByName('delete').getComponent(cc.Toggle).isChecked = false;
             }, this);
             this.show.runAction(cc.sequence(act, callfunc));
         }
     }
+
+
 
     //升级
     onClickUpgrand() {
@@ -300,6 +352,8 @@ export default class BaseCreate extends cc.Component {
                     this.choice_tower.getComponent(cc.Sprite).spriteFrame = fram;
 
                     this.tower_lv++;
+
+                    
                 });
             }
             this.show.getComponent(cc.Animation).play('clickTowerAnimRe')
@@ -326,6 +380,7 @@ export default class BaseCreate extends cc.Component {
             let callfunc = cc.callFunc(() => {
                 this.show.active = !this.show.active;
                 this.tower_lv = 1;
+                this.choice_tower_id = 0;
             });
             this.show.runAction(cc.sequence(act, callfunc));
 
@@ -341,5 +396,108 @@ export default class BaseCreate extends cc.Component {
         }
     }
 
+
+    arrowAnimation(){
+       this.anim_LD = `archerAnim_${this.tower_lv}_LD`;
+       this.anim_RD = `archerAnim_${this.tower_lv}_RD`;
+       this.anim_LU = `archerAnim_${this.tower_lv}_LU`;
+       this.anim_RU = `archerAnim_${this.tower_lv}_RU`;
+    }
+
+    kittyAnimation(){
+        this.anim_LD = `kittyAnim_${this.tower_lv}_LD`;
+        this.anim_RD = `kittyAnim_${this.tower_lv}_RD`;
+        this.anim_LU = `kittyAnim_${this.tower_lv}_LU`;
+        this.anim_RU = `kittyAnim_${this.tower_lv}_RU`;
+    }
+
+    ballAnimation(){
+        this.anim_LD = `ballAnim_${this.tower_lv}`;
+        this.anim_RD = `ballAnim_${this.tower_lv}`;
+        this.anim_LU = `ballAnim_${this.tower_lv}`;
+        this.anim_RU = `ballAnim_${this.tower_lv}`;
+    }
+
+    magicAnimation(){
+        this.anim_LD = `magicAnim_${this.tower_lv}_LD`;
+        this.anim_RD = `magicAnim_${this.tower_lv}_RD`;
+        this.anim_LU = `magicAnim_${this.tower_lv}_LU`;
+        this.anim_RU = `magicAnim_${this.tower_lv}_RU`;
+    }
+
+    fireAnimation(){
+        this.anim_LD = `fireAnim_${this.tower_lv}_LD`;
+        this.anim_RD = `fireAnim_${this.tower_lv}_RD`;
+        this.anim_LU = `fireAnim_${this.tower_lv}_LU`;
+        this.anim_RU = `fireAnim_${this.tower_lv}_RU`;
+    }
+
+    sniperAnimation(){
+        this.anim_LD = `sniperAnim_${this.tower_lv}_LD`;
+        this.anim_RD = `sniperAnim_${this.tower_lv}_RD`;
+        this.anim_LU = `sniperAnim_${this.tower_lv}_LU`;
+        this.anim_RU = `sniperAnim_${this.tower_lv}_RU`;
+    }
+
+
+    stopAttack()
+    {
+        this.anim.stop();
+    }
+    
+    
+    towerAttackDir(enemyPoint:cc.Vec2,towerPoint:cc.Vec2)
+    {
+        this.is_attack = true;
+
+        let dir:towerDir = towerDir.none;
+
+        //右上
+        if(enemyPoint.x >= 0 && enemyPoint.y >= 0)
+        {
+           dir = towerDir.right_up;
+        }
+        //右下
+        else if(enemyPoint.x >= 0 && enemyPoint.y < 0)
+        {
+            dir = towerDir.right_down;
+        }
+        //左上
+        else if(enemyPoint.x < 0 && enemyPoint.y >= 0)
+        {
+            dir = towerDir.left_up
+        }
+        //左下
+        else if(enemyPoint.x < 0 && enemyPoint.y < 0)
+        {
+            dir = towerDir.left_down;
+        }
+
+        if (dir != this.tower_dir) {
+            this.tower_dir = dir;
+
+            switch (this.tower_dir) {
+                case towerDir.left_down:
+                    this.anim.play(this.anim_LD);
+                    break;
+                case towerDir.left_up:
+                    this.anim.play(this.anim_LU);
+                    break;
+                case towerDir.right_down:
+                    this.anim.play(this.anim_RD);
+                    break;
+                case towerDir.right_up:
+                    this.anim.play(this.anim_RU);
+                    break;
+                default:
+                    break;
+            }
+        }
+    }
+
+    update(){
+        
+       
+    }
 }
 
