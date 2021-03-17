@@ -1,11 +1,11 @@
 {
   "__type__": "cc.AnimationClip",
-  "_name": "kitty_1_RD",
+  "_name": "kittyAnim_1_RD",
   "_objFlags": 0,
   "_native": "",
   "_duration": 1.1833333333333333,
   "sample": 60,
-  "speed": 2,
+  "speed": 1,
   "wrapMode": 2,
   "curveData": {
     "comps": {

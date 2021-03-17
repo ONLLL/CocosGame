@@ -1,4 +1,5 @@
-
+import Enemy from "./enemy-action";
+import LoadingBattel from "./loadingBattel"
 
 const { ccclass, property } = cc._decorator;
 
@@ -44,49 +45,60 @@ export default class BaseCreate extends cc.Component {
     @property(cc.Node)
     wave:cc.Node = null;
 
-    private toggleContainer: cc.Node = null;
+    toggleContainer: cc.Node = null;
 
-    private menu1: cc.Node = null;
-    private menu2: cc.Node = null;
-    private menu3: cc.Node = null;
-    private menu4: cc.Node = null;
-    private menu5: cc.Node = null;
-    private menu6: cc.Node = null;
-    private choice_tower: cc.Node = null;
-    private land: cc.Node = null;
-    private hint: cc.Node = null;
+    menu1: cc.Node = null;
+     menu2: cc.Node = null;
+     menu3: cc.Node = null;
+     menu4: cc.Node = null;
+     menu5: cc.Node = null;
+     menu6: cc.Node = null;
+     choice_tower: cc.Node = null;
+     land: cc.Node = null;
+     hint: cc.Node = null;
 
-    private show: cc.Node = null;
+     show: cc.Node = null;
 
-    private towerConfig: TowerConfig[] = [];
-    private tower_lv: number = 1;
+     towerConfig: TowerConfig[] = [];
+     tower_lv: number = 1;
 
-    choice_tower_id: number = 0;
+     choice_tower_id: number = 0;
 
 
-    private gold_count: number = 3740;
-    private lifes_count:number;
-    private wave_count:number ;
+     gold_count: number = 3740;
+     lifes_count:number;
+     wave_count:number ;
 
-    private anim:cc.Animation = null;
+     anim:cc.Animation = null;
 
     //是否攻击
      is_attack:Boolean = false;
 
     //当前基地
-    private base_now:number;
+     base_now:number;
 
     //左下攻击
-    private anim_LD:string = null;
+     anim_LD:string = null;
     //右下攻击
-    private anim_RD:string = null;
+     anim_RD:string = null;
     //左上攻击
-    private anim_LU:string = null;
+     anim_LU:string = null;
     //右上攻击
-    private anim_RU:string = null;
+     anim_RU:string = null;
 
-    private tower_dir:towerDir = towerDir.none;
+     tower_dir:towerDir = towerDir.none;
+    anim_name:string = null;
 
+     att:number =0;
+     speed: number = 0;
+     rang:number =0;
+    //敌人
+     enemy:cc.Node = null;
+
+    //加速倍速
+     mutiple:number = 1;
+    //原速
+    self_speed:number = 0;
     onLoad() {
        
         this.toggleContainer = this.node.getChildByName('toggleContainer');
@@ -104,6 +116,8 @@ export default class BaseCreate extends cc.Component {
         this.show = this.node.getChildByName('show');
 
         this.anim = this.choice_tower.getComponent(cc.Animation);
+       
+    
     }
     start() {
         cc.resources.load("config/towerConfig", cc.JsonAsset, (err, jsonAsset: cc.JsonAsset) => {
@@ -138,6 +152,7 @@ export default class BaseCreate extends cc.Component {
 
     //点击基地
     onClickLand() {
+       
         let count = Number(localStorage.getItem("tower_count"));
         this.node.zIndex = 20;
         for(let i=0; i < count; i++)
@@ -180,6 +195,10 @@ loadTower(id: number) {
                 let fram = atlas.getSpriteFrame(this.towerConfig[id - 1].config[0].sprite_frame);
                 this.choice_tower.getComponent(cc.Sprite)
                 this.choice_tower.getComponent(cc.Sprite).spriteFrame = fram;
+
+                this.att = this.towerConfig[id - 1].config[0].att;
+                this.speed = this.towerConfig[id - 1].config[0].speed;
+                this.rang = this.towerConfig[id - 1].config[0].rang;
 
                 this.tower_lv++;
                 this.hint.active = false;
@@ -351,9 +370,11 @@ loadTower(id: number) {
                     let fram = atlas.getSpriteFrame(this.towerConfig[this.choice_tower_id - 1].config[this.tower_lv - 1].sprite_frame);
                     this.choice_tower.getComponent(cc.Sprite).spriteFrame = fram;
 
-                    this.tower_lv++;
+                    this.att = this.towerConfig[this.choice_tower_id - 1].config[this.tower_lv - 1].att;
+                    this.speed = this.towerConfig[this.choice_tower_id - 1].config[this.tower_lv - 1].speed;
+                    this.rang = this.towerConfig[this.choice_tower_id - 1].config[this.tower_lv - 1].rang;
 
-                    
+                    this.tower_lv++;
                 });
             }
             this.show.getComponent(cc.Animation).play('clickTowerAnimRe')
@@ -440,6 +461,31 @@ loadTower(id: number) {
     }
 
 
+    //加速
+    addSpeed()
+    {
+        if(this.mutiple == 1)
+        {
+            this.mutiple = 2;
+        }
+        else if(this.mutiple == 2)
+        {
+            this.mutiple = 4;
+        }
+        else if(this.mutiple == 4)
+        {
+            this.mutiple = 1;
+        }
+        console.log("mutiple: ",this.mutiple);
+        let clips = this.anim.getClips();
+        for (let i = 0; i < clips.length; i++) {
+            
+            clips[i].speed = this.speed * this.mutiple;
+            console.log("towerspeed:", clips[i].speed)
+        }
+
+    }
+
     stopAttack()
     {
         this.anim.stop();
@@ -473,27 +519,40 @@ loadTower(id: number) {
             dir = towerDir.left_down;
         }
 
-        if (dir != this.tower_dir) {
+        let tmp:LoadingBattel = this.node.parent.getComponent("loadingBattel")
+        if (dir != this.tower_dir || this.mutiple != tmp.speed ||
+             !this.anim.getAnimationState( this.anim_name).isPlaying) {
+           
             this.tower_dir = dir;
-
+            this.mutiple = tmp.speed;
+           
             switch (this.tower_dir) {
                 case towerDir.left_down:
-                    this.anim.play(this.anim_LD);
+                    this.anim.play(this.anim_LD).speed = this.speed * this.mutiple; 
+                    this.anim_name = this.anim_LD;
                     break;
                 case towerDir.left_up:
-                    this.anim.play(this.anim_LU);
+                    this.anim.play(this.anim_LU).speed = this.speed * this.mutiple;
+                    this.anim_name =this.anim_LU;
                     break;
                 case towerDir.right_down:
-                    this.anim.play(this.anim_RD);
+                    this.anim.play(this.anim_RD).speed = this.speed * this.mutiple;
+                    this.anim_name =this.anim_RD;
                     break;
                 case towerDir.right_up:
-                    this.anim.play(this.anim_RU);
+                    this.anim.play(this.anim_RU).speed = this.speed * this.mutiple;
+                    this.anim_name =this.anim_RU;
                     break;
                 default:
                     break;
             }
         }
     }
+
+   setEnemy(enemy:cc.Node)
+   {
+
+   }
 
     update(){
         

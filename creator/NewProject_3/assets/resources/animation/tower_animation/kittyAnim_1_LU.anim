@@ -1,12 +1,12 @@
 {
   "__type__": "cc.AnimationClip",
-  "_name": "kitty_1_LU",
+  "_name": "kittyAnim_1_LU",
   "_objFlags": 0,
   "_native": "",
   "_duration": 1.1833333333333333,
   "sample": 60,
   "speed": 1,
-  "wrapMode": 2,
+  "wrapMode": 1,
   "curveData": {
     "comps": {
       "cc.Sprite": {
@@ -14,49 +14,49 @@
           {
             "frame": 0,
             "value": {
-              "__uuid__": "fd03bc96-b371-4779-84d7-964a5b712078"
+              "__uuid__": "81a47da5-f66b-43d4-9882-3550110c2412"
             }
           },
           {
             "frame": 0.16666666666666666,
             "value": {
-              "__uuid__": "74772693-9783-452d-a809-e43706e54ac5"
+              "__uuid__": "37527619-2e4d-4574-bbe8-37aa725a5206"
             }
           },
           {
             "frame": 0.3333333333333333,
             "value": {
-              "__uuid__": "2b78cf4b-4716-4cd3-8775-8c605552083d"
+              "__uuid__": "c82c5d04-359e-4467-a423-32db4aac10e5"
             }
           },
           {
             "frame": 0.5,
             "value": {
-              "__uuid__": "b67859d1-f72f-4ca7-86d3-7590a9928c04"
+              "__uuid__": "aa681162-6a91-42f5-9687-d5e59bc7825f"
             }
           },
           {
             "frame": 0.6666666666666666,
             "value": {
-              "__uuid__": "0ab74696-f7fb-488f-beea-d14ddc8440f8"
+              "__uuid__": "cd9d0fbc-d4ea-4e45-bcd2-6edde4c66944"
             }
           },
           {
             "frame": 0.8333333333333334,
             "value": {
-              "__uuid__": "c7faa4bc-e189-4b11-b677-2d02c2681df9"
+              "__uuid__": "b632f127-773d-4124-9689-6f996081b634"
             }
           },
           {
             "frame": 1,
             "value": {
-              "__uuid__": "e817f274-e7b9-4a4b-96d2-39216afed6ad"
+              "__uuid__": "c3619deb-9a1d-43b5-849c-a91f75a22928"
             }
           },
           {
             "frame": 1.1666666666666667,
             "value": {
-              "__uuid__": "f2cccf03-7c70-4280-8c24-6bc9301f6ee2"
+              "__uuid__": "7ed0473e-48f6-45da-b0d1-3dda0ae330b2"
             }
           }
         ]

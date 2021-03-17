@@ -1,0 +1,18 @@
+[
+    {
+        "id":0,
+        "name":"cavecat",
+        "hp":20,
+        "att":1,
+        "speed":3,
+        "gear":5
+    },
+    {
+        "id":1,
+        "name":"soldier",
+        "hp":20,
+        "att":1,
+        "speed":3,
+        "gear":5
+    }
+]

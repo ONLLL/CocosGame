@@ -1,11 +1,11 @@
 {
   "__type__": "cc.AnimationClip",
-  "_name": "archerAnimation_2_LU",
+  "_name": "archerAnim_2_LU",
   "_objFlags": 0,
   "_native": "",
   "_duration": 2.85,
   "sample": 60,
-  "speed": 3,
+  "speed": 1,
   "wrapMode": 2,
   "curveData": {
     "comps": {

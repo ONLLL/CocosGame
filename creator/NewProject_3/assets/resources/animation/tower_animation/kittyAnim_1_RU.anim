@@ -1,6 +1,6 @@
 {
   "__type__": "cc.AnimationClip",
-  "_name": "kitty_1_RU",
+  "_name": "kittyAnim_1_RU",
   "_objFlags": 0,
   "_native": "",
   "_duration": 1.1833333333333333,
@@ -14,49 +14,49 @@
           {
             "frame": 0,
             "value": {
-              "__uuid__": "6a9bd28e-ea93-4642-921c-a44a31faa0ae"
+              "__uuid__": "dfa6c4fc-8c66-45eb-8232-3f270b3fdf84"
             }
           },
           {
             "frame": 0.16666666666666666,
             "value": {
-              "__uuid__": "a44e32bd-c984-498f-ae9d-3900c3c36dd1"
+              "__uuid__": "ff1c6e47-1955-45aa-9b2f-8620db275ea3"
             }
           },
           {
             "frame": 0.3333333333333333,
             "value": {
-              "__uuid__": "f35f6b33-2c50-4cf6-8a51-498f3094f6e3"
+              "__uuid__": "f64f6af3-8655-462a-bb0e-760df455fe45"
             }
           },
           {
             "frame": 0.5,
             "value": {
-              "__uuid__": "c976e928-4631-466a-add2-a1d11cde18b1"
+              "__uuid__": "62d93b0c-77f1-4ced-8be9-4ac764a6a7a9"
             }
           },
           {
             "frame": 0.6666666666666666,
             "value": {
-              "__uuid__": "a20db84e-1cd9-47a4-a25a-660ce651852f"
+              "__uuid__": "591a82c9-9f26-47fd-a23b-237d6b369ba8"
             }
           },
           {
             "frame": 0.8333333333333334,
             "value": {
-              "__uuid__": "fef0f0f7-ad51-4ce1-b841-f892b6863063"
+              "__uuid__": "ceea582c-0e3c-45d6-ae6c-e221d475dd75"
             }
           },
           {
             "frame": 1,
             "value": {
-              "__uuid__": "e72a620c-ae32-4ebd-8f03-84c5c4d8f34b"
+              "__uuid__": "bb8c9e03-8669-4e09-a8cf-39d8b2b95d7e"
             }
           },
           {
             "frame": 1.1666666666666667,
             "value": {
-              "__uuid__": "5dcbaee6-43b2-44c9-af2f-f678a9d873f5"
+              "__uuid__": "d5dfe017-ddec-4e30-8a2d-a317f4dd3d14"
             }
           }
         ]

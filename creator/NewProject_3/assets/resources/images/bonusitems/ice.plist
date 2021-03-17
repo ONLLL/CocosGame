@@ -4,45 +4,53 @@
     <dict>
         <key>frames</key>
         <dict>
-            <key>Ice-0001.png</key>
+            <key>ice_01.png</key>
             <dict>
-                <key>frame</key>
-                <string>{{2,2},{73,126}}</string>
-                <key>offset</key>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
                 <string>{0,0}</string>
-                <key>rotated</key>
+                <key>spriteSize</key>
+                <string>{75,120}</string>
+                <key>spriteSourceSize</key>
+                <string>{77,120}</string>
+                <key>textureRect</key>
+                <string>{{1,1},{75,120}}</string>
+                <key>textureRotated</key>
                 <false/>
-                <key>sourceColorRect</key>
-                <string>{{0,0},{73,126}}</string>
-                <key>sourceSize</key>
-                <string>{73,126}</string>
             </dict>
-            <key>Ice-0002.png</key>
+            <key>ice_02.png</key>
             <dict>
-                <key>frame</key>
-                <string>{{2,130},{73,110}}</string>
-                <key>offset</key>
-                <string>{0,-8}</string>
-                <key>rotated</key>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
+                <string>{75,112}</string>
+                <key>spriteSourceSize</key>
+                <string>{77,112}</string>
+                <key>textureRect</key>
+                <string>{{1,123},{75,112}}</string>
+                <key>textureRotated</key>
                 <false/>
-                <key>sourceColorRect</key>
-                <string>{{0,16},{73,110}}</string>
-                <key>sourceSize</key>
-                <string>{73,126}</string>
             </dict>
         </dict>
         <key>metadata</key>
         <dict>
             <key>format</key>
-            <integer>2</integer>
+            <integer>3</integer>
+            <key>pixelFormat</key>
+            <string>RGBA8888</string>
+            <key>premultiplyAlpha</key>
+            <false/>
             <key>realTextureFileName</key>
-            <string>Ice.png</string>
+            <string>ice.png</string>
             <key>size</key>
-            <string>{77,242}</string>
+            <string>{77,236}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:4f74b45bd76c011db5d1b7a7ebd1c088:a1ac2d74e44d94e49c12e64951777d8c:c726205c27e4788c93bdec8200cffa4f$</string>
+            <string>$TexturePacker:SmartUpdate:42d5e960f520f926a41f940b6ce495c5:57ebf641ed4e98c586e5598c2f146a20:cff808ca0f70b591245cfda0ce34c370$</string>
             <key>textureFileName</key>
-            <string>Ice.png</string>
+            <string>ice.png</string>
         </dict>
     </dict>
 </plist>

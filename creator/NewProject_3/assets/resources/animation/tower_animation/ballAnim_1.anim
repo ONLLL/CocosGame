@@ -1,12 +1,12 @@
 {
   "__type__": "cc.AnimationClip",
-  "_name": "ball_1",
+  "_name": "ballAnim_1",
   "_objFlags": 0,
   "_native": "",
   "_duration": 1.6833333333333333,
   "sample": 60,
   "speed": 1,
-  "wrapMode": 1,
+  "wrapMode": 2,
   "curveData": {
     "comps": {
       "cc.Sprite": {
@@ -14,7 +14,7 @@
           {
             "frame": 0,
             "value": {
-              "__uuid__": "5b3c9665-53bc-459d-9fef-d4e35512db33"
+              "__uuid__": "f16ed824-a25f-4ce7-8a72-449930ebb559"
             }
           },
           {
