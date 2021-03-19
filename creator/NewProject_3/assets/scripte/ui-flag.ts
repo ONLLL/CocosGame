@@ -37,11 +37,13 @@ export default class Flag extends cc.Component {
     private lv:number;
 
     onLoad() {
-        this.show = this.node.parent.parent.getChildByName("choose").getChildByName("show");
+        this.show = cc.find("Canvas/Friendly_Map/choose/show");
      
         this.anim = this.show.getComponent(cc.Animation);
 
-        this.mask = this.node.parent.parent.getChildByName("mask");
+        this.mask =  cc.find("Canvas/Friendly_Map/mask");
+
+        
     }
 
     onClickFlag() {
@@ -63,11 +65,9 @@ export default class Flag extends cc.Component {
         this.lv = Number(n);
         this.loadMessege();
 
-        this.mask.active = !this.mask.active;
+        this.mask.active = true;
         this.show.parent.active = true;
         this.anim.play('toBattelAnim');
-
-        
     }
 
     loadMessege(){

@@ -1,5 +1,6 @@
 import Enemy from "./enemy-action";
 import LoadingBattel from "./loadingBattel"
+import {MapMessege,LocalTowerMessege} from "./GameData";
 
 const { ccclass, property } = cc._decorator;
 
@@ -59,8 +60,10 @@ export default class BaseCreate extends cc.Component {
 
      show: cc.Node = null;
 
+     circle:cc.Node = null;
+
      towerConfig: TowerConfig[] = [];
-     tower_lv: number = 1;
+     tower_lv: number = 0;
 
      choice_tower_id: number = 0;
 
@@ -87,7 +90,7 @@ export default class BaseCreate extends cc.Component {
      anim_RU:string = null;
 
      tower_dir:towerDir = towerDir.none;
-    anim_name:string = null;
+     anim_name:string = null;
 
      att:number =0;
      speed: number = 0;
@@ -99,8 +102,25 @@ export default class BaseCreate extends cc.Component {
      mutiple:number = 1;
     //原速
     self_speed:number = 0;
+
+    //塔信息
+    tower_messege:LocalTowerMessege[] = [];
+
+    battel_message:LoadingBattel = null;
+
+    //是否可以升级
+    isUpgrade:boolean = false;
+
+    //是否升过级
+    is_Upgraded:boolean = false;
+
+    //升级价格
+    upgrade_price:number = 0;
     onLoad() {
-       
+        this.tower_messege = JSON.parse(localStorage.getItem("tower_messege"));
+
+        this.battel_message = this.node.parent.getComponent("loadingBattel");
+
         this.toggleContainer = this.node.getChildByName('toggleContainer');
       
         this.menu1 = this.toggleContainer.getChildByName('menu1');
@@ -114,6 +134,7 @@ export default class BaseCreate extends cc.Component {
         this.hint = this.node.getChildByName('hint_panel');
         this.choice_tower = this.node.getChildByName('tower');
         this.show = this.node.getChildByName('show');
+        this.circle = this.node.getChildByName('circle');
 
         this.anim = this.choice_tower.getComponent(cc.Animation);
        
@@ -150,9 +171,226 @@ export default class BaseCreate extends cc.Component {
         });
     }
 
+    loadShow()
+    {
+        this.show.active = true;
+        this.show.getChildByName('upgrand').getComponentInChildren(cc.Label).string = String(this.upgrade_price);
+        this.show.getChildByName('delete').getComponentInChildren(cc.Label).string = String(Math.floor(this.upgrade_price*0.8));
+    }
+
+    //是否解锁塔
+    unlockTower()
+    {
+        let gear = this.battel_message.present_gear;
+        
+        if(!this.tower_messege[0].unlock)
+        {
+            cc.resources.load("images/gamescene/menucreatetower/menu_lock2",cc.SpriteFrame,(err:Error,spriteFrame:cc.SpriteFrame)=>
+            {
+                this.menu1.getChildByName("Background").getComponent(cc.Sprite).spriteFrame = spriteFrame;
+            });
+            cc.resources.load("images/gamescene/menucreatetower/menu_lock2",cc.SpriteFrame,(err:Error,spriteFrame:cc.SpriteFrame)=>
+            {
+                this.menu1.getChildByName('checkmark').getComponent(cc.Sprite).spriteFrame = spriteFrame;
+            });
+        }
+        else if(this.towerConfig[0].config[0].upgrand_price > gear)
+        {
+            cc.resources.load("images/gamescene/menucreatetower/menu_minigun2",cc.SpriteFrame,(err:Error,spriteFrame:cc.SpriteFrame)=>
+            {
+                this.menu1.getChildByName("Background").getComponent(cc.Sprite).spriteFrame = spriteFrame;
+            });
+            cc.resources.load("images/gamescene/menucreatetower/menu_ok1",cc.SpriteFrame,(err:Error,spriteFrame:cc.SpriteFrame)=>
+            {
+                this.menu1.getChildByName('checkmark').getComponent(cc.Sprite).spriteFrame = spriteFrame;
+            });
+        }
+        else if(this.towerConfig[0].config[0].upgrand_price <= gear)
+        {
+            cc.resources.load("images/gamescene/menucreatetower/menu_minigun1",cc.SpriteFrame,(err:Error,spriteFrame:cc.SpriteFrame)=>
+            {
+                this.menu1.getChildByName("Background").getComponent(cc.Sprite).spriteFrame = spriteFrame;
+            });
+            cc.resources.load("images/gamescene/menucreatetower/menu_ok2",cc.SpriteFrame,(err:Error,spriteFrame:cc.SpriteFrame)=>
+            {
+                this.menu1.getChildByName('checkmark').getComponent(cc.Sprite).spriteFrame = spriteFrame;
+            });
+        }
+
+        if(!this.tower_messege[1].unlock)
+        {
+            cc.resources.load("images/gamescene/menucreatetower/menu_lock2",cc.SpriteFrame,(err:Error,spriteFrame:cc.SpriteFrame)=>
+            {
+                this.menu2.getChildByName("Background").getComponent(cc.Sprite).spriteFrame = spriteFrame;
+            });
+            cc.resources.load("images/gamescene/menucreatetower/menu_lock2",cc.SpriteFrame,(err:Error,spriteFrame:cc.SpriteFrame)=>
+            {
+                this.menu2.getChildByName('checkmark').getComponent(cc.Sprite).spriteFrame = spriteFrame;
+            });
+        }
+        else if(this.towerConfig[1].config[0].upgrand_price > gear)
+        {
+            cc.resources.load("images/gamescene/menucreatetower/menu_icegun2",cc.SpriteFrame,(err:Error,spriteFrame:cc.SpriteFrame)=>
+            {
+                this.menu2.getChildByName("Background").getComponent(cc.Sprite).spriteFrame = spriteFrame;
+            });
+            cc.resources.load("images/gamescene/menucreatetower/menu_ok1",cc.SpriteFrame,(err:Error,spriteFrame:cc.SpriteFrame)=>
+            {
+                this.menu2.getChildByName('checkmark').getComponent(cc.Sprite).spriteFrame = spriteFrame;
+            });
+        }
+        else if(this.towerConfig[1].config[0].upgrand_price <= gear)
+        {
+            cc.resources.load("images/gamescene/menucreatetower/menu_icegun1",cc.SpriteFrame,(err:Error,spriteFrame:cc.SpriteFrame)=>
+            {
+                this.menu2.getChildByName("Background").getComponent(cc.Sprite).spriteFrame = spriteFrame;
+            });
+            cc.resources.load("images/gamescene/menucreatetower/menu_ok2",cc.SpriteFrame,(err:Error,spriteFrame:cc.SpriteFrame)=>
+            {
+                this.menu2.getChildByName('checkmark').getComponent(cc.Sprite).spriteFrame = spriteFrame;
+            });
+        }
+
+        if(!this.tower_messege[2].unlock)
+        {
+            cc.resources.load("images/gamescene/menucreatetower/menu_lock2",cc.SpriteFrame,(err:Error,spriteFrame:cc.SpriteFrame)=>
+            {
+                this.menu3.getChildByName("Background").getComponent(cc.Sprite).spriteFrame = spriteFrame;
+            });
+            cc.resources.load("images/gamescene/menucreatetower/menu_lock2",cc.SpriteFrame,(err:Error,spriteFrame:cc.SpriteFrame)=>
+            {
+                this.menu3.getChildByName('checkmark').getComponent(cc.Sprite).spriteFrame = spriteFrame;
+            });
+        }
+        else if(this.towerConfig[2].config[0].upgrand_price > gear)
+        {
+            cc.resources.load("images/gamescene/menucreatetower/menu_teslagun2",cc.SpriteFrame,(err:Error,spriteFrame:cc.SpriteFrame)=>
+            {
+                this.menu3.getChildByName("Background").getComponent(cc.Sprite).spriteFrame = spriteFrame;
+            });
+            cc.resources.load("images/gamescene/menucreatetower/menu_ok1",cc.SpriteFrame,(err:Error,spriteFrame:cc.SpriteFrame)=>
+            {
+                this.menu3.getChildByName('checkmark').getComponent(cc.Sprite).spriteFrame = spriteFrame;
+            });
+        }
+        else if(this.towerConfig[2].config[0].upgrand_price <= gear)
+        {
+            cc.resources.load("images/gamescene/menucreatetower/menu_teslagun1-0ld",cc.SpriteFrame,(err:Error,spriteFrame:cc.SpriteFrame)=>
+            {
+                this.menu3.getChildByName("Background").getComponent(cc.Sprite).spriteFrame = spriteFrame;
+            });
+            cc.resources.load("images/gamescene/menucreatetower/menu_ok2",cc.SpriteFrame,(err:Error,spriteFrame:cc.SpriteFrame)=>
+            {
+                this.menu3.getChildByName('checkmark').getComponent(cc.Sprite).spriteFrame = spriteFrame;
+            });
+        }
+
+        if(!this.tower_messege[3].unlock)
+        {
+            cc.resources.load("images/gamescene/menucreatetower/menu_lock2",cc.SpriteFrame,(err:Error,spriteFrame:cc.SpriteFrame)=>
+            {
+                this.menu4.getChildByName("Background").getComponent(cc.Sprite).spriteFrame = spriteFrame;
+            });
+            cc.resources.load("images/gamescene/menucreatetower/menu_lock2",cc.SpriteFrame,(err:Error,spriteFrame:cc.SpriteFrame)=>
+            {
+                this.menu4.getChildByName('checkmark').getComponent(cc.Sprite).spriteFrame = spriteFrame;
+            });
+        }
+        else if(this.towerConfig[3].config[0].upgrand_price > gear)
+        {
+            cc.resources.load("images/gamescene/menucreatetower/menu_roketgun2",cc.SpriteFrame,(err:Error,spriteFrame:cc.SpriteFrame)=>
+            {
+                this.menu4.getChildByName("Background").getComponent(cc.Sprite).spriteFrame = spriteFrame;
+            });
+            cc.resources.load("images/gamescene/menucreatetower/menu_ok1",cc.SpriteFrame,(err:Error,spriteFrame:cc.SpriteFrame)=>
+            {
+                this.menu4.getChildByName('checkmark').getComponent(cc.Sprite).spriteFrame = spriteFrame;
+            });
+        }
+        else if(this.towerConfig[3].config[0].upgrand_price <= gear)
+        {
+            cc.resources.load("images/gamescene/menucreatetower/menu_roketgun1",cc.SpriteFrame,(err:Error,spriteFrame:cc.SpriteFrame)=>
+            {
+                this.menu4.getChildByName("Background").getComponent(cc.Sprite).spriteFrame = spriteFrame;
+            });
+            cc.resources.load("images/gamescene/menucreatetower/menu_ok2",cc.SpriteFrame,(err:Error,spriteFrame:cc.SpriteFrame)=>
+            {
+                this.menu4.getChildByName('checkmark').getComponent(cc.Sprite).spriteFrame = spriteFrame;
+            });
+        }
+
+        if(!this.tower_messege[4].unlock)
+        {
+            cc.resources.load("images/gamescene/menucreatetower/menu_lock2",cc.SpriteFrame,(err:Error,spriteFrame:cc.SpriteFrame)=>
+            {
+                this.menu5.getChildByName("Background").getComponent(cc.Sprite).spriteFrame = spriteFrame;
+            });
+            cc.resources.load("images/gamescene/menucreatetower/menu_lock2",cc.SpriteFrame,(err:Error,spriteFrame:cc.SpriteFrame)=>
+            {
+                this.menu5.getChildByName('checkmark').getComponent(cc.Sprite).spriteFrame = spriteFrame;
+            });
+        }
+        else if(this.towerConfig[4].config[0].upgrand_price > gear)
+        {
+            cc.resources.load("images/gamescene/menucreatetower/menu_firegun2",cc.SpriteFrame,(err:Error,spriteFrame:cc.SpriteFrame)=>
+            {
+                this.menu5.getChildByName("Background").getComponent(cc.Sprite).spriteFrame = spriteFrame;
+            });
+            cc.resources.load("images/gamescene/menucreatetower/menu_ok1",cc.SpriteFrame,(err:Error,spriteFrame:cc.SpriteFrame)=>
+            {
+                this.menu5.getChildByName('checkmark').getComponent(cc.Sprite).spriteFrame = spriteFrame;
+            });
+        }
+        else if(this.towerConfig[4].config[0].upgrand_price <= gear)
+        {
+            cc.resources.load("images/gamescene/menucreatetower/menu_firegun1",cc.SpriteFrame,(err:Error,spriteFrame:cc.SpriteFrame)=>
+            {
+                this.menu5.getChildByName("Background").getComponent(cc.Sprite).spriteFrame = spriteFrame;
+            });
+            cc.resources.load("images/gamescene/menucreatetower/menu_ok2",cc.SpriteFrame,(err:Error,spriteFrame:cc.SpriteFrame)=>
+            {
+                this.menu5.getChildByName('checkmark').getComponent(cc.Sprite).spriteFrame = spriteFrame;
+            });
+        }
+
+        if(!this.tower_messege[5].unlock)
+        {
+            cc.resources.load("images/gamescene/menucreatetower/menu_lock2",cc.SpriteFrame,(err:Error,spriteFrame:cc.SpriteFrame)=>
+            {
+                this.menu6.getChildByName("Background").getComponent(cc.Sprite).spriteFrame = spriteFrame;
+            });
+            cc.resources.load("images/gamescene/menucreatetower/menu_lock2",cc.SpriteFrame,(err:Error,spriteFrame:cc.SpriteFrame)=>
+            {
+                this.menu6.getChildByName('checkmark').getComponent(cc.Sprite).spriteFrame = spriteFrame;
+            });
+        }
+        else if(this.towerConfig[5].config[0].upgrand_price > gear)
+        {
+            cc.resources.load("images/gamescene/menucreatetower/menu_laser2",cc.SpriteFrame,(err:Error,spriteFrame:cc.SpriteFrame)=>
+            {
+                this.menu6.getChildByName("Background").getComponent(cc.Sprite).spriteFrame = spriteFrame;
+            });
+            cc.resources.load("images/gamescene/menucreatetower/menu_ok1",cc.SpriteFrame,(err:Error,spriteFrame:cc.SpriteFrame)=>
+            {
+                this.menu6.getChildByName('checkmark').getComponent(cc.Sprite).spriteFrame = spriteFrame;
+            });
+        }
+        else if(this.towerConfig[5].config[0].upgrand_price <= gear)
+        {
+            cc.resources.load("images/gamescene/menucreatetower/menu_laser1",cc.SpriteFrame,(err:Error,spriteFrame:cc.SpriteFrame)=>
+            {
+                this.menu6.getChildByName("Background").getComponent(cc.Sprite).spriteFrame = spriteFrame;
+            });
+            cc.resources.load("images/gamescene/menucreatetower/menu_ok2",cc.SpriteFrame,(err:Error,spriteFrame:cc.SpriteFrame)=>
+            {
+                this.menu6.getChildByName('checkmark').getComponent(cc.Sprite).spriteFrame = spriteFrame;
+            });
+        }
+
+    }
     //点击基地
     onClickLand() {
-       
+        this.unlockTower();
         let count = Number(localStorage.getItem("tower_count"));
         this.node.zIndex = 20;
         for(let i=0; i < count; i++)
@@ -165,6 +403,7 @@ export default class BaseCreate extends cc.Component {
             tower_other.getChildByName("toggleContainer").active = false;
             tower_other.getChildByName("hint_panel").active = false;
             tower_other.getChildByName("show").active = false;
+            tower_other.getChildByName("circle").active = false;
            }
         }
       
@@ -187,11 +426,22 @@ export default class BaseCreate extends cc.Component {
 
     }
 
-loadTower(id: number) {
     
+    loadTower(id: number) {
+    this.unlockTower()
+    if(!this.tower_messege[id - 1].unlock)
+    {
+        return;
+    }
+    if (this.battel_message.present_gear < this.towerConfig[id - 1].config[0].upgrand_price) {
+        return;
+    }
         cc.resources.load(this.towerConfig[id - 1].config[0].atlas, cc.SpriteAtlas, (err, atlas: cc.SpriteAtlas) => {
-            if (this.gold_count >= this.towerConfig[id - 1].config[0].upgrand_price) {
-                this.gold_count -= this.towerConfig[id - 1].config[0].upgrand_price;
+           
+                this.battel_message.present_gear -= this.towerConfig[id - 1].config[0].upgrand_price;
+               
+                this.node.dispatchEvent(new cc.Event.EventCustom("updateMesseg",true));
+
                 let fram = atlas.getSpriteFrame(this.towerConfig[id - 1].config[0].sprite_frame);
                 this.choice_tower.getComponent(cc.Sprite)
                 this.choice_tower.getComponent(cc.Sprite).spriteFrame = fram;
@@ -199,13 +449,16 @@ loadTower(id: number) {
                 this.att = this.towerConfig[id - 1].config[0].att;
                 this.speed = this.towerConfig[id - 1].config[0].speed;
                 this.rang = this.towerConfig[id - 1].config[0].rang;
+                this.upgrade_price = this.towerConfig[id - 1].config[0].upgrand_price;
 
                 this.tower_lv++;
                 this.hint.active = false;
                 this.land.active = false;
                 this.choice_tower.active = true;
                 this.choice_tower_id = id;
-            }
+
+                this.updateAnim();
+            
         });
       
     }
@@ -223,9 +476,9 @@ loadTower(id: number) {
         this.hint.active = true;
         this.hint.getChildByName("name").getComponent(cc.Label).string = this.towerConfig[id - 1].name;
         this.hint.getChildByName("detail").getComponent(cc.Label).string = this.towerConfig[id - 1].describe;
-        this.hint.getChildByName("atk").getComponent(cc.Label).string = "" + this.towerConfig[id - 1].config[this.tower_lv - 1].att;
-        this.hint.getChildByName("speed").getComponent(cc.Label).string = "" + this.towerConfig[id - 1].config[this.tower_lv - 1].speed;
-        this.hint.getChildByName("rang").getComponent(cc.Label).string = "" + this.towerConfig[id - 1].config[this.tower_lv - 1].rang;
+        this.hint.getChildByName("atk").getComponent(cc.Label).string = "" + this.towerConfig[id - 1].config[this.tower_lv].att;
+        this.hint.getChildByName("speed").getComponent(cc.Label).string = "" + this.towerConfig[id - 1].config[this.tower_lv].speed;
+        this.hint.getChildByName("rang").getComponent(cc.Label).string = "" + this.towerConfig[id - 1].config[this.tower_lv].rang;
     }
 
     //Archer-tower
@@ -237,7 +490,7 @@ loadTower(id: number) {
 
             this.menu1.getComponent(cc.Toggle).isChecked = false;
 
-            this.arrowAnimation();
+            //this.arrowAnimation();
         }
         else {
             this.loadHintPanel(1);
@@ -252,7 +505,7 @@ loadTower(id: number) {
             this.loadTower(2);
 
             this.menu2.getComponent(cc.Toggle).isChecked = false;
-            this.kittyAnimation();
+         //   this.kittyAnimation();
         }
         else {
             this.loadHintPanel(2);
@@ -268,7 +521,7 @@ loadTower(id: number) {
 
             this.menu3.getComponent(cc.Toggle).isChecked = false;
 
-            this.ballAnimation();
+   //         this.ballAnimation();
         }
         else {
             this.loadHintPanel(3);
@@ -284,7 +537,7 @@ loadTower(id: number) {
 
             this.menu4.getComponent(cc.Toggle).isChecked = false;
 
-            this.magicAnimation();
+   //         this.magicAnimation();
         }
         else {
             this.loadHintPanel(4);
@@ -300,7 +553,7 @@ loadTower(id: number) {
 
             this.menu5.getComponent(cc.Toggle).isChecked = false;
 
-            this.fireAnimation();
+    //        this.fireAnimation();
         }
         else {
             this.loadHintPanel(5);
@@ -316,7 +569,7 @@ loadTower(id: number) {
 
             this.menu6.getComponent(cc.Toggle).isChecked = false;
 
-            this.sniperAnimation();
+ //           this.sniperAnimation();
         }
         else {
             this.loadHintPanel(6);
@@ -325,6 +578,8 @@ loadTower(id: number) {
 
     //点击塔
     onClickTower() {
+        this.enabledUpgrade();
+
         let count = Number(localStorage.getItem("tower_count"));
         this.node.zIndex = 20;
         for(let i=0; i < count; i++)
@@ -337,13 +592,16 @@ loadTower(id: number) {
             tower_other.getChildByName("toggleContainer").active = false;
             tower_other.getChildByName("hint_panel").active = false;
             tower_other.getChildByName("show").active = false;
+            tower_other.getChildByName("circle").active = false;
            }
         }
       
 
         if (!this.show.active) {
-            this.show.active = true;
+            this.loadShow();
             this.show.getComponent(cc.Animation).play('clickTowerAnim')
+            this.loadHintPanel(this.choice_tower_id);
+            this.circle.active = true;
         }
         else {
 
@@ -352,6 +610,7 @@ loadTower(id: number) {
             let callfunc = cc.callFunc(() => {
                 this.hint.active = false;
                 this.show.active = false;
+                this.circle.active = false;
                 this.show.getChildByName('upgrand').getComponent(cc.Toggle).isChecked = false;
                 this.show.getChildByName('delete').getComponent(cc.Toggle).isChecked = false;
             }, this);
@@ -360,37 +619,146 @@ loadTower(id: number) {
     }
 
 
+    //是否可以升级
+    enabledUpgrade()
+    { 
+        let gear =  this.upgrade_price;
+       
+        let tower:LocalTowerMessege[] = JSON.parse(localStorage.getItem("tower_messege"));
+        if(this.tower_lv == tower[this.choice_tower_id -1].lv)
+        {
+           
+           
+            cc.resources.load("images/gamescene/menucreatetower/menu_lock2",cc.SpriteFrame,(err:Error,spriteFrame:cc.SpriteFrame)=>
+            {
+                this.isUpgrade = false;
+                this.show.getChildByName('upgrand').getChildByName("Background").getComponent(cc.Sprite).spriteFrame = spriteFrame;
+            });
+            cc.resources.load("images/gamescene/menucreatetower/menu_lock2",cc.SpriteFrame,(err:Error,spriteFrame:cc.SpriteFrame)=>
+            {
+                this.show.getChildByName('upgrand').getChildByName('checkmark').getComponent(cc.Sprite).spriteFrame = spriteFrame;
+            });
+        }
+        else if(gear > this.battel_message.present_gear)
+        {
+           
+            cc.resources.load("images/gamescene/menucreatetower/menu_upgrade2",cc.SpriteFrame,(err:Error,spriteFrame:cc.SpriteFrame)=>
+            {
+                this.isUpgrade = false;
+                this.show.getChildByName('upgrand').getChildByName("Background").getComponent(cc.Sprite).spriteFrame = spriteFrame;
+               
+            });
+            cc.resources.load("images/gamescene/menucreatetower/menu_ok1",cc.SpriteFrame,(err:Error,spriteFrame:cc.SpriteFrame)=>
+            {
+                this.show.getChildByName('upgrand').getChildByName('checkmark').getComponent(cc.Sprite).spriteFrame = spriteFrame;
+            });
+        }
+        else if(gear <= this.battel_message.present_gear){
+           
+            cc.resources.load("images/gamescene/menucreatetower/menu_upgrade1",cc.SpriteFrame,(err:Error,spriteFrame:cc.SpriteFrame)=>
+            {
+                this.isUpgrade = true;
+                this.show.getChildByName('upgrand').getChildByName("Background").getComponent(cc.Sprite).spriteFrame = spriteFrame;
+               
+            });
+            cc.resources.load("images/gamescene/menucreatetower/menu_ok2",cc.SpriteFrame,(err:Error,spriteFrame:cc.SpriteFrame)=>
+            {
+                this.show.getChildByName('upgrand').getChildByName('checkmark').getComponent(cc.Sprite).spriteFrame = spriteFrame;
+            });
+        }
+    }
 
+    //升级后动画
+    updateAnim()
+    {
+        switch(this.choice_tower_id)
+        {
+            case 1:
+                this.arrowAnimation();
+                break;
+            case 2:
+                this.kittyAnimation();
+                break;
+            case 3:
+                this.ballAnimation();
+                break;
+            case 4:
+                this.magicAnimation();
+                break;
+            case 5:
+                this.fireAnimation();
+                break;
+            case 6:
+                this.sniperAnimation();
+                break;
+            default:
+                break;
+        }
+
+        switch(this.tower_dir)
+        {
+            case towerDir.left_down:
+                this.anim.play(this.anim_LD).speed = this.speed * this.mutiple; 
+                break;
+            case towerDir.left_up:
+                this.anim.play(this.anim_LU).speed = this.speed * this.mutiple;
+                break;
+            case towerDir.right_down:
+                this.anim.play(this.anim_RD).speed = this.speed * this.mutiple;
+                break;
+            case towerDir.right_up:
+                this.anim.play(this.anim_RU).speed = this.speed * this.mutiple;
+                break;
+            default:
+                break;
+        }
+    }
     //升级
     onClickUpgrand() {
-        if (!this.show.getChildByName('upgrand').getComponent(cc.Toggle).isChecked) {
-            if (this.gold_count >= this.towerConfig[this.choice_tower_id - 1].config[this.tower_lv - 1].upgrand_price) {
-                this.gold_count -= this.towerConfig[this.choice_tower_id - 1].config[this.tower_lv - 1].upgrand_price;
-                cc.resources.load(this.towerConfig[this.choice_tower_id - 1].config[this.tower_lv - 1].atlas, cc.SpriteAtlas, (err, atlas: cc.SpriteAtlas) => {
-                    let fram = atlas.getSpriteFrame(this.towerConfig[this.choice_tower_id - 1].config[this.tower_lv - 1].sprite_frame);
+     
+
+        if (!this.show.getChildByName('upgrand').getComponent(cc.Toggle).isChecked && this.isUpgrade) {
+
+            //if (this.gold_count >= this.towerConfig[this.choice_tower_id - 1].config[this.tower_lv - 1].upgrand_price) {
+             //   this.gold_count -= this.towerConfig[this.choice_tower_id - 1].config[this.tower_lv - 1].upgrand_price;
+         
+             cc.resources.load(this.towerConfig[this.choice_tower_id - 1].config[this.tower_lv].atlas, cc.SpriteAtlas, (err, atlas: cc.SpriteAtlas) => {
+                this.isUpgrade = false;
+
+                    let fram = atlas.getSpriteFrame(this.towerConfig[this.choice_tower_id - 1].config[this.tower_lv].sprite_frame);
                     this.choice_tower.getComponent(cc.Sprite).spriteFrame = fram;
 
-                    this.att = this.towerConfig[this.choice_tower_id - 1].config[this.tower_lv - 1].att;
-                    this.speed = this.towerConfig[this.choice_tower_id - 1].config[this.tower_lv - 1].speed;
-                    this.rang = this.towerConfig[this.choice_tower_id - 1].config[this.tower_lv - 1].rang;
+                    this.att = this.towerConfig[this.choice_tower_id - 1].config[this.tower_lv].att;
+                    this.speed = this.towerConfig[this.choice_tower_id - 1].config[this.tower_lv].speed;
+                    this.rang = this.towerConfig[this.choice_tower_id - 1].config[this.tower_lv].rang;
+                    this.upgrade_price = this.towerConfig[this.choice_tower_id - 1].config[this.tower_lv].upgrand_price;
 
+                    this.battel_message.present_gear -= this.towerConfig[this.choice_tower_id - 1].config[this.tower_lv].upgrand_price; 
+                    this.node.dispatchEvent(new cc.Event.EventCustom("updateMesseg",true));
+                    
                     this.tower_lv++;
-                });
-            }
-            this.show.getComponent(cc.Animation).play('clickTowerAnimRe')
-            let act = cc.delayTime(0.1);
-            let callfunc = cc.callFunc(() => {
-                this.show.active = false;
-            });
-            this.show.runAction(cc.sequence(act, callfunc));
 
-            this.hint.active = false;
+                    this.show.getComponent(cc.Animation).play('clickTowerAnimRe')
+                    let act = cc.delayTime(0.1);
+                    let callfunc = cc.callFunc(() => {
+                        this.show.active = false;
+                    });
+                    this.show.runAction(cc.sequence(act, callfunc));
+        
+                    this.hint.active = false;       
+                    
+                    this.updateAnim();
+                });
+          //  }
            
         }
-        else
-        {
-            this.loadHintPanel(this.choice_tower_id);
-        }
+        // else
+        // {
+        //     if(this.isUpgrade)
+        //     {
+        //         this.loadHintPanel(this.choice_tower_id);
+        //     }
+        // }
     }
     onClickDelet() {
 
@@ -400,17 +768,24 @@ loadTower(id: number) {
             let act = cc.delayTime(0.1);
             let callfunc = cc.callFunc(() => {
                 this.show.active = !this.show.active;
-                this.tower_lv = 1;
+            
+                this.land.active = true;
+                this.choice_tower.active = false;
+                this.hint.active = false;
+                this.battel_message.present_gear += Math.floor(this.towerConfig[this.choice_tower_id - 1].config[this.tower_lv - 1].upgrand_price * 0.8);
+                this.node.dispatchEvent(new cc.Event.EventCustom("updateMesseg",true));
+
+                this.tower_lv = 0;
                 this.choice_tower_id = 0;
+                this.speed = 0;
+                this.upgrade_price = 0;
+                
+                this.node.getChildByName("circle").active = false;
             });
             this.show.runAction(cc.sequence(act, callfunc));
 
 
-            this.land.active = true;
-            this.choice_tower.active = false;
-            this.hint.active = false;
-            this.gold_count += this.towerConfig[this.choice_tower_id - 1].config[this.tower_lv - 1].upgrand_price * 0.8;
-            
+           
         }
         else{
             this.hint.active = false;
@@ -424,6 +799,7 @@ loadTower(id: number) {
        this.anim_LU = `archerAnim_${this.tower_lv}_LU`;
        this.anim_RU = `archerAnim_${this.tower_lv}_RU`;
     }
+
 
     kittyAnimation(){
         this.anim_LD = `kittyAnim_${this.tower_lv}_LD`;
@@ -481,20 +857,24 @@ loadTower(id: number) {
         for (let i = 0; i < clips.length; i++) {
             
             clips[i].speed = this.speed * this.mutiple;
-            console.log("towerspeed:", clips[i].speed)
+          
         }
 
     }
 
     stopAttack()
     {
-        this.anim.stop();
+      
+           // this.anim.stop();
+        this.anim.currentClip.wrapMode = cc.WrapMode.Normal;
+       
     }
     
     
     towerAttackDir(enemyPoint:cc.Vec2,towerPoint:cc.Vec2)
     {
         this.is_attack = true;
+       
 
         let dir:towerDir = towerDir.none;
 
@@ -519,16 +899,19 @@ loadTower(id: number) {
             dir = towerDir.left_down;
         }
 
-        let tmp:LoadingBattel = this.node.parent.getComponent("loadingBattel")
+        let tmp:LoadingBattel = this.battel_message;
         if (dir != this.tower_dir || this.mutiple != tmp.speed ||
-             !this.anim.getAnimationState( this.anim_name).isPlaying) {
+             !this.anim.getAnimationState( this.anim_name).isPlaying ) {
            
+        
+
             this.tower_dir = dir;
             this.mutiple = tmp.speed;
            
             switch (this.tower_dir) {
                 case towerDir.left_down:
                     this.anim.play(this.anim_LD).speed = this.speed * this.mutiple; 
+
                     this.anim_name = this.anim_LD;
                     break;
                 case towerDir.left_up:

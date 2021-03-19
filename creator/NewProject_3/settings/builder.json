@@ -1,7 +1,7 @@
 {
-  "title": "NewProject_3",
+  "title": "Cat",
   "packageName": "org.cocos2d.demo",
-  "startScene": "19450864-c64a-418e-8501-e8e3f0374347",
+  "startScene": "d66c59e2-f70c-4ce8-a57b-f2e98c8bfbb1",
   "excludeScenes": [],
   "includeSDKBox": false,
   "orientation": {
@@ -15,7 +15,7 @@
   "inlineSpriteFrames_native": true,
   "mainCompressionType": "default",
   "mainIsRemote": false,
-  "optimizeHotUpdate": false,
+  "optimizeHotUpdate": true,
   "md5Cache": true,
   "nativeMd5Cache": true,
   "encryptJs": true,
@@ -24,7 +24,7 @@
   "fb-instant-games": {},
   "android": {
     "REMOTE_SERVER_ROOT": "",
-    "packageName": "org.cocos2d.demo"
+    "packageName": "com.game.c"
   },
   "ios": {
     "REMOTE_SERVER_ROOT": "",

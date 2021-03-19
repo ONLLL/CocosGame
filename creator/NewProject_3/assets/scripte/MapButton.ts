@@ -48,6 +48,9 @@ export default class MapButton extends cc.Component {
 
   private show:cc.Node = null;
 
+
+  @property(cc.Node)
+  money:cc.Node = null;
   onLoad(){
   
 
@@ -63,6 +66,12 @@ export default class MapButton extends cc.Component {
 
     this.show = this.node.getChildByName("choose").getChildByName("show")
     this.loadFlag();
+
+
+    //更新主页面金币  星星 信息
+    this.updateMainMoney();
+    this.node.on("updateMainMoney",this.updateMainMoney);
+  
   }
 
   start() {
@@ -107,6 +116,12 @@ export default class MapButton extends cc.Component {
     }
   }
 
+  updateMainMoney()
+  {
+    this.money.getChildByName("gold").getComponentInChildren(cc.Label).string = localStorage.getItem("gold");
+
+    this.money.getChildByName("star").getComponentInChildren(cc.Label).string = localStorage.getItem("star");
+  }
 
   //返回按钮 返回主界面
   onClickBackButton() {

@@ -78,14 +78,17 @@
         "__id__": 7
       },
       {
-        "__id__": 15
+        "__id__": 14
       },
       {
-        "__id__": 17
+        "__id__": 16
       }
     ],
     "_active": true,
     "_components": [
+      {
+        "__id__": 18
+      },
       {
         "__id__": 19
       },
@@ -180,7 +183,7 @@
       "array": [
         0,
         0,
-        209.57814771583418,
+        230.3627574066607,
         0,
         0,
         0,
@@ -355,9 +358,6 @@
       },
       {
         "__id__": 12
-      },
-      {
-        "__id__": 13
       }
     ],
     "_prefab": null,
@@ -558,16 +558,6 @@
     "_id": "21632WgBFKupM6Kzknj4e8"
   },
   {
-    "__type__": "59a12JYWc9MVaNhnDfxUODw",
-    "_name": "",
-    "_objFlags": 0,
-    "node": {
-      "__id__": 7
-    },
-    "_enabled": true,
-    "_id": "fbo7fzXppEsIsEA+T191H7"
-  },
-  {
     "__type__": "cc.Button",
     "_name": "",
     "_objFlags": 0,
@@ -581,7 +571,7 @@
     "zoomScale": 1.2,
     "clickEvents": [
       {
-        "__id__": 14
+        "__id__": 13
       }
     ],
     "_N$interactable": true,
@@ -644,7 +634,7 @@
   {
     "__type__": "cc.ClickEvent",
     "target": {
-      "__id__": 7
+      "__id__": 2
     },
     "component": "",
     "_componentId": "59a12JYWc9MVaNhnDfxUODw",
@@ -662,7 +652,7 @@
     "_active": true,
     "_components": [
       {
-        "__id__": 16
+        "__id__": 15
       }
     ],
     "_prefab": null,
@@ -718,7 +708,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 15
+      "__id__": 14
     },
     "_enabled": true,
     "_materials": [
@@ -756,7 +746,7 @@
     "_active": true,
     "_components": [
       {
-        "__id__": 18
+        "__id__": 17
       }
     ],
     "_prefab": null,
@@ -812,7 +802,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 17
+      "__id__": 16
     },
     "_enabled": true,
     "_materials": [
@@ -882,5 +872,15 @@
     "_originalWidth": 0,
     "_originalHeight": 0,
     "_id": "29zXboiXFBKoIV4PQ2liTe"
+  },
+  {
+    "__type__": "59a12JYWc9MVaNhnDfxUODw",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 2
+    },
+    "_enabled": true,
+    "_id": "69QIphalJBiJeqZ56W9IR8"
   }
 ]

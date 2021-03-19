@@ -26,7 +26,7 @@ export default class NewClass extends cc.Component {
   onClickRoomBack() {
     this.anim.play('heroHomeAnimRe');
    
-    let act = cc.delayTime(0.1);
+    let act = cc.delayTime(0.3);
     let callfunc = cc.callFunc(()=>{
       this.mask.active = false;
       this.bg.parent.active = false;
@@ -36,9 +36,9 @@ export default class NewClass extends cc.Component {
 
   onClickPowerBack() {
     this.anim.play('powerupsAnimRe');
-    this.bg.parent.active = false;
+    //this.bg.parent.active = false;
 
-    let act = cc.delayTime(0.1);
+    let act = cc.delayTime(0.3);
     let callfunc = cc.callFunc(()=>{
       this.mask.active = false;
       this.bg.parent.active = false;
@@ -48,9 +48,9 @@ export default class NewClass extends cc.Component {
 
   onClickShopBack() {
     this.anim.play('shopAnimRe');
-    this.bg.parent.active = false;
+   // this.bg.parent.active = false;
 
-    let act = cc.delayTime(0.1);
+    let act = cc.delayTime(0.3);
     let callfunc = cc.callFunc(()=>{
       this.mask.active = false;
       this.bg.parent.active = false;
@@ -60,13 +60,28 @@ export default class NewClass extends cc.Component {
 
   onClickTowerBack() {
     this.anim.play('shopAnimRe');
-    this.bg.parent.active = false;
+   // this.bg.parent.active = false;
 
-    let act = cc.delayTime(0.1);
+    let act = cc.delayTime(0.3);
     let callfunc = cc.callFunc(()=>{
       this.mask.active = false;
       this.bg.parent.active = false;
     });
     this.bg.runAction(cc.sequence(act,callfunc));
+  }
+
+  onClickMask(){
+    if(this.bg.active)
+    {
+      this.anim.play('toBatteAnimRe');
+      //this.bg.parent.active = false;
+  
+      let act = cc.delayTime(0.3);
+      let callfunc = cc.callFunc(()=>{
+        this.mask.active = false;
+        this.bg.parent.active = false;
+      });
+      this.bg.runAction(cc.sequence(act,callfunc));
+    }
   }
 }

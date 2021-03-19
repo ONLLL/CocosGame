@@ -1,6 +1,6 @@
 {
   "__type__": "cc.AnimationClip",
-  "_name": "magic_1_RU",
+  "_name": "magicAnim_1_RU",
   "_objFlags": 0,
   "_native": "",
   "_duration": 1.6833333333333333,
@@ -81,5 +81,11 @@
       }
     }
   },
-  "events": []
+  "events": [
+    {
+      "frame": 0.5,
+      "func": "onAnimationFinished",
+      "params": []
+    }
+  ]
 }

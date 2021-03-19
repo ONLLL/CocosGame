@@ -6,431 +6,499 @@
         <dict>
             <key>Kitty-litter-tower-L1-0001.png</key>
             <dict>
-                <key>frame</key>
-                <string>{{2,2},{113,113}}</string>
-                <key>offset</key>
-                <string>{-5,0}</string>
-                <key>rotated</key>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
+                <string>{113,113}</string>
+                <key>spriteSourceSize</key>
+                <string>{113,113}</string>
+                <key>textureRect</key>
+                <string>{{1,1},{113,113}}</string>
+                <key>textureRotated</key>
                 <false/>
-                <key>sourceColorRect</key>
-                <string>{{0,0},{113,113}}</string>
-                <key>sourceSize</key>
-                <string>{123,113}</string>
             </dict>
             <key>Kitty-litter-tower-L1-0002.png</key>
             <dict>
-                <key>frame</key>
-                <string>{{1240,115},{101,109}}</string>
-                <key>offset</key>
-                <string>{1,-2}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{12,4},{101,109}}</string>
-                <key>sourceSize</key>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
                 <string>{123,113}</string>
+                <key>spriteSourceSize</key>
+                <string>{123,113}</string>
+                <key>textureRect</key>
+                <string>{{116,1},{123,113}}</string>
+                <key>textureRotated</key>
+                <false/>
             </dict>
             <key>Kitty-litter-tower-L1-0003.png</key>
             <dict>
-                <key>frame</key>
-                <string>{{1444,2},{103,107}}</string>
-                <key>offset</key>
-                <string>{0,-3}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{10,6},{103,107}}</string>
-                <key>sourceSize</key>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
                 <string>{123,113}</string>
+                <key>spriteSourceSize</key>
+                <string>{123,113}</string>
+                <key>textureRect</key>
+                <string>{{241,1},{123,113}}</string>
+                <key>textureRotated</key>
+                <false/>
             </dict>
             <key>Kitty-litter-tower-L1-0004.png</key>
             <dict>
-                <key>frame</key>
-                <string>{{929,2},{103,111}}</string>
-                <key>offset</key>
-                <string>{-1,-1}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{9,2},{103,111}}</string>
-                <key>sourceSize</key>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
                 <string>{123,113}</string>
+                <key>spriteSourceSize</key>
+                <string>{123,113}</string>
+                <key>textureRect</key>
+                <string>{{366,1},{123,113}}</string>
+                <key>textureRotated</key>
+                <false/>
             </dict>
             <key>Kitty-litter-tower-L1-0005.png</key>
             <dict>
-                <key>frame</key>
-                <string>{{822,2},{105,111}}</string>
-                <key>offset</key>
-                <string>{-2,-1}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{7,2},{105,111}}</string>
-                <key>sourceSize</key>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
                 <string>{123,113}</string>
+                <key>spriteSourceSize</key>
+                <string>{123,113}</string>
+                <key>textureRect</key>
+                <string>{{491,1},{123,113}}</string>
+                <key>textureRotated</key>
+                <false/>
             </dict>
             <key>Kitty-litter-tower-L1-0006.png</key>
             <dict>
-                <key>frame</key>
-                <string>{{228,117},{105,113}}</string>
-                <key>offset</key>
-                <string>{-2,0}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{7,0},{105,113}}</string>
-                <key>sourceSize</key>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
                 <string>{123,113}</string>
+                <key>spriteSourceSize</key>
+                <string>{123,113}</string>
+                <key>textureRect</key>
+                <string>{{616,1},{123,113}}</string>
+                <key>textureRotated</key>
+                <false/>
             </dict>
             <key>Kitty-litter-tower-L1-0007.png</key>
             <dict>
-                <key>frame</key>
-                <string>{{440,2},{97,113}}</string>
-                <key>offset</key>
-                <string>{2,0}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{15,0},{97,113}}</string>
-                <key>sourceSize</key>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
                 <string>{123,113}</string>
+                <key>spriteSourceSize</key>
+                <string>{123,113}</string>
+                <key>textureRect</key>
+                <string>{{741,1},{123,113}}</string>
+                <key>textureRotated</key>
+                <false/>
             </dict>
             <key>Kitty-litter-tower-L1-0008.png</key>
             <dict>
-                <key>frame</key>
-                <string>{{442,117},{97,113}}</string>
-                <key>offset</key>
-                <string>{2,0}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{15,0},{97,113}}</string>
-                <key>sourceSize</key>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
                 <string>{123,113}</string>
+                <key>spriteSourceSize</key>
+                <string>{123,113}</string>
+                <key>textureRect</key>
+                <string>{{866,1},{123,113}}</string>
+                <key>textureRotated</key>
+                <false/>
             </dict>
             <key>Kitty-litter-tower-L1-0020.png</key>
             <dict>
-                <key>frame</key>
-                <string>{{117,2},{111,113}}</string>
-                <key>offset</key>
-                <string>{6,0}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{12,0},{111,113}}</string>
-                <key>sourceSize</key>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
                 <string>{123,113}</string>
+                <key>spriteSourceSize</key>
+                <string>{123,113}</string>
+                <key>textureRect</key>
+                <string>{{991,1},{123,113}}</string>
+                <key>textureRotated</key>
+                <false/>
             </dict>
             <key>Kitty-litter-tower-L1-0021.png</key>
             <dict>
-                <key>frame</key>
-                <string>{{1242,2},{101,109}}</string>
-                <key>offset</key>
-                <string>{-1,-2}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{10,4},{101,109}}</string>
-                <key>sourceSize</key>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
                 <string>{123,113}</string>
+                <key>spriteSourceSize</key>
+                <string>{123,113}</string>
+                <key>textureRect</key>
+                <string>{{1116,1},{123,113}}</string>
+                <key>textureRotated</key>
+                <false/>
             </dict>
             <key>Kitty-litter-tower-L1-0022.png</key>
             <dict>
-                <key>frame</key>
-                <string>{{1549,2},{103,107}}</string>
-                <key>offset</key>
-                <string>{0,-3}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{10,6},{103,107}}</string>
-                <key>sourceSize</key>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
                 <string>{123,113}</string>
+                <key>spriteSourceSize</key>
+                <string>{123,113}</string>
+                <key>textureRect</key>
+                <string>{{1241,1},{123,113}}</string>
+                <key>textureRotated</key>
+                <false/>
             </dict>
             <key>Kitty-litter-tower-L1-0023.png</key>
             <dict>
-                <key>frame</key>
-                <string>{{929,115},{103,111}}</string>
-                <key>offset</key>
-                <string>{1,-1}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{11,2},{103,111}}</string>
-                <key>sourceSize</key>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
                 <string>{123,113}</string>
+                <key>spriteSourceSize</key>
+                <string>{123,113}</string>
+                <key>textureRect</key>
+                <string>{{1366,1},{123,113}}</string>
+                <key>textureRotated</key>
+                <false/>
             </dict>
             <key>Kitty-litter-tower-L1-0024.png</key>
             <dict>
-                <key>frame</key>
-                <string>{{1034,2},{103,111}}</string>
-                <key>offset</key>
-                <string>{2,-1}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{12,2},{103,111}}</string>
-                <key>sourceSize</key>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
                 <string>{123,113}</string>
+                <key>spriteSourceSize</key>
+                <string>{123,113}</string>
+                <key>textureRect</key>
+                <string>{{1491,1},{123,113}}</string>
+                <key>textureRotated</key>
+                <false/>
             </dict>
             <key>Kitty-litter-tower-L1-0025.png</key>
             <dict>
-                <key>frame</key>
-                <string>{{230,2},{105,113}}</string>
-                <key>offset</key>
-                <string>{2,0}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{11,0},{105,113}}</string>
-                <key>sourceSize</key>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
                 <string>{123,113}</string>
+                <key>spriteSourceSize</key>
+                <string>{123,113}</string>
+                <key>textureRect</key>
+                <string>{{1616,1},{123,113}}</string>
+                <key>textureRotated</key>
+                <false/>
             </dict>
             <key>Kitty-litter-tower-L1-0026.png</key>
             <dict>
-                <key>frame</key>
-                <string>{{638,2},{95,113}}</string>
-                <key>offset</key>
-                <string>{-2,0}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{12,0},{95,113}}</string>
-                <key>sourceSize</key>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
                 <string>{123,113}</string>
+                <key>spriteSourceSize</key>
+                <string>{123,113}</string>
+                <key>textureRect</key>
+                <string>{{1741,1},{123,113}}</string>
+                <key>textureRotated</key>
+                <false/>
             </dict>
             <key>Kitty-litter-tower-L1-0027.png</key>
             <dict>
-                <key>frame</key>
-                <string>{{733,117},{87,113}}</string>
-                <key>offset</key>
-                <string>{-6,0}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{12,0},{87,113}}</string>
-                <key>sourceSize</key>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
                 <string>{123,113}</string>
+                <key>spriteSourceSize</key>
+                <string>{123,113}</string>
+                <key>textureRect</key>
+                <string>{{1866,1},{123,113}}</string>
+                <key>textureRotated</key>
+                <false/>
             </dict>
             <key>Kitty-litter-tower-L1-0040.png</key>
             <dict>
-                <key>frame</key>
-                <string>{{2,117},{113,113}}</string>
-                <key>offset</key>
-                <string>{-5,0}</string>
-                <key>rotated</key>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
+                <string>{113,113}</string>
+                <key>spriteSourceSize</key>
+                <string>{113,113}</string>
+                <key>textureRect</key>
+                <string>{{1,116},{113,113}}</string>
+                <key>textureRotated</key>
                 <false/>
-                <key>sourceColorRect</key>
-                <string>{{0,0},{113,113}}</string>
-                <key>sourceSize</key>
-                <string>{123,113}</string>
             </dict>
             <key>Kitty-litter-tower-L1-0041.png</key>
             <dict>
-                <key>frame</key>
-                <string>{{1343,113},{101,109}}</string>
-                <key>offset</key>
-                <string>{0,-2}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{11,4},{101,109}}</string>
-                <key>sourceSize</key>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
                 <string>{123,113}</string>
+                <key>spriteSourceSize</key>
+                <string>{123,113}</string>
+                <key>textureRect</key>
+                <string>{{116,116},{123,113}}</string>
+                <key>textureRotated</key>
+                <false/>
             </dict>
             <key>Kitty-litter-tower-L1-0042.png</key>
             <dict>
-                <key>frame</key>
-                <string>{{1446,111},{103,107}}</string>
-                <key>offset</key>
-                <string>{0,-3}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{10,6},{103,107}}</string>
-                <key>sourceSize</key>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
                 <string>{123,113}</string>
+                <key>spriteSourceSize</key>
+                <string>{123,113}</string>
+                <key>textureRect</key>
+                <string>{{241,116},{123,113}}</string>
+                <key>textureRotated</key>
+                <false/>
             </dict>
             <key>Kitty-litter-tower-L1-0043.png</key>
             <dict>
-                <key>frame</key>
-                <string>{{1034,115},{103,111}}</string>
-                <key>offset</key>
-                <string>{-1,-1}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{9,2},{103,111}}</string>
-                <key>sourceSize</key>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
                 <string>{123,113}</string>
+                <key>spriteSourceSize</key>
+                <string>{123,113}</string>
+                <key>textureRect</key>
+                <string>{{366,116},{123,113}}</string>
+                <key>textureRotated</key>
+                <false/>
             </dict>
             <key>Kitty-litter-tower-L1-0044.png</key>
             <dict>
-                <key>frame</key>
-                <string>{{822,115},{105,111}}</string>
-                <key>offset</key>
-                <string>{-2,-1}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{7,2},{105,111}}</string>
-                <key>sourceSize</key>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
                 <string>{123,113}</string>
+                <key>spriteSourceSize</key>
+                <string>{123,113}</string>
+                <key>textureRect</key>
+                <string>{{491,116},{123,113}}</string>
+                <key>textureRotated</key>
+                <false/>
             </dict>
             <key>Kitty-litter-tower-L1-0045.png</key>
             <dict>
-                <key>frame</key>
-                <string>{{335,117},{105,113}}</string>
-                <key>offset</key>
-                <string>{-2,0}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{7,0},{105,113}}</string>
-                <key>sourceSize</key>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
                 <string>{123,113}</string>
+                <key>spriteSourceSize</key>
+                <string>{123,113}</string>
+                <key>textureRect</key>
+                <string>{{616,116},{123,113}}</string>
+                <key>textureRotated</key>
+                <false/>
             </dict>
             <key>Kitty-litter-tower-L1-0046.png</key>
             <dict>
-                <key>frame</key>
-                <string>{{539,2},{97,113}}</string>
-                <key>offset</key>
-                <string>{2,0}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{15,0},{97,113}}</string>
-                <key>sourceSize</key>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
                 <string>{123,113}</string>
+                <key>spriteSourceSize</key>
+                <string>{123,113}</string>
+                <key>textureRect</key>
+                <string>{{741,116},{123,113}}</string>
+                <key>textureRotated</key>
+                <false/>
             </dict>
             <key>Kitty-litter-tower-L1-0047.png</key>
             <dict>
-                <key>frame</key>
-                <string>{{541,117},{97,113}}</string>
-                <key>offset</key>
-                <string>{2,0}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{15,0},{97,113}}</string>
-                <key>sourceSize</key>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
                 <string>{123,113}</string>
+                <key>spriteSourceSize</key>
+                <string>{123,113}</string>
+                <key>textureRect</key>
+                <string>{{866,116},{123,113}}</string>
+                <key>textureRotated</key>
+                <false/>
             </dict>
             <key>Kitty-litter-tower-L1-0060.png</key>
             <dict>
-                <key>frame</key>
-                <string>{{117,117},{109,113}}</string>
-                <key>offset</key>
-                <string>{7,0}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{14,0},{109,113}}</string>
-                <key>sourceSize</key>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
                 <string>{123,113}</string>
+                <key>spriteSourceSize</key>
+                <string>{123,113}</string>
+                <key>textureRect</key>
+                <string>{{991,116},{123,113}}</string>
+                <key>textureRotated</key>
+                <false/>
             </dict>
             <key>Kitty-litter-tower-L1-0061.png</key>
             <dict>
-                <key>frame</key>
-                <string>{{1345,2},{97,109}}</string>
-                <key>offset</key>
-                <string>{1,-2}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{14,4},{97,109}}</string>
-                <key>sourceSize</key>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
                 <string>{123,113}</string>
+                <key>spriteSourceSize</key>
+                <string>{123,113}</string>
+                <key>textureRect</key>
+                <string>{{1116,116},{123,113}}</string>
+                <key>textureRotated</key>
+                <false/>
             </dict>
             <key>Kitty-litter-tower-L1-0062.png</key>
             <dict>
-                <key>frame</key>
-                <string>{{1551,111},{99,107}}</string>
-                <key>offset</key>
-                <string>{2,-3}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{14,6},{99,107}}</string>
-                <key>sourceSize</key>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
                 <string>{123,113}</string>
+                <key>spriteSourceSize</key>
+                <string>{123,113}</string>
+                <key>textureRect</key>
+                <string>{{1241,116},{123,113}}</string>
+                <key>textureRotated</key>
+                <false/>
             </dict>
             <key>Kitty-litter-tower-L1-0063.png</key>
             <dict>
-                <key>frame</key>
-                <string>{{1139,115},{99,111}}</string>
-                <key>offset</key>
-                <string>{3,-1}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{15,2},{99,111}}</string>
-                <key>sourceSize</key>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
                 <string>{123,113}</string>
+                <key>spriteSourceSize</key>
+                <string>{123,113}</string>
+                <key>textureRect</key>
+                <string>{{1366,116},{123,113}}</string>
+                <key>textureRotated</key>
+                <false/>
             </dict>
             <key>Kitty-litter-tower-L1-0064.png</key>
             <dict>
-                <key>frame</key>
-                <string>{{1139,2},{101,111}}</string>
-                <key>offset</key>
-                <string>{3,-1}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{14,2},{101,111}}</string>
-                <key>sourceSize</key>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
                 <string>{123,113}</string>
+                <key>spriteSourceSize</key>
+                <string>{123,113}</string>
+                <key>textureRect</key>
+                <string>{{1491,116},{123,113}}</string>
+                <key>textureRotated</key>
+                <false/>
             </dict>
             <key>Kitty-litter-tower-L1-0065.png</key>
             <dict>
-                <key>frame</key>
-                <string>{{337,2},{101,113}}</string>
-                <key>offset</key>
-                <string>{3,0}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{14,0},{101,113}}</string>
-                <key>sourceSize</key>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
                 <string>{123,113}</string>
+                <key>spriteSourceSize</key>
+                <string>{123,113}</string>
+                <key>textureRect</key>
+                <string>{{1616,116},{123,113}}</string>
+                <key>textureRotated</key>
+                <false/>
             </dict>
             <key>Kitty-litter-tower-L1-0066.png</key>
             <dict>
-                <key>frame</key>
-                <string>{{640,117},{91,113}}</string>
-                <key>offset</key>
-                <string>{-1,0}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{15,0},{91,113}}</string>
-                <key>sourceSize</key>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
                 <string>{123,113}</string>
+                <key>spriteSourceSize</key>
+                <string>{123,113}</string>
+                <key>textureRect</key>
+                <string>{{1741,116},{123,113}}</string>
+                <key>textureRotated</key>
+                <false/>
             </dict>
             <key>Kitty-litter-tower-L1-0067.png</key>
             <dict>
-                <key>frame</key>
-                <string>{{735,2},{85,113}}</string>
-                <key>offset</key>
-                <string>{-5,0}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{14,0},{85,113}}</string>
-                <key>sourceSize</key>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
                 <string>{123,113}</string>
+                <key>spriteSourceSize</key>
+                <string>{123,113}</string>
+                <key>textureRect</key>
+                <string>{{1866,116},{123,113}}</string>
+                <key>textureRotated</key>
+                <false/>
             </dict>
         </dict>
         <key>metadata</key>
         <dict>
             <key>format</key>
-            <integer>2</integer>
+            <integer>3</integer>
+            <key>pixelFormat</key>
+            <string>RGBA8888</string>
+            <key>premultiplyAlpha</key>
+            <false/>
             <key>realTextureFileName</key>
             <string>1.png</string>
             <key>size</key>
-            <string>{1654,232}</string>
+            <string>{1990,230}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:fe9e0bda391e2fba86c6ac71c12f9ca6:6ca4073bbc6589ecd3c808df0a8f9075:2f7983b4c14cf09938dfa44df99367f8$</string>
+            <string>$TexturePacker:SmartUpdate:56476bf0ff0ab17838ae56d4d57f35ef:19f20d15164969fabeb4c9d7158ed00d:2f7983b4c14cf09938dfa44df99367f8$</string>
             <key>textureFileName</key>
             <string>1.png</string>
         </dict>

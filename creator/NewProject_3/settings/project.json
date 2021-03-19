@@ -3,7 +3,9 @@
     "default",
     "fireball",
     "enemy",
-    "prop"
+    "prop",
+    "fire",
+    "ice"
   ],
   "collision-matrix": [
     [
@@ -18,12 +20,29 @@
       false,
       true,
       false,
+      true,
+      true,
       true
     ],
     [
       false,
       false,
       true,
+      false
+    ],
+    [
+      false,
+      false,
+      true,
+      false,
+      false
+    ],
+    [
+      false,
+      false,
+      true,
+      false,
+      false,
       false
     ]
   ],
@@ -51,5 +70,6 @@
     "live": {
       "enable": false
     }
-  }
+  },
+  "last-module-event-record-time": 1615969862587
 }

@@ -6,7 +6,7 @@
   "_duration": 2.5166666666666666,
   "sample": 60,
   "speed": 1,
-  "wrapMode": 2,
+  "wrapMode": 1,
   "curveData": {
     "comps": {
       "cc.Sprite": {
@@ -14,102 +14,108 @@
           {
             "frame": 0,
             "value": {
-              "__uuid__": "9adfedc4-c6a4-41cc-806e-2ecdc522c782"
+              "__uuid__": "1f7fad7f-ce1a-4a26-8863-a3ba5de8358a"
             }
           },
           {
             "frame": 0.16666666666666666,
             "value": {
-              "__uuid__": "7d89f4aa-ea5e-4645-ae08-9648b4a8c010"
+              "__uuid__": "ab952780-0d46-48a8-b648-8facdd16dfa4"
             }
           },
           {
             "frame": 0.3333333333333333,
             "value": {
-              "__uuid__": "65a87e52-18b0-41dc-944c-23c137217523"
+              "__uuid__": "9e9eaf21-7dad-4b21-9ab1-7878fd328a66"
             }
           },
           {
             "frame": 0.5,
             "value": {
-              "__uuid__": "17f83f76-1d6a-4e8e-ab36-001848d14bda"
+              "__uuid__": "2f54a66b-8e4e-4fd8-89f6-377689e02f7a"
             }
           },
           {
             "frame": 0.6666666666666666,
             "value": {
-              "__uuid__": "c92f5896-e9fc-4b9b-8892-c2a78a99f95a"
+              "__uuid__": "17df3795-a1d4-45a8-b439-f30ae65b3202"
             }
           },
           {
             "frame": 0.8333333333333334,
             "value": {
-              "__uuid__": "5e46a401-dd84-4e63-9a9a-4dfd64ff21f7"
+              "__uuid__": "68c7c983-5717-4021-a459-874d9998dafe"
             }
           },
           {
             "frame": 1,
             "value": {
-              "__uuid__": "4a9365aa-66b2-4ab2-b1e3-20decd49efde"
+              "__uuid__": "082ccec7-cf6c-46e2-9f55-d0ef0a6a7e96"
             }
           },
           {
             "frame": 1.1666666666666667,
             "value": {
-              "__uuid__": "e5dff554-1911-4536-acb6-796387aef0df"
+              "__uuid__": "4668b6e1-265a-48cf-bd8f-2eeca04705e7"
             }
           },
           {
             "frame": 1.3333333333333333,
             "value": {
-              "__uuid__": "37e7318b-6f22-4b04-8133-fe3ffafed3eb"
+              "__uuid__": "28e1335b-f2d5-47cb-a363-3b22f0fa6224"
             }
           },
           {
             "frame": 1.5,
             "value": {
-              "__uuid__": "b2bb1693-8b2d-4c64-a844-072c3ec6b004"
+              "__uuid__": "e88d07a9-2e06-4310-ab07-ca96f38aeeb3"
             }
           },
           {
             "frame": 1.6666666666666667,
             "value": {
-              "__uuid__": "fd822d90-4bdb-4102-9777-80eff865aa6f"
+              "__uuid__": "c676c29e-06d8-45ac-a05f-26c430132f12"
             }
           },
           {
             "frame": 1.8333333333333333,
             "value": {
-              "__uuid__": "5bf4d556-7e30-4b36-beaf-7d7710c3e7d7"
+              "__uuid__": "5ec22f6f-bcaa-4357-9075-398bbef12de3"
             }
           },
           {
             "frame": 2,
             "value": {
-              "__uuid__": "897a7b64-ef72-44d0-bdac-3119eb06ff60"
+              "__uuid__": "71c11a29-15cc-4bcf-a657-012aaa2418d7"
             }
           },
           {
             "frame": 2.1666666666666665,
             "value": {
-              "__uuid__": "e976520b-9f1a-45a2-91f2-7addf466ad90"
+              "__uuid__": "cbc63fe4-8d3a-420c-9813-75c8b0ff6e65"
             }
           },
           {
             "frame": 2.3333333333333335,
             "value": {
-              "__uuid__": "4cf442fb-2a70-4be5-8238-f8aa897718e5"
+              "__uuid__": "ec68196b-bb70-477d-b278-a171de3be2da"
             }
           },
           {
             "frame": 2.5,
             "value": {
-              "__uuid__": "8fee26e7-ae21-44de-ab03-a768176851c5"
+              "__uuid__": "6c09c52e-577b-4aec-b59f-ee86bdf45bd1"
             }
           }
         ]
       }
     }
   },
-  "events": []
+  "events": [
+    {
+      "frame": 0.3333333333333333,
+      "func": "onAnimationFinished",
+      "params": []
+    }
+  ]
 }

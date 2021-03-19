@@ -8,10 +8,11 @@
 import Enemy from "./enemy-action"
 import BaseCreate from "./base-create"
 import BattelUi from "./Battel-ui"
+import {MapMessege,LocalTowerMessege} from "./GameData";
 
 const { ccclass, property } = cc._decorator;
 
-interface mapCofig {
+export interface mapCofig {
     lv: number;
     sprite_frame: string;
     map: string;
@@ -21,23 +22,24 @@ interface mapCofig {
         gear: number;
         wave: number;
         lifes: number;
+        waveconfig: WaveConfig[]
     }
 }
-interface Normal {
+export interface Normal {
     money: number;
     gear: number;
     wave: number;
     lifes: number;
     waveconfig: WaveConfig[]
 }
-interface WaveConfig {
+export interface WaveConfig {
     waittime: number;
     total: number;
     type: number[];
     num: number[];
 }
 
-interface EnemyConfig {
+export interface EnemyConfig {
     id: number;
     name: string;
     hp: number;
@@ -84,6 +86,7 @@ export default class LoadingBattel extends cc.Component {
     @property(cc.Prefab)
     prop_holy: cc.Prefab = null;
 
+    //路径
     private road: cc.Vec2[] = [];
 
     private nextpoint: number = 0;
@@ -123,11 +126,20 @@ export default class LoadingBattel extends cc.Component {
     private type: number;
     private num: number;
 
+    //通过奖励
+    money:number = 0;
     //火球
     private fireball_1: cc.Node = null;
 
      speed:number = 1;
 
+     game_over:boolean = false;
+
+     @property(cc.Node)
+     gameover:cc.Node = null;
+
+     @property(cc.Node)
+     mask:cc.Node = null;
     onLoad() {
         // this.gear = cc.find("Canvas/icon_gear");
         // this.wave = cc.find("Canvas/icon_wave");
@@ -140,6 +152,7 @@ export default class LoadingBattel extends cc.Component {
         });
     }
     start() {
+
         cc.resources.load("config/mapConfig", cc.JsonAsset, (err: Error, jsonAsset: cc.JsonAsset) => {
             err && console.log(err);
         let map: mapCofig[] = jsonAsset.json;
@@ -149,6 +162,7 @@ export default class LoadingBattel extends cc.Component {
         this.present_gear = mapdata.nomal.gear
         this.present_hp = mapdata.nomal.lifes;
         this.total_wave = mapdata.nomal.wave;
+        this.money = mapdata.nomal.money;
 
         this.gear.getComponentInChildren(cc.Label).string = "" + this.present_gear;
         this.wave.getComponentInChildren(cc.Label).string =  `${this.present_wave} / ${mapdata.nomal.wave}`;
@@ -234,14 +248,23 @@ export default class LoadingBattel extends cc.Component {
 
                         break;
                     case 1:
+                        localStorage.setItem("prop_potion",String(Number(localStorage.getItem("prop_potion")) - 1));
+                        this.node.dispatchEvent(new cc.Event.EventCustom("box_update",true));
+
                         this.usePropPotion(this.node.convertToNodeSpaceAR(touchLoc))
                         battel.propSetScale();
                         break;
                     case 2:
+                        localStorage.setItem("prop_ice",String(Number(localStorage.getItem("prop_ice")) - 1));
+                        this.node.dispatchEvent(new cc.Event.EventCustom("box_update",true));
+
                         this.usePropIce(this.node.convertToNodeSpaceAR(touchLoc));
                         battel.propSetScale();
                         break;
                     case 3:
+                        localStorage.setItem("prop_holy",String(Number(localStorage.getItem("prop_holy")) - 1));
+                        this.node.dispatchEvent(new cc.Event.EventCustom("box_update",true));
+                        
                         this. usePropHoly(this.node.convertToNodeSpaceAR(touchLoc));
                         battel.propSetScale();
                         break;
@@ -250,7 +273,7 @@ export default class LoadingBattel extends cc.Component {
                 console.log("hit: ", touchLoc.x, " ", touchLoc.y);
                 
                 //测试加速
-                this.addSpeed();
+             //   this.addSpeed();
                 console.log("this.speed:",this.speed)
               
             }
@@ -369,7 +392,7 @@ export default class LoadingBattel extends cc.Component {
             this.towerArr[i].getChildByName("toggleContainer").active = false;
             this.towerArr[i].getChildByName("hint_panel").active = false;
             this.towerArr[i].getChildByName("show").active = false;
-            this.towerArr[i].getChildByName("circle");
+            this.towerArr[i].getChildByName("circle").active = false;
         }
     }
 
@@ -461,6 +484,11 @@ export default class LoadingBattel extends cc.Component {
 
 
     update() {
+        if(this.game_over)
+        {
+   
+            return;
+        }
         //  this.fireballWiepOut();
         if (this.is_begin_wave) {
             this.waveEnemy();
@@ -486,6 +514,97 @@ export default class LoadingBattel extends cc.Component {
             this.present_wave++;
             this.wave.getComponentInChildren(cc.Label).string =  `${this.present_wave} / ${this.total_wave}`;
 
+            //游戏结束  更改游戏数据
+            if(this.present_wave == 2)
+            {
+                this.game_over = true;
+                let star_num = Number(localStorage.getItem("star"));
+                let gold_num = Number(localStorage.getItem("gold"));
+
+                let map:MapMessege[] = [];
+                
+                map = JSON.parse(localStorage.getItem("map_messege"));
+
+                gold_num += this.money;
+
+                if(this.present_hp == 20)
+                {
+                    switch (map[Number(localStorage.getItem("choice_lv")) - 1].normal_star) {
+                        case 0:
+                            star_num += 3;
+                            break;
+                        case 1:
+                            star_num += 2;
+                            break;
+                        case 2:
+                            star_num += 1;
+                            break;
+                        case 3:
+                            star_num += 0;
+                            break;
+                        default:
+                            break;
+                    }
+
+                    map[Number(localStorage.getItem("choice_lv")) - 1].normal_star = 3;
+                    map[Number(localStorage.getItem("choice_lv")) - 1].is_finish = true;
+                }
+                else if(this.present_hp >= 10)
+                {
+                    switch (map[Number(localStorage.getItem("choice_lv")) - 1].normal_star) {
+                        case 0:
+                            star_num += 2;
+                            break;
+                        case 1:
+                            star_num += 1;
+                            break;
+                        case 2:
+                            star_num += 0;
+                            break;
+                        case 3:
+                            star_num += 0;
+                            break;
+                        default:
+                            break;
+                    }
+
+                    map[Number(localStorage.getItem("choice_lv")) - 1].normal_star = 2;
+                    map[Number(localStorage.getItem("choice_lv")) - 1].is_finish = true;
+                }
+                else{
+                    switch (map[Number(localStorage.getItem("choice_lv")) - 1].normal_star) {
+                        case 0:
+                            star_num += 1;
+                            break;
+                        case 1:
+                            star_num += 0;
+                            break;
+                        case 2:
+                            star_num += 0;
+                            break;
+                        case 3:
+                            star_num += 0;
+                            break;
+                        default:
+                            break;
+                    }
+                    map[Number(localStorage.getItem("choice_lv")) - 1].normal_star = 1;
+                    map[Number(localStorage.getItem("choice_lv")) - 1].is_finish = true;
+                }
+
+                //存储数据
+                localStorage.setItem("gold",String(gold_num));
+                localStorage.setItem("star",String(star_num));
+                localStorage.setItem("map_messege",JSON.stringify(map));
+
+
+                this.unscheduleAllCallbacks();
+                this.scheduleOnce(()=>{
+                    this.mask.active = true;
+                    this.gameover.active = true;
+                },3);
+                
+            }
             this.is_begin_wave = true;
         }
 

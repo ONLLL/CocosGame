@@ -104,12 +104,19 @@ export default class BattelUi extends cc.Component {
                 //    cc.log(self.skill2.name);
                     this.skill2_1 = spriteFrame;
                 });
+
+                this.node.on("box_update",()=>{
+                    this.box.getChildByName("prop_potion").getComponentInChildren(cc.Label).string = localStorage.getItem("prop_potion");
+                    this.box.getChildByName("prop_ice").getComponentInChildren(cc.Label).string = localStorage.getItem("prop_ice");
+                    this.box.getChildByName("prop_holy").getComponentInChildren(cc.Label).string = localStorage.getItem("prop_holy");
+                })
     }
 
     //道具按钮
     onClickBox() {
         this.boxStatu = !this.boxStatu;
         if (this.boxStatu) {
+            this.node.dispatchEvent(new cc.Event.EventCustom("box_update",true));
             this.box.getChildByName('box').getComponent(cc.Sprite).spriteFrame = this.boxOpen;
             this.boxAnim.play('boxAnim');
         }
@@ -188,13 +195,15 @@ export default class BattelUi extends cc.Component {
     //重新开始
     onClickRestart() {
     
+        cc.director.resume();
+        cc.director.loadScene("BattelScene");
      
     }
 
-    //返回主界面
+    //返回
     onClickQuit() {
         cc.director.resume();
-        cc.director.loadScene('StartScene');
+        cc.director.loadScene('GameScene');
     }
 
     //取消暂停界面
@@ -311,6 +320,8 @@ export default class BattelUi extends cc.Component {
     }
 
 
-   
+   test()
+    {
 
+    }
 }

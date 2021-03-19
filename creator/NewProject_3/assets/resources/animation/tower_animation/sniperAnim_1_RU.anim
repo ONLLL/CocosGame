@@ -1,9 +1,9 @@
 {
   "__type__": "cc.AnimationClip",
-  "_name": "spiner_1_RU",
+  "_name": "sniperAnim_1_RU",
   "_objFlags": 0,
   "_native": "",
-  "_duration": 1.6833333333333333,
+  "_duration": 1.8333333333333333,
   "sample": 60,
   "speed": 1,
   "wrapMode": 1,
@@ -14,72 +14,78 @@
           {
             "frame": 0,
             "value": {
-              "__uuid__": "3fa7825c-1037-4983-b523-a3a3b9b2a150"
+              "__uuid__": "3b21556b-8ebc-4526-91ab-238568b98de8"
             }
           },
           {
             "frame": 0.16666666666666666,
             "value": {
-              "__uuid__": "c82030e1-d0af-4c8d-a7d1-775e6e5ccb9f"
+              "__uuid__": "564c045d-440d-4d83-8842-aab628d2e299"
             }
           },
           {
             "frame": 0.3333333333333333,
             "value": {
-              "__uuid__": "1913fe2b-b396-40f7-8813-faa9f6201732"
+              "__uuid__": "b159c95f-58df-4390-a385-cc744f15c880"
             }
           },
           {
             "frame": 0.5,
             "value": {
-              "__uuid__": "85fa8a9b-3345-4c64-928d-41d0aa2b986a"
+              "__uuid__": "5be33025-2f0f-45df-bc88-dd222fd3c035"
             }
           },
           {
             "frame": 0.6666666666666666,
             "value": {
-              "__uuid__": "8dd4f496-4a4d-46ac-afa9-2564ccc8e4d5"
+              "__uuid__": "c3920d2d-7f04-431f-bd7b-67fb7e283e0e"
             }
           },
           {
             "frame": 0.8333333333333334,
             "value": {
-              "__uuid__": "4cd8afd5-2dfd-4c03-b732-0167dacf23b2"
+              "__uuid__": "80d0974e-bcf1-4ef3-bd94-75abcbe6a698"
             }
           },
           {
             "frame": 1,
             "value": {
-              "__uuid__": "31a7b1dd-f468-432c-99bd-fc2f0a129a21"
+              "__uuid__": "fe1ecc1d-f9cb-40d6-a887-c0df0f267567"
             }
           },
           {
             "frame": 1.1666666666666667,
             "value": {
-              "__uuid__": "dfa1b4bb-d305-4fc3-b71c-07524224b565"
+              "__uuid__": "f2a37d16-0555-4be5-be34-c66e7f9f5bc2"
             }
           },
           {
             "frame": 1.3333333333333333,
             "value": {
-              "__uuid__": "8ce12381-8baf-44b4-b3d3-6b7573f34dc7"
+              "__uuid__": "99e3cad8-f757-4174-9ae1-6a754ceeef1b"
             }
           },
           {
             "frame": 1.5,
             "value": {
-              "__uuid__": "09a2c175-e3d0-4874-b0bd-e406364dd3b0"
+              "__uuid__": "51682804-e6bb-47c8-99be-5839fafb52e9"
             }
           },
           {
             "frame": 1.6666666666666667,
             "value": {
-              "__uuid__": "138db57d-50bc-4dee-aa1e-efc236507136"
+              "__uuid__": "9d56c89c-6780-4d18-bf32-53fc9d52275d"
             }
           }
         ]
       }
     }
   },
-  "events": []
+  "events": [
+    {
+      "frame": 0,
+      "func": "onAnimationFinished",
+      "params": []
+    }
+  ]
 }

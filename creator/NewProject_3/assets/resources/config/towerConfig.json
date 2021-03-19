@@ -103,7 +103,7 @@
                 "lv": 1,
                 "upgrand_price": 90,
                 "lv_price": 120,
-                "att": 2,
+                "att": 3,
                 "rang": 5,
                 "speed": 7
             },
@@ -158,12 +158,12 @@
         "describe":"heavy power attacks aganinst single enemies from long range.attacks ground and flying enemies.",
         "config": [
             {
-                "atlas": "images/towers/laser/laser.1",
+                "atlas": "images/towers/laser/1",
                 "sprite_frame": "Sniper-tower-L1-0001",
                 "lv": 1,
                 "upgrand_price": 150,
                 "lv_price": 120,
-                "att": 2,
+                "att": 20,
                 "rang": 7,
                 "speed": 1
             },
@@ -173,7 +173,7 @@
                 "lv": 2,
                 "upgrand_price": 180,
                 "lv_price": 120,
-                "att": 3,
+                "att": 32,
                 "rang": 5,
                 "speed": 2
             }

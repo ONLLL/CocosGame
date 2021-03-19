@@ -6,158 +6,184 @@
         <dict>
             <key>Magic-wizard-tower-L1-0020.png</key>
             <dict>
-                <key>frame</key>
-                <string>{{811,2},{102,115}}</string>
-                <key>offset</key>
-                <string>{-7,0}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{0,0},{102,115}}</string>
-                <key>sourceSize</key>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
                 <string>{116,115}</string>
+                <key>spriteSourceSize</key>
+                <string>{116,115}</string>
+                <key>textureRect</key>
+                <string>{{1,1},{116,115}}</string>
+                <key>textureRotated</key>
+                <false/>
             </dict>
             <key>Magic-wizard-tower-L1-0021.png</key>
             <dict>
-                <key>frame</key>
-                <string>{{915,2},{102,115}}</string>
-                <key>offset</key>
-                <string>{-7,0}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{0,0},{102,115}}</string>
-                <key>sourceSize</key>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
                 <string>{116,115}</string>
+                <key>spriteSourceSize</key>
+                <string>{116,115}</string>
+                <key>textureRect</key>
+                <string>{{119,1},{116,115}}</string>
+                <key>textureRotated</key>
+                <false/>
             </dict>
             <key>Magic-wizard-tower-L1-0022.png</key>
             <dict>
-                <key>frame</key>
-                <string>{{703,2},{106,115}}</string>
-                <key>offset</key>
-                <string>{-5,0}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{0,0},{106,115}}</string>
-                <key>sourceSize</key>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
                 <string>{116,115}</string>
+                <key>spriteSourceSize</key>
+                <string>{116,115}</string>
+                <key>textureRect</key>
+                <string>{{237,1},{116,115}}</string>
+                <key>textureRotated</key>
+                <false/>
             </dict>
             <key>Magic-wizard-tower-L1-0023.png</key>
             <dict>
-                <key>frame</key>
-                <string>{{2,2},{116,115}}</string>
-                <key>offset</key>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
                 <string>{0,0}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{0,0},{116,115}}</string>
-                <key>sourceSize</key>
+                <key>spriteSize</key>
                 <string>{116,115}</string>
+                <key>spriteSourceSize</key>
+                <string>{116,115}</string>
+                <key>textureRect</key>
+                <string>{{355,1},{116,115}}</string>
+                <key>textureRotated</key>
+                <false/>
             </dict>
             <key>Magic-wizard-tower-L1-0024.png</key>
             <dict>
-                <key>frame</key>
-                <string>{{119,2},{116,115}}</string>
-                <key>offset</key>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
                 <string>{0,0}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{0,0},{116,115}}</string>
-                <key>sourceSize</key>
+                <key>spriteSize</key>
                 <string>{116,115}</string>
+                <key>spriteSourceSize</key>
+                <string>{116,115}</string>
+                <key>textureRect</key>
+                <string>{{473,1},{116,115}}</string>
+                <key>textureRotated</key>
+                <false/>
             </dict>
             <key>Magic-wizard-tower-L1-0025.png</key>
             <dict>
-                <key>frame</key>
-                <string>{{236,2},{116,115}}</string>
-                <key>offset</key>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
                 <string>{0,0}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{0,0},{116,115}}</string>
-                <key>sourceSize</key>
+                <key>spriteSize</key>
                 <string>{116,115}</string>
+                <key>spriteSourceSize</key>
+                <string>{116,115}</string>
+                <key>textureRect</key>
+                <string>{{591,1},{116,115}}</string>
+                <key>textureRotated</key>
+                <false/>
             </dict>
             <key>Magic-wizard-tower-L1-0026.png</key>
             <dict>
-                <key>frame</key>
-                <string>{{353,2},{116,115}}</string>
-                <key>offset</key>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
                 <string>{0,0}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{0,0},{116,115}}</string>
-                <key>sourceSize</key>
+                <key>spriteSize</key>
                 <string>{116,115}</string>
+                <key>spriteSourceSize</key>
+                <string>{116,115}</string>
+                <key>textureRect</key>
+                <string>{{709,1},{116,115}}</string>
+                <key>textureRotated</key>
+                <false/>
             </dict>
             <key>Magic-wizard-tower-L1-0027.png</key>
             <dict>
-                <key>frame</key>
-                <string>{{470,2},{116,115}}</string>
-                <key>offset</key>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
                 <string>{0,0}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{0,0},{116,115}}</string>
-                <key>sourceSize</key>
+                <key>spriteSize</key>
                 <string>{116,115}</string>
+                <key>spriteSourceSize</key>
+                <string>{116,115}</string>
+                <key>textureRect</key>
+                <string>{{827,1},{116,115}}</string>
+                <key>textureRotated</key>
+                <false/>
             </dict>
             <key>Magic-wizard-tower-L1-0028.png</key>
             <dict>
-                <key>frame</key>
-                <string>{{587,2},{114,115}}</string>
-                <key>offset</key>
-                <string>{-1,0}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{0,0},{114,115}}</string>
-                <key>sourceSize</key>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
                 <string>{116,115}</string>
+                <key>spriteSourceSize</key>
+                <string>{116,115}</string>
+                <key>textureRect</key>
+                <string>{{945,1},{116,115}}</string>
+                <key>textureRotated</key>
+                <false/>
             </dict>
             <key>Magic-wizard-tower-L1-0029.png</key>
             <dict>
-                <key>frame</key>
-                <string>{{1019,2},{102,115}}</string>
-                <key>offset</key>
-                <string>{-7,0}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{0,0},{102,115}}</string>
-                <key>sourceSize</key>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
                 <string>{116,115}</string>
+                <key>spriteSourceSize</key>
+                <string>{116,115}</string>
+                <key>textureRect</key>
+                <string>{{1063,1},{116,115}}</string>
+                <key>textureRotated</key>
+                <false/>
             </dict>
             <key>Magic-wizard-tower-L1-0030.png</key>
             <dict>
-                <key>frame</key>
-                <string>{{1123,2},{102,115}}</string>
-                <key>offset</key>
-                <string>{-7,0}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{0,0},{102,115}}</string>
-                <key>sourceSize</key>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
                 <string>{116,115}</string>
+                <key>spriteSourceSize</key>
+                <string>{116,115}</string>
+                <key>textureRect</key>
+                <string>{{1181,1},{116,115}}</string>
+                <key>textureRotated</key>
+                <false/>
             </dict>
         </dict>
         <key>metadata</key>
         <dict>
             <key>format</key>
-            <integer>2</integer>
+            <integer>3</integer>
+            <key>pixelFormat</key>
+            <string>RGBA8888</string>
+            <key>premultiplyAlpha</key>
+            <false/>
             <key>realTextureFileName</key>
             <string>1.2.png</string>
             <key>size</key>
-            <string>{1227,120}</string>
+            <string>{1298,117}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:f71fa319ef6c6d1ea7c83d7f8aa6d2af:ccad13f221798a003fd1ef9571e09cda:52352518f17bc50a44e141255d3775aa$</string>
+            <string>$TexturePacker:SmartUpdate:6faae57669e82d2a23712b53963fb1f3:095e0f3e3ad1c97db47ab4babf61dd23:52352518f17bc50a44e141255d3775aa$</string>
             <key>textureFileName</key>
             <string>1.2.png</string>
         </dict>

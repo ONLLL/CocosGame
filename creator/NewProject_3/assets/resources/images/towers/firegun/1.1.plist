@@ -6,223 +6,259 @@
         <dict>
             <key>Fire-tower-L1-0001.png</key>
             <dict>
-                <key>frame</key>
-                <string>{{132,1850},{112,130}}</string>
-                <key>offset</key>
-                <string>{-12,-10}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{29,20},{112,130}}</string>
-                <key>sourceSize</key>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
                 <string>{194,150}</string>
+                <key>spriteSourceSize</key>
+                <string>{194,150}</string>
+                <key>textureRect</key>
+                <string>{{1,1},{194,150}}</string>
+                <key>textureRotated</key>
+                <false/>
             </dict>
             <key>Fire-tower-L1-0002.png</key>
             <dict>
-                <key>frame</key>
-                <string>{{2,1850},{128,130}}</string>
-                <key>offset</key>
-                <string>{-20,-10}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{13,20},{128,130}}</string>
-                <key>sourceSize</key>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
                 <string>{194,150}</string>
+                <key>spriteSourceSize</key>
+                <string>{194,150}</string>
+                <key>textureRect</key>
+                <string>{{197,1},{194,150}}</string>
+                <key>textureRotated</key>
+                <false/>
             </dict>
             <key>Fire-tower-L1-0003.png</key>
             <dict>
-                <key>frame</key>
-                <string>{{2,398},{140,130}}</string>
-                <key>offset</key>
-                <string>{-26,-10}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{1,20},{140,130}}</string>
-                <key>sourceSize</key>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
                 <string>{194,150}</string>
+                <key>spriteSourceSize</key>
+                <string>{194,150}</string>
+                <key>textureRect</key>
+                <string>{{1,153},{194,150}}</string>
+                <key>textureRotated</key>
+                <false/>
             </dict>
             <key>Fire-tower-L1-0004.png</key>
             <dict>
-                <key>frame</key>
-                <string>{{2,2},{142,130}}</string>
-                <key>offset</key>
-                <string>{-26,-10}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{0,20},{142,130}}</string>
-                <key>sourceSize</key>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
                 <string>{194,150}</string>
+                <key>spriteSourceSize</key>
+                <string>{194,150}</string>
+                <key>textureRect</key>
+                <string>{{197,153},{194,150}}</string>
+                <key>textureRotated</key>
+                <false/>
             </dict>
             <key>Fire-tower-L1-0005.png</key>
             <dict>
-                <key>frame</key>
-                <string>{{2,134},{142,130}}</string>
-                <key>offset</key>
-                <string>{-26,-10}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{0,20},{142,130}}</string>
-                <key>sourceSize</key>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
                 <string>{194,150}</string>
+                <key>spriteSourceSize</key>
+                <string>{194,150}</string>
+                <key>textureRect</key>
+                <string>{{1,305},{194,150}}</string>
+                <key>textureRotated</key>
+                <false/>
             </dict>
             <key>Fire-tower-L1-0006.png</key>
             <dict>
-                <key>frame</key>
-                <string>{{2,266},{142,130}}</string>
-                <key>offset</key>
-                <string>{-26,-10}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{0,20},{142,130}}</string>
-                <key>sourceSize</key>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
                 <string>{194,150}</string>
+                <key>spriteSourceSize</key>
+                <string>{194,150}</string>
+                <key>textureRect</key>
+                <string>{{197,305},{194,150}}</string>
+                <key>textureRotated</key>
+                <false/>
             </dict>
             <key>Fire-tower-L1-0007.png</key>
             <dict>
-                <key>frame</key>
-                <string>{{2,530},{140,130}}</string>
-                <key>offset</key>
-                <string>{-26,-10}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{1,20},{140,130}}</string>
-                <key>sourceSize</key>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
                 <string>{194,150}</string>
+                <key>spriteSourceSize</key>
+                <string>{194,150}</string>
+                <key>textureRect</key>
+                <string>{{1,457},{194,150}}</string>
+                <key>textureRotated</key>
+                <false/>
             </dict>
             <key>Fire-tower-L1-0008.png</key>
             <dict>
-                <key>frame</key>
-                <string>{{2,662},{140,130}}</string>
-                <key>offset</key>
-                <string>{-26,-10}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{1,20},{140,130}}</string>
-                <key>sourceSize</key>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
                 <string>{194,150}</string>
+                <key>spriteSourceSize</key>
+                <string>{194,150}</string>
+                <key>textureRect</key>
+                <string>{{197,457},{194,150}}</string>
+                <key>textureRotated</key>
+                <false/>
             </dict>
             <key>Fire-tower-L1-0009.png</key>
             <dict>
-                <key>frame</key>
-                <string>{{2,794},{140,130}}</string>
-                <key>offset</key>
-                <string>{-26,-10}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{1,20},{140,130}}</string>
-                <key>sourceSize</key>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
                 <string>{194,150}</string>
+                <key>spriteSourceSize</key>
+                <string>{194,150}</string>
+                <key>textureRect</key>
+                <string>{{1,609},{194,150}}</string>
+                <key>textureRotated</key>
+                <false/>
             </dict>
             <key>Fire-tower-L1-0010.png</key>
             <dict>
-                <key>frame</key>
-                <string>{{2,926},{140,130}}</string>
-                <key>offset</key>
-                <string>{-26,-10}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{1,20},{140,130}}</string>
-                <key>sourceSize</key>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
                 <string>{194,150}</string>
+                <key>spriteSourceSize</key>
+                <string>{194,150}</string>
+                <key>textureRect</key>
+                <string>{{197,609},{194,150}}</string>
+                <key>textureRotated</key>
+                <false/>
             </dict>
             <key>Fire-tower-L1-0011.png</key>
             <dict>
-                <key>frame</key>
-                <string>{{2,1058},{138,130}}</string>
-                <key>offset</key>
-                <string>{-25,-10}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{3,20},{138,130}}</string>
-                <key>sourceSize</key>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
                 <string>{194,150}</string>
+                <key>spriteSourceSize</key>
+                <string>{194,150}</string>
+                <key>textureRect</key>
+                <string>{{1,761},{194,150}}</string>
+                <key>textureRotated</key>
+                <false/>
             </dict>
             <key>Fire-tower-L1-0012.png</key>
             <dict>
-                <key>frame</key>
-                <string>{{2,1190},{138,130}}</string>
-                <key>offset</key>
-                <string>{-25,-10}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{3,20},{138,130}}</string>
-                <key>sourceSize</key>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
                 <string>{194,150}</string>
+                <key>spriteSourceSize</key>
+                <string>{194,150}</string>
+                <key>textureRect</key>
+                <string>{{197,761},{194,150}}</string>
+                <key>textureRotated</key>
+                <false/>
             </dict>
             <key>Fire-tower-L1-0013.png</key>
             <dict>
-                <key>frame</key>
-                <string>{{2,1322},{138,130}}</string>
-                <key>offset</key>
-                <string>{-25,-10}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{3,20},{138,130}}</string>
-                <key>sourceSize</key>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
                 <string>{194,150}</string>
+                <key>spriteSourceSize</key>
+                <string>{194,150}</string>
+                <key>textureRect</key>
+                <string>{{1,913},{194,150}}</string>
+                <key>textureRotated</key>
+                <false/>
             </dict>
             <key>Fire-tower-L1-0014.png</key>
             <dict>
-                <key>frame</key>
-                <string>{{2,1454},{138,130}}</string>
-                <key>offset</key>
-                <string>{-25,-10}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{3,20},{138,130}}</string>
-                <key>sourceSize</key>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
                 <string>{194,150}</string>
+                <key>spriteSourceSize</key>
+                <string>{194,150}</string>
+                <key>textureRect</key>
+                <string>{{197,913},{194,150}}</string>
+                <key>textureRotated</key>
+                <false/>
             </dict>
             <key>Fire-tower-L1-0015.png</key>
             <dict>
-                <key>frame</key>
-                <string>{{2,1586},{136,130}}</string>
-                <key>offset</key>
-                <string>{-24,-10}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{5,20},{136,130}}</string>
-                <key>sourceSize</key>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
                 <string>{194,150}</string>
+                <key>spriteSourceSize</key>
+                <string>{194,150}</string>
+                <key>textureRect</key>
+                <string>{{1,1065},{194,150}}</string>
+                <key>textureRotated</key>
+                <false/>
             </dict>
             <key>Fire-tower-L1-0016.png</key>
             <dict>
-                <key>frame</key>
-                <string>{{2,1718},{136,130}}</string>
-                <key>offset</key>
-                <string>{-24,-10}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{5,20},{136,130}}</string>
-                <key>sourceSize</key>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
                 <string>{194,150}</string>
+                <key>spriteSourceSize</key>
+                <string>{194,150}</string>
+                <key>textureRect</key>
+                <string>{{197,1065},{194,150}}</string>
+                <key>textureRotated</key>
+                <false/>
             </dict>
         </dict>
         <key>metadata</key>
         <dict>
             <key>format</key>
-            <integer>2</integer>
+            <integer>3</integer>
+            <key>pixelFormat</key>
+            <string>RGBA8888</string>
+            <key>premultiplyAlpha</key>
+            <false/>
             <key>realTextureFileName</key>
             <string>1.1.png</string>
             <key>size</key>
-            <string>{246,1982}</string>
+            <string>{392,1216}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:2b216cd2b5c1ccb8806fe413e5ace520:d1129162bd3fc61e95159036cd6627e1:042e3a7151d8172f01bbfd3b2fad0fd3$</string>
+            <string>$TexturePacker:SmartUpdate:29a3f3fc609781f930d973df1593fcbf:544f0e8615f6e7c4ea4eedfef7d8bc93:042e3a7151d8172f01bbfd3b2fad0fd3$</string>
             <key>textureFileName</key>
             <string>1.1.png</string>
         </dict>

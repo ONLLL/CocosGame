@@ -12,26 +12,26 @@
                 {
                     "waittime":0,
                     "total":5,
-                    "type":[0,1],
-                    "num":[5,3]
+                    "type":[0],
+                    "num":[5]
                 },
                 {
                     "waittime":10,
                     "total":2,
-                    "type":[1],
-                    "num":[2]
+                    "type":[0],
+                    "num":[6]
                 },
                 {
                     "waittime":10,
                     "total":3,
-                    "type":[0],
-                    "num":[3]
+                    "type":[0,1],
+                    "num":[5,4]
                 },
                 {
                     "waittime":10,
                     "total":1,
-                    "type":[0],
-                    "num":[1]
+                    "type":[0,1],
+                    "num":[3,8]
                 },
                 {
                     "waittime":10,
@@ -42,8 +42,8 @@
                 {
                     "waittime":10,
                     "total":3,
-                    "type":[0],
-                    "num":[3]
+                    "type":[1],
+                    "num":[6]
                 },
                 {
                     "waittime":10,
@@ -54,8 +54,8 @@
                 {
                     "waittime":10,
                     "total":1,
-                    "type":[0],
-                    "num":[1]
+                    "type":[0,1],
+                    "num":[7,6]
                 }
             ]
         },
@@ -63,7 +63,57 @@
             "money": 80,
             "gear": 250,
             "wave": 10,
-            "lifes": 1
+            "lifes": 1,
+            "waveconfig":[
+                {
+                    "waittime":0,
+                    "total":5,
+                    "type":[0],
+                    "num":[10]
+                },
+                {
+                    "waittime":10,
+                    "total":2,
+                    "type":[0],
+                    "num":[12]
+                },
+                {
+                    "waittime":10,
+                    "total":3,
+                    "type":[0,1],
+                    "num":[10,8]
+                },
+                {
+                    "waittime":10,
+                    "total":1,
+                    "type":[0,1],
+                    "num":[6,16]
+                },
+                {
+                    "waittime":10,
+                    "total":6,
+                    "type":[0],
+                    "num":[12]
+                },
+                {
+                    "waittime":10,
+                    "total":3,
+                    "type":[1],
+                    "num":[12]
+                },
+                {
+                    "waittime":10,
+                    "total":5,
+                    "type":[0],
+                    "num":[10]
+                },
+                {
+                    "waittime":10,
+                    "total":1,
+                    "type":[0,1],
+                    "num":[14,12]
+                }
+            ]
         }
     },
     {
@@ -75,13 +125,112 @@
             "gear": 375,
             "wave": 8,
             "lifes": 20,
-            "waveconfig":[]
+            "waveconfig":[
+                {
+                    "waittime":0,
+                    "total":5,
+                    "type":[0],
+                    "num":[5]
+                },
+                {
+                    "waittime":10,
+                    "total":2,
+                    "type":[0],
+                    "num":[6]
+                },
+                {
+                    "waittime":10,
+                    "total":3,
+                    "type":[0,1],
+                    "num":[5,4]
+                },
+                {
+                    "waittime":10,
+                    "total":1,
+                    "type":[0,1],
+                    "num":[3,8]
+                },
+                {
+                    "waittime":10,
+                    "total":6,
+                    "type":[0],
+                    "num":[6]
+                },
+                {
+                    "waittime":10,
+                    "total":3,
+                    "type":[1],
+                    "num":[6]
+                },
+                {
+                    "waittime":10,
+                    "total":5,
+                    "type":[0],
+                    "num":[5]
+                },
+                {
+                    "waittime":10,
+                    "total":1,
+                    "type":[0,1],
+                    "num":[7,6]
+                }
+            ]
         },
         "hard":{
             "money": 90,
             "gear": 250,
             "wave": 10,
-            "lifes": 1
+            "lifes": 1,
+            "waveconfig":[
+                {
+                    "waittime":0,
+                    "total":5,
+                    "type":[0],
+                    "num":[10]
+                },
+                {
+                    "waittime":10,
+                    "total":2,
+                    "type":[0],
+                    "num":[12]
+                },
+                {
+                    "waittime":10,
+                    "total":3,
+                    "type":[0,1],
+                    "num":[10,8]
+                },
+                {
+                    "waittime":10,
+                    "total":1,
+                    "type":[0,1],
+                    "num":[6,16]
+                },
+                {
+                    "waittime":10,
+                    "total":6,
+                    "type":[0],
+                    "num":[12]
+                },
+                {
+                    "waittime":10,
+                    "total":3,
+                    "type":[1],
+                    "num":[12]
+                },
+                {
+                    "waittime":10,
+                    "total":5,
+                    "type":[0],
+                    "num":[10]
+                },
+                {
+                    "waittime":10,
+                    "total":1,
+                    "type":[0,1],
+                    "num":[14,12]
+                }
+            ]
         }
     },
     {
@@ -148,7 +297,57 @@
             "money": 100,
             "gear": 350,
             "wave": 9,
-            "lifes": 5
+            "lifes": 5,
+            "waveconfig":[
+                {
+                    "waittime":0,
+                    "total":5,
+                    "type":[0],
+                    "num":[10]
+                },
+                {
+                    "waittime":10,
+                    "total":2,
+                    "type":[0],
+                    "num":[12]
+                },
+                {
+                    "waittime":10,
+                    "total":3,
+                    "type":[0,1],
+                    "num":[10,8]
+                },
+                {
+                    "waittime":10,
+                    "total":1,
+                    "type":[0,1],
+                    "num":[6,16]
+                },
+                {
+                    "waittime":10,
+                    "total":6,
+                    "type":[0],
+                    "num":[12]
+                },
+                {
+                    "waittime":10,
+                    "total":3,
+                    "type":[1],
+                    "num":[12]
+                },
+                {
+                    "waittime":10,
+                    "total":5,
+                    "type":[0],
+                    "num":[10]
+                },
+                {
+                    "waittime":10,
+                    "total":1,
+                    "type":[0,1],
+                    "num":[14,12]
+                }
+            ]
         }
     },
     {
@@ -215,7 +414,57 @@
             "money": 110,
             "gear": 430,
             "wave": 9,
-            "lifes": 3
+            "lifes": 3,
+            "waveconfig":[
+                {
+                    "waittime":0,
+                    "total":5,
+                    "type":[0],
+                    "num":[10]
+                },
+                {
+                    "waittime":10,
+                    "total":2,
+                    "type":[0],
+                    "num":[12]
+                },
+                {
+                    "waittime":10,
+                    "total":3,
+                    "type":[0,1],
+                    "num":[10,8]
+                },
+                {
+                    "waittime":10,
+                    "total":1,
+                    "type":[0,1],
+                    "num":[6,16]
+                },
+                {
+                    "waittime":10,
+                    "total":6,
+                    "type":[0],
+                    "num":[12]
+                },
+                {
+                    "waittime":10,
+                    "total":3,
+                    "type":[1],
+                    "num":[12]
+                },
+                {
+                    "waittime":10,
+                    "total":5,
+                    "type":[0],
+                    "num":[10]
+                },
+                {
+                    "waittime":10,
+                    "total":1,
+                    "type":[0,1],
+                    "num":[14,12]
+                }
+            ]
         }
     },
     {
@@ -282,7 +531,57 @@
             "money": 130,
             "gear": 350,
             "wave": 16,
-            "lifes": 2
+            "lifes": 2,
+            "waveconfig":[
+                {
+                    "waittime":0,
+                    "total":5,
+                    "type":[0],
+                    "num":[10]
+                },
+                {
+                    "waittime":10,
+                    "total":2,
+                    "type":[0],
+                    "num":[12]
+                },
+                {
+                    "waittime":10,
+                    "total":3,
+                    "type":[0,1],
+                    "num":[10,8]
+                },
+                {
+                    "waittime":10,
+                    "total":1,
+                    "type":[0,1],
+                    "num":[6,16]
+                },
+                {
+                    "waittime":10,
+                    "total":6,
+                    "type":[0],
+                    "num":[12]
+                },
+                {
+                    "waittime":10,
+                    "total":3,
+                    "type":[1],
+                    "num":[12]
+                },
+                {
+                    "waittime":10,
+                    "total":5,
+                    "type":[0],
+                    "num":[10]
+                },
+                {
+                    "waittime":10,
+                    "total":1,
+                    "type":[0,1],
+                    "num":[14,12]
+                }
+            ]
         }
     },
     {
@@ -349,7 +648,57 @@
             "money": 150,
             "gear": 350,
             "wave": 8,
-            "lifes": 4
+            "lifes": 4,
+            "waveconfig":[
+                {
+                    "waittime":0,
+                    "total":5,
+                    "type":[0],
+                    "num":[10]
+                },
+                {
+                    "waittime":10,
+                    "total":2,
+                    "type":[0],
+                    "num":[12]
+                },
+                {
+                    "waittime":10,
+                    "total":3,
+                    "type":[0,1],
+                    "num":[10,8]
+                },
+                {
+                    "waittime":10,
+                    "total":1,
+                    "type":[0,1],
+                    "num":[6,16]
+                },
+                {
+                    "waittime":10,
+                    "total":6,
+                    "type":[0],
+                    "num":[12]
+                },
+                {
+                    "waittime":10,
+                    "total":3,
+                    "type":[1],
+                    "num":[12]
+                },
+                {
+                    "waittime":10,
+                    "total":5,
+                    "type":[0],
+                    "num":[10]
+                },
+                {
+                    "waittime":10,
+                    "total":1,
+                    "type":[0,1],
+                    "num":[14,12]
+                }
+            ]
         }
     },
     {
@@ -416,7 +765,57 @@
             "money": 160,
             "gear": 750,
             "wave": 12,
-            "lifes": 2
+            "lifes": 2,
+            "waveconfig":[
+                {
+                    "waittime":0,
+                    "total":5,
+                    "type":[0],
+                    "num":[10]
+                },
+                {
+                    "waittime":10,
+                    "total":2,
+                    "type":[0],
+                    "num":[12]
+                },
+                {
+                    "waittime":10,
+                    "total":3,
+                    "type":[0,1],
+                    "num":[10,8]
+                },
+                {
+                    "waittime":10,
+                    "total":1,
+                    "type":[0,1],
+                    "num":[6,16]
+                },
+                {
+                    "waittime":10,
+                    "total":6,
+                    "type":[0],
+                    "num":[12]
+                },
+                {
+                    "waittime":10,
+                    "total":3,
+                    "type":[1],
+                    "num":[12]
+                },
+                {
+                    "waittime":10,
+                    "total":5,
+                    "type":[0],
+                    "num":[10]
+                },
+                {
+                    "waittime":10,
+                    "total":1,
+                    "type":[0,1],
+                    "num":[14,12]
+                }
+            ]
         }
     },
     {
@@ -483,7 +882,57 @@
             "money": 90,
             "gear": 250,
             "wave": 10,
-            "lifes": 1
+            "lifes": 1,
+            "waveconfig":[
+                {
+                    "waittime":0,
+                    "total":5,
+                    "type":[0],
+                    "num":[10]
+                },
+                {
+                    "waittime":10,
+                    "total":2,
+                    "type":[0],
+                    "num":[12]
+                },
+                {
+                    "waittime":10,
+                    "total":3,
+                    "type":[0,1],
+                    "num":[10,8]
+                },
+                {
+                    "waittime":10,
+                    "total":1,
+                    "type":[0,1],
+                    "num":[6,16]
+                },
+                {
+                    "waittime":10,
+                    "total":6,
+                    "type":[0],
+                    "num":[12]
+                },
+                {
+                    "waittime":10,
+                    "total":3,
+                    "type":[1],
+                    "num":[12]
+                },
+                {
+                    "waittime":10,
+                    "total":5,
+                    "type":[0],
+                    "num":[10]
+                },
+                {
+                    "waittime":10,
+                    "total":1,
+                    "type":[0,1],
+                    "num":[14,12]
+                }
+            ]
         }
     },
     {
@@ -550,7 +999,57 @@
             "money": 90,
             "gear": 250,
             "wave": 10,
-            "lifes": 1
+            "lifes": 1,
+            "waveconfig":[
+                {
+                    "waittime":0,
+                    "total":5,
+                    "type":[0],
+                    "num":[10]
+                },
+                {
+                    "waittime":10,
+                    "total":2,
+                    "type":[0],
+                    "num":[12]
+                },
+                {
+                    "waittime":10,
+                    "total":3,
+                    "type":[0,1],
+                    "num":[10,8]
+                },
+                {
+                    "waittime":10,
+                    "total":1,
+                    "type":[0,1],
+                    "num":[6,16]
+                },
+                {
+                    "waittime":10,
+                    "total":6,
+                    "type":[0],
+                    "num":[12]
+                },
+                {
+                    "waittime":10,
+                    "total":3,
+                    "type":[1],
+                    "num":[12]
+                },
+                {
+                    "waittime":10,
+                    "total":5,
+                    "type":[0],
+                    "num":[10]
+                },
+                {
+                    "waittime":10,
+                    "total":1,
+                    "type":[0,1],
+                    "num":[14,12]
+                }
+            ]
         }
     },
     {
@@ -617,7 +1116,57 @@
             "money": 90,
             "gear": 250,
             "wave": 10,
-            "lifes": 1
+            "lifes": 1,
+            "waveconfig":[
+                {
+                    "waittime":0,
+                    "total":5,
+                    "type":[0],
+                    "num":[10]
+                },
+                {
+                    "waittime":10,
+                    "total":2,
+                    "type":[0],
+                    "num":[12]
+                },
+                {
+                    "waittime":10,
+                    "total":3,
+                    "type":[0,1],
+                    "num":[10,8]
+                },
+                {
+                    "waittime":10,
+                    "total":1,
+                    "type":[0,1],
+                    "num":[6,16]
+                },
+                {
+                    "waittime":10,
+                    "total":6,
+                    "type":[0],
+                    "num":[12]
+                },
+                {
+                    "waittime":10,
+                    "total":3,
+                    "type":[1],
+                    "num":[12]
+                },
+                {
+                    "waittime":10,
+                    "total":5,
+                    "type":[0],
+                    "num":[10]
+                },
+                {
+                    "waittime":10,
+                    "total":1,
+                    "type":[0,1],
+                    "num":[14,12]
+                }
+            ]
         }
     },
     {
@@ -684,7 +1233,57 @@
             "money": 90,
             "gear": 250,
             "wave": 10,
-            "lifes": 1
+            "lifes": 1,
+            "waveconfig":[
+                {
+                    "waittime":0,
+                    "total":5,
+                    "type":[0],
+                    "num":[10]
+                },
+                {
+                    "waittime":10,
+                    "total":2,
+                    "type":[0],
+                    "num":[12]
+                },
+                {
+                    "waittime":10,
+                    "total":3,
+                    "type":[0,1],
+                    "num":[10,8]
+                },
+                {
+                    "waittime":10,
+                    "total":1,
+                    "type":[0,1],
+                    "num":[6,16]
+                },
+                {
+                    "waittime":10,
+                    "total":6,
+                    "type":[0],
+                    "num":[12]
+                },
+                {
+                    "waittime":10,
+                    "total":3,
+                    "type":[1],
+                    "num":[12]
+                },
+                {
+                    "waittime":10,
+                    "total":5,
+                    "type":[0],
+                    "num":[10]
+                },
+                {
+                    "waittime":10,
+                    "total":1,
+                    "type":[0,1],
+                    "num":[14,12]
+                }
+            ]
         }
     },
     {
@@ -751,7 +1350,57 @@
             "money": 90,
             "gear": 250,
             "wave": 10,
-            "lifes": 1
+            "lifes": 1,
+            "waveconfig":[
+                {
+                    "waittime":0,
+                    "total":5,
+                    "type":[0],
+                    "num":[10]
+                },
+                {
+                    "waittime":10,
+                    "total":2,
+                    "type":[0],
+                    "num":[12]
+                },
+                {
+                    "waittime":10,
+                    "total":3,
+                    "type":[0,1],
+                    "num":[10,8]
+                },
+                {
+                    "waittime":10,
+                    "total":1,
+                    "type":[0,1],
+                    "num":[6,16]
+                },
+                {
+                    "waittime":10,
+                    "total":6,
+                    "type":[0],
+                    "num":[12]
+                },
+                {
+                    "waittime":10,
+                    "total":3,
+                    "type":[1],
+                    "num":[12]
+                },
+                {
+                    "waittime":10,
+                    "total":5,
+                    "type":[0],
+                    "num":[10]
+                },
+                {
+                    "waittime":10,
+                    "total":1,
+                    "type":[0,1],
+                    "num":[14,12]
+                }
+            ]
         }
     },
     {
@@ -818,7 +1467,57 @@
             "money": 90,
             "gear": 250,
             "wave": 10,
-            "lifes": 1
+            "lifes": 1,
+            "waveconfig":[
+                {
+                    "waittime":0,
+                    "total":5,
+                    "type":[0],
+                    "num":[10]
+                },
+                {
+                    "waittime":10,
+                    "total":2,
+                    "type":[0],
+                    "num":[12]
+                },
+                {
+                    "waittime":10,
+                    "total":3,
+                    "type":[0,1],
+                    "num":[10,8]
+                },
+                {
+                    "waittime":10,
+                    "total":1,
+                    "type":[0,1],
+                    "num":[6,16]
+                },
+                {
+                    "waittime":10,
+                    "total":6,
+                    "type":[0],
+                    "num":[12]
+                },
+                {
+                    "waittime":10,
+                    "total":3,
+                    "type":[1],
+                    "num":[12]
+                },
+                {
+                    "waittime":10,
+                    "total":5,
+                    "type":[0],
+                    "num":[10]
+                },
+                {
+                    "waittime":10,
+                    "total":1,
+                    "type":[0,1],
+                    "num":[14,12]
+                }
+            ]
         }
     },
     {
@@ -885,7 +1584,57 @@
             "money": 90,
             "gear": 250,
             "wave": 10,
-            "lifes": 1
+            "lifes": 1,
+            "waveconfig":[
+                {
+                    "waittime":0,
+                    "total":5,
+                    "type":[0],
+                    "num":[10]
+                },
+                {
+                    "waittime":10,
+                    "total":2,
+                    "type":[0],
+                    "num":[12]
+                },
+                {
+                    "waittime":10,
+                    "total":3,
+                    "type":[0,1],
+                    "num":[10,8]
+                },
+                {
+                    "waittime":10,
+                    "total":1,
+                    "type":[0,1],
+                    "num":[6,16]
+                },
+                {
+                    "waittime":10,
+                    "total":6,
+                    "type":[0],
+                    "num":[12]
+                },
+                {
+                    "waittime":10,
+                    "total":3,
+                    "type":[1],
+                    "num":[12]
+                },
+                {
+                    "waittime":10,
+                    "total":5,
+                    "type":[0],
+                    "num":[10]
+                },
+                {
+                    "waittime":10,
+                    "total":1,
+                    "type":[0,1],
+                    "num":[14,12]
+                }
+            ]
         }
     },
     {
@@ -952,7 +1701,57 @@
             "money": 90,
             "gear": 250,
             "wave": 10,
-            "lifes": 1
+            "lifes": 1,
+            "waveconfig":[
+                {
+                    "waittime":0,
+                    "total":5,
+                    "type":[0],
+                    "num":[10]
+                },
+                {
+                    "waittime":10,
+                    "total":2,
+                    "type":[0],
+                    "num":[12]
+                },
+                {
+                    "waittime":10,
+                    "total":3,
+                    "type":[0,1],
+                    "num":[10,8]
+                },
+                {
+                    "waittime":10,
+                    "total":1,
+                    "type":[0,1],
+                    "num":[6,16]
+                },
+                {
+                    "waittime":10,
+                    "total":6,
+                    "type":[0],
+                    "num":[12]
+                },
+                {
+                    "waittime":10,
+                    "total":3,
+                    "type":[1],
+                    "num":[12]
+                },
+                {
+                    "waittime":10,
+                    "total":5,
+                    "type":[0],
+                    "num":[10]
+                },
+                {
+                    "waittime":10,
+                    "total":1,
+                    "type":[0,1],
+                    "num":[14,12]
+                }
+            ]
         }
     }
 ]

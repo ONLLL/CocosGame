@@ -5,6 +5,7 @@
 // Learn life-cycle callbacks:
 //  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 import LoadingBattel from "./loadingBattel"
+import Bullet from "./bullet"
 
 const { ccclass, property } = cc._decorator;
 
@@ -28,6 +29,9 @@ export default class Enemy extends cc.Component {
     @property(cc.Node)
     hpBar:cc.Node = null;
 
+    @property(cc.Node)
+    fire:cc.Node = null;
+
     islive:boolean = true;
 
     addspeed:number = 1;
@@ -38,12 +42,18 @@ export default class Enemy extends cc.Component {
 
     att:number = 0;
 
+    persistent_harm:number = 0;
+
+    harm_time:number = 0;
     onLoad(){
         this.anim = this.node.getComponent(cc.Animation); 
+        let a:cc.BoxCollider;
+       
     }
 
     start(){
       cc.director.getCollisionManager().enabled = true;
+
     }
 
     setValue(hp:number,speed:number,gear:number,att:number)
@@ -67,11 +77,11 @@ export default class Enemy extends cc.Component {
 
         if (Math.abs(x) > 20) {
             for (let i = 0; i < road.length; i++) {
-                this.road.push(new cc.Vec2(road[i].x,road[i].y + num));
+                this.road.push(new cc.Vec2(road[i].x + num * 2,road[i].y + num * 2));
             }
         } else if (Math.abs(y) > 20) {
             for (let i = 0; i < road.length; i++) {
-                this.road.push(new cc.Vec2(road[i].x + num,road[i].y));
+                this.road.push(new cc.Vec2(road[i].x + num * 2,road[i].y + num * 2));
             }
         }
 
@@ -84,6 +94,63 @@ export default class Enemy extends cc.Component {
         this.schedule(() => {
             this.move();
         }, 0.08);
+      
+    }
+
+    //持续掉血  
+    persistentSubHp(dt)
+    {
+        console.log("hp",this.hp)
+      
+        this.hp -= this.persistent_harm;
+        this.harm_time--;
+        this.hpBar.active = true;
+        this.hpBar.getComponent(cc.ProgressBar).progress = this.hp * 1.0 / this.mix_hp
+
+        if(this.harm_time == 0 )
+        {
+            this.fire.getComponent(cc.Animation).stop();
+            this.fire.active = false;
+        } 
+
+        if(this.hp <= 0)
+        {
+            this.islive = false;
+            this.hp = 0;
+
+            let clip: cc.AnimationClip[] = this.anim.getClips();
+            clip[4].speed = 3;
+            this.anim.play(clip[4].name);
+            this.unschedule(this.persistentSubHp);
+            return;
+        }
+
+     
+    }
+
+    //冰冻
+    startIce()
+    {
+     
+    }
+
+    //燃烧
+    startFire()
+    {
+        if(this.hp <=0)
+        {
+            return;
+        }
+        if(this.fire.active)
+        {
+            return;
+        }
+        this.unschedule(this.persistentSubHp);
+        this.harm_time = 3
+        this.persistent_harm = 3;
+        this.fire.active = true;
+        this.fire.getComponent(cc.Animation).play();
+        this.schedule(this.persistentSubHp,1,3,1);
     }
 
     //到达终点
@@ -153,17 +220,16 @@ export default class Enemy extends cc.Component {
     //受伤
     hurt(harm:number){
         this.hp -= harm;
-        if(this.hp <= 0)
+        if(this.hp <= 0 && this.node)
         {
             this.islive = false;
-            this.hpBar.active = true;
-            this.hpBar.getComponent(cc.ProgressBar).progress =0;
 
             let clip: cc.AnimationClip[] = this.node.getComponent(cc.Animation).getClips();
             clip[4].speed = 4 ;
             this.anim.play(clip[4].name);
         }
-        else{
+
+        if( this.node){
             this.hpBar.active = true;
             this.hpBar.getComponent(cc.ProgressBar).progress = this.hp * 1.0 / this.mix_hp
         }
@@ -187,10 +253,25 @@ export default class Enemy extends cc.Component {
     }
 
 
-    onCollisionEnter(other)
+    onCollisionEnter(other,self)
     {
+        
+        console.log(other.node.group);
       
-        this.islive = false;
+        if(other.node.group == "fire")
+        {
+            this.startFire();
+        }
+
+        if(other.node.group == "ice")
+        {
+            let bullet:Bullet = other.node.getComponent("bullet");
+            this.hurt(bullet.harm);
+        }
+
+        if(other.node.group == "prop")
+        {
+            this.islive = false;
             this.hpBar.active = true;
             this.hp = 0;
             this.hpBar.getComponent(cc.ProgressBar).progress =0;
@@ -198,6 +279,8 @@ export default class Enemy extends cc.Component {
             let clip: cc.AnimationClip[] = this.anim.getClips();
             clip[4].speed = 3;
             this.anim.play(clip[4].name);
+        }
+ 
     }
 
     update()

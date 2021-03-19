@@ -6,7 +6,7 @@
   "_duration": 1.1833333333333333,
   "sample": 60,
   "speed": 1,
-  "wrapMode": 2,
+  "wrapMode": 1,
   "curveData": {
     "comps": {
       "cc.Sprite": {
@@ -14,54 +14,60 @@
           {
             "frame": 0,
             "value": {
-              "__uuid__": "b36d1b39-4150-43da-9821-31cb8b7ff228"
+              "__uuid__": "086f01f1-65e2-4765-ad96-251bd7e5a64f"
             }
           },
           {
             "frame": 0.16666666666666666,
             "value": {
-              "__uuid__": "40038b72-ebcc-461c-9451-b267171bd482"
+              "__uuid__": "aeaeb34d-82d2-465d-a8a7-fd96bc055caa"
             }
           },
           {
             "frame": 0.3333333333333333,
             "value": {
-              "__uuid__": "c9fe1dad-5f5c-4764-b16a-0360e470c093"
+              "__uuid__": "f616c126-f90d-44ad-adab-4b8a973799b2"
             }
           },
           {
             "frame": 0.5,
             "value": {
-              "__uuid__": "0a239132-8952-4dd5-91f5-44f12c0173d8"
+              "__uuid__": "ec7affeb-e2a2-4196-be8c-dd90b3de7a2e"
             }
           },
           {
             "frame": 0.6666666666666666,
             "value": {
-              "__uuid__": "1a78bce3-0ae9-4d8b-bfc9-8fb5fb91bd8c"
+              "__uuid__": "3f34e1ed-9159-45d6-a3a0-ebf90a0c84c6"
             }
           },
           {
             "frame": 0.8333333333333334,
             "value": {
-              "__uuid__": "d78d4eec-de4e-4726-b6be-aa7b5bd2683c"
+              "__uuid__": "6cabcc46-5c62-4ea7-82dd-ccd733eb4f78"
             }
           },
           {
             "frame": 1,
             "value": {
-              "__uuid__": "01ccceb6-0638-4ea2-8b50-a34ef9bc45f5"
+              "__uuid__": "fb365a72-5072-45b3-a90f-421e499472ce"
             }
           },
           {
             "frame": 1.1666666666666667,
             "value": {
-              "__uuid__": "81de5fb1-4f62-4ace-91bf-af437dc9b27d"
+              "__uuid__": "6a39fb65-60fe-4af6-9663-df676d2d5eeb"
             }
           }
         ]
       }
     }
   },
-  "events": []
+  "events": [
+    {
+      "frame": 0,
+      "func": "onAnimationFinished",
+      "params": []
+    }
+  ]
 }
