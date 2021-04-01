@@ -5,6 +5,8 @@
 // Learn life-cycle callbacks:
 //  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 
+import { MapMessege, LocalTowerMessege } from "./GameData";
+
 const { ccclass, property } = cc._decorator;
 
 interface Map{
@@ -74,8 +76,11 @@ export default class Flag extends cc.Component {
         cc.resources.load("config/mapConfig",cc.JsonAsset,(err:Error,jsonAsset:cc.JsonAsset)=>{
             let map:Map[] = jsonAsset.json;
             let mapdata:Map = map[this.lv-1];
+         
+            cc.resources.load(mapdata.sprite_frame,cc.SpriteFrame,(err:Error,spriteFrame:cc.SpriteFrame)=>{
+                this.show.getChildByName("lv_map").getComponent(cc.Sprite).spriteFrame = spriteFrame;
 
-            localStorage.setItem("choice_lv",String(this.lv));
+                localStorage.setItem("choice_lv",String(this.lv));
 
             let normal = this.show.getChildByName("win_normal_diff");
             
@@ -84,11 +89,29 @@ export default class Flag extends cc.Component {
             normal.getChildByName("wave_for_diff").getComponentInChildren(cc.Label).string = "x " +mapdata.nomal.wave;
             normal.getChildByName("heals_for_diff").getComponentInChildren(cc.Label).string = "x " +mapdata.nomal.lifes;
 
+            let hard = this.show.getChildByName("win_hard_diff");
+            
+            hard.getChildByName("coin_diff").getComponentInChildren(cc.Label).string = "x " + mapdata.hard.money;
+            hard.getChildByName("gear_for_diff").getComponentInChildren(cc.Label).string = "x " +mapdata.hard.gear;
+            hard.getChildByName("wave_for_diff").getComponentInChildren(cc.Label).string = "x " +mapdata.hard.wave;
+            hard.getChildByName("heals_for_diff").getComponentInChildren(cc.Label).string = "x " +mapdata.hard.lifes;
+
             this.show.getChildByName("win_for_level2").getComponentInChildren(cc.Label).string = "LEVEL "+ mapdata.lv;
-         
-            cc.resources.load(mapdata.sprite_frame,cc.SpriteFrame,(err:Error,spriteFrame:cc.SpriteFrame)=>{
-                this.show.getChildByName("lv_map").getComponent(cc.Sprite).spriteFrame = spriteFrame;
+
+                let map_messege:MapMessege[] = [];
+                map_messege = JSON.parse(localStorage.getItem("map_messege"));
+
+    //            console.log("fisnish:",map_messege[this.lv - 1].is_finish)
+                if(map_messege[this.lv - 1].is_finish)
+                {
+                    this.show.getChildByName("unlock").active  =false;
+                }
+                else{
+                    this.show.getChildByName("unlock").active  =true;
+                }
             });
+
+
         });
     }
 }

@@ -3,7 +3,7 @@
   "_name": "magicAnim_1_RU",
   "_objFlags": 0,
   "_native": "",
-  "_duration": 1.6833333333333333,
+  "_duration": 3.0166666666666666,
   "sample": 60,
   "speed": 1,
   "wrapMode": 1,
@@ -72,12 +72,36 @@
             }
           },
           {
-            "frame": 1.6666666666666667,
+            "frame": 3,
             "value": {
               "__uuid__": "48c6c993-89da-4b6e-b5cf-813ef73964f3"
             }
           }
         ]
+      }
+    },
+    "paths": {
+      "bullet_point": {
+        "props": {
+          "position": [
+            {
+              "frame": 0,
+              "value": [
+                -19.958,
+                103.673,
+                0
+              ]
+            },
+            {
+              "frame": 0.016666666666666666,
+              "value": [
+                -21.555,
+                103.673,
+                0
+              ]
+            }
+          ]
+        }
       }
     }
   },

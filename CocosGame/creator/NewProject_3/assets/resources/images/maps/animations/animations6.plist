@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>frames</key>
+        <dict>
+            <key>helicopter_shadow.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,2},{56,11}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{56,11}}</string>
+                <key>sourceSize</key>
+                <string>{56,11}</string>
+            </dict>
+        </dict>
+        <key>metadata</key>
+        <dict>
+            <key>format</key>
+            <integer>2</integer>
+            <key>realTextureFileName</key>
+            <string>animations6.png</string>
+            <key>size</key>
+            <string>{60,15}</string>
+            <key>smartupdate</key>
+            <string>$TexturePacker:SmartUpdate:4551776ba8ff168c5dd22ac435d42d18:0c6496c5c33c209854461d348bcd4298:2a9a1c47a9ccb8ee26cd3d77d671bc9e$</string>
+            <key>textureFileName</key>
+            <string>animations6.png</string>
+        </dict>
+    </dict>
+</plist>

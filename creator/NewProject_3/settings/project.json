@@ -5,7 +5,11 @@
     "enemy",
     "prop",
     "fire",
-    "ice"
+    "ice",
+    "kitty_att_rang",
+    "kitty",
+    "hero",
+    "bomb_att"
   ],
   "collision-matrix": [
     [
@@ -22,6 +26,9 @@
       false,
       true,
       true,
+      true,
+      false,
+      true,
       true
     ],
     [
@@ -43,6 +50,51 @@
       true,
       false,
       false,
+      false
+    ],
+    [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    [
+      false,
+      false,
+      true,
+      false,
+      false,
+      false,
+      false,
+      false,
+      null,
+      true
+    ],
+    [
+      false,
+      false,
+      true,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      true
+    ],
+    [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      true,
+      true,
       false
     ]
   ],
@@ -71,5 +123,6 @@
       "enable": false
     }
   },
-  "last-module-event-record-time": 1615969862587
+  "last-module-event-record-time": 1617243119565,
+  "start-scene": "d66c59e2-f70c-4ce8-a57b-f2e98c8bfbb1"
 }

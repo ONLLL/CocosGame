@@ -21,13 +21,10 @@
     "_components": [
       {
         "__id__": 2
-      },
-      {
-        "__id__": 3
       }
     ],
     "_prefab": {
-      "__id__": 4
+      "__id__": 3
     },
     "_opacity": 255,
     "_color": {
@@ -107,16 +104,6 @@
     "_isTrimmedMode": true,
     "_atlas": null,
     "_id": ""
-  },
-  {
-    "__type__": "eed94AyKbtJYZewPHhz/3oD",
-    "_name": "",
-    "_objFlags": 0,
-    "node": {
-      "__id__": 1
-    },
-    "_enabled": true,
-    "_id": "69UtNK2M9L2rMTrjEO9+yl"
   },
   {
     "__type__": "cc.PrefabInfo",

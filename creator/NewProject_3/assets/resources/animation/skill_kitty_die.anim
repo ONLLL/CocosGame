@@ -3,9 +3,9 @@
   "_name": "skill_kitty_die",
   "_objFlags": 0,
   "_native": "",
-  "_duration": 1.0166666666666666,
+  "_duration": 1.1,
   "sample": 60,
-  "speed": 1,
+  "speed": 2,
   "wrapMode": 1,
   "curveData": {
     "comps": {
@@ -88,10 +88,22 @@
             "value": {
               "__uuid__": "1a9a5d78-bc55-460d-a139-2483428c5fad"
             }
+          },
+          {
+            "frame": 1.0833333333333333,
+            "value": {
+              "__uuid__": "ae7e97fe-82c6-4d6f-b11a-23ebf7f23ba5"
+            }
           }
         ]
       }
     }
   },
-  "events": []
+  "events": [
+    {
+      "frame": 1.0833333333333333,
+      "func": "DeleteRole",
+      "params": []
+    }
+  ]
 }

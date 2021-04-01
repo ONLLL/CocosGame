@@ -3,7 +3,7 @@
   "_name": "magicAnim_1_LU",
   "_objFlags": 0,
   "_native": "",
-  "_duration": 1.6833333333333333,
+  "_duration": 3.0166666666666666,
   "sample": 60,
   "speed": 1,
   "wrapMode": 1,
@@ -72,18 +72,42 @@
             }
           },
           {
-            "frame": 1.6666666666666667,
+            "frame": 3,
             "value": {
               "__uuid__": "d983af4c-4aee-4757-a298-6ec8fa5e7691"
             }
           }
         ]
       }
+    },
+    "paths": {
+      "bullet_point": {
+        "props": {
+          "position": [
+            {
+              "frame": 0,
+              "value": [
+                30.337,
+                109.26,
+                0
+              ]
+            },
+            {
+              "frame": 0.016666666666666666,
+              "value": [
+                31.135,
+                113.252,
+                0
+              ]
+            }
+          ]
+        }
+      }
     }
   },
   "events": [
     {
-      "frame": 0.5,
+      "frame": 0.6666666666666666,
       "func": "onAnimationFinished",
       "params": []
     }

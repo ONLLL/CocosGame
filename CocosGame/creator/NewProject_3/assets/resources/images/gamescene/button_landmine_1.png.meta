@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.5",
+  "uuid": "d3788678-f695-476b-92e7-45a44423cdd7",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 112,
+  "height": 96,
+  "platformSettings": {},
+  "subMetas": {
+    "button_landmine_1": {
+      "ver": "1.0.4",
+      "uuid": "5a9029b4-55cf-45e8-b429-d9b61e163249",
+      "rawTextureUuid": "d3788678-f695-476b-92e7-45a44423cdd7",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 1.5,
+      "offsetY": 0,
+      "trimX": 5,
+      "trimY": 2,
+      "width": 105,
+      "height": 92,
+      "rawWidth": 112,
+      "rawHeight": 96,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

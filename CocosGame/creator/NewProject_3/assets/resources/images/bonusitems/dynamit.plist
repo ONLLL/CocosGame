@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>frames</key>
+        <dict>
+            <key>potion00.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,2},{24,43}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{24,43}}</string>
+                <key>sourceSize</key>
+                <string>{24,43}</string>
+            </dict>
+        </dict>
+        <key>metadata</key>
+        <dict>
+            <key>format</key>
+            <integer>2</integer>
+            <key>realTextureFileName</key>
+            <string>dynamit.png</string>
+            <key>size</key>
+            <string>{28,47}</string>
+            <key>smartupdate</key>
+            <string>$TexturePacker:SmartUpdate:376be821c721f834cb68314303f84cd0:870893fb6a3c404b7a9f4117afa75393:a98c420c9e6d2ed8cc6eda4d2a711a20$</string>
+            <key>textureFileName</key>
+            <string>dynamit.png</string>
+        </dict>
+    </dict>
+</plist>

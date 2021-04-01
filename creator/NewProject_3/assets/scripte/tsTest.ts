@@ -38,7 +38,7 @@ export default class NewClass extends cc.Component {
     onKeyDown(event){
         switch(event.keyCode){
             case cc.macro.KEY.a:
-                console.log('Press aKey');
+      //          console.log('Press aKey');
                 cc.director.loadScene('StartScene');
                 break;
         }
@@ -47,7 +47,7 @@ export default class NewClass extends cc.Component {
     onKeyUp(event){
         switch(event.keyCod){
             case cc.macro.KEY.a:
-                console.log('release a key');
+      //          console.log('release a key');
                 cc.director.loadScene('StartScene');
                 break;
         }

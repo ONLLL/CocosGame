@@ -5,6 +5,7 @@
 // Learn life-cycle callbacks:
 //  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 
+import {MapMessege,LocalTowerMessege} from "./GameData";
 
 const { ccclass, property } = cc._decorator;
 
@@ -51,6 +52,7 @@ export default class MapButton extends cc.Component {
 
   @property(cc.Node)
   money:cc.Node = null;
+
   onLoad(){
   
 
@@ -85,10 +87,17 @@ export default class MapButton extends cc.Component {
   loadFlag(){
     let tilemap = this.node.getComponent(cc.TiledMap);
     let group = tilemap.getObjectGroup("flag");
-    let flagarr = group.getObjects();
-    for(let i=0;i< flagarr.length;i++)
+   
+    
+    let n = Number(localStorage.getItem("max_maplv"));
+    let map:MapMessege[] = [];
+    map = JSON.parse(localStorage.getItem("map_messege"));
+
+    for(let i=0;i< n;i++)
     {
-      let value = flagarr[i];
+      let value = group.getObject(`${i+1}`);
+
+    //  let value = flagarr;
       let f = cc.instantiate(this.flag);
       //f.parent = this.node;
       f.x = value['x'] - this.node.getContentSize().width / 2 ;
@@ -100,6 +109,17 @@ export default class MapButton extends cc.Component {
       // f.setPosition(f.parent.convertToWorldSpace(f.getPosition()));
 
       f.name = String(value['name']);
+
+      if(map[i].is_finish)
+      {
+        f.getChildByName("flag_1").active = true;
+        f.getChildByName(`star_${map[i].normal_star}`).active = true;
+      }
+      else
+      {
+        f.getChildByName("flag_0").active = true;
+        f.getChildByName(`star_0`).active = true;
+      }
 
     //  let handler = new cc.Component.EventHandler();
 
@@ -144,7 +164,7 @@ export default class MapButton extends cc.Component {
   onClickHeroRoomButton() {
 
     this.mask.active = !this.mask.active;
-    console.log(this.heroRoomAnim.name);
+ //   console.log(this.heroRoomAnim.name);
     this.heroRoomBg.parent.active =true;
     this.heroRoomAnim.play('heroHomeAnim');
 
@@ -178,4 +198,6 @@ export default class MapButton extends cc.Component {
     // }
 
   }
+
+
 }

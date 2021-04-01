@@ -14,7 +14,7 @@
                 "upgrand_price": 99,
                 "lv_price": 120,
                 "att": 2,
-                "rang": 4,
+                "rang": 5,
                 "speed": 7
             },
             {
@@ -24,7 +24,7 @@
                 "upgrand_price": 140,
                 "lv_price": 120,
                 "att": 3,
-                "rang": 5,
+                "rang": 6,
                 "speed": 7
             }
         ]
@@ -103,9 +103,9 @@
                 "lv": 1,
                 "upgrand_price": 90,
                 "lv_price": 120,
-                "att": 3,
+                "att": 4,
                 "rang": 5,
-                "speed": 7
+                "speed": 5
             },
             {
                 "atlas": "images/towers/roketgun/2",
@@ -113,9 +113,9 @@
                 "lv": 2,
                 "upgrand_price": 180,
                 "lv_price": 120,
-                "att": 3,
+                "att": 4,
                 "rang": 5,
-                "speed": 2
+                "speed": 5
             }
         ]
     },
@@ -144,7 +144,7 @@
                 "upgrand_price": 180,
                 "lv_price": 120,
                 "att": 3,
-                "rang": 5,
+                "rang": 6,
                 "speed": 2
             }
         ]
@@ -164,7 +164,7 @@
                 "upgrand_price": 150,
                 "lv_price": 120,
                 "att": 20,
-                "rang": 7,
+                "rang": 10,
                 "speed": 1
             },
             {

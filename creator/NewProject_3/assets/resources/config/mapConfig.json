@@ -10,49 +10,49 @@
             "lifes": 20,
             "waveconfig":[
                 {
-                    "waittime":0,
+                    "waittime":30,
                     "total":5,
                     "type":[0],
                     "num":[5]
                 },
                 {
-                    "waittime":10,
+                    "waittime":30,
                     "total":2,
-                    "type":[0],
-                    "num":[6]
+                    "type":[0,1],
+                    "num":[6,2]
                 },
                 {
-                    "waittime":10,
+                    "waittime":30,
                     "total":3,
                     "type":[0,1],
                     "num":[5,4]
                 },
                 {
-                    "waittime":10,
+                    "waittime":30,
                     "total":1,
                     "type":[0,1],
                     "num":[3,8]
                 },
                 {
-                    "waittime":10,
+                    "waittime":30,
                     "total":6,
-                    "type":[0],
-                    "num":[6]
+                    "type":[0,1],
+                    "num":[7,5]
                 },
                 {
-                    "waittime":10,
+                    "waittime":30,
                     "total":3,
                     "type":[1],
                     "num":[6]
                 },
                 {
-                    "waittime":10,
+                    "waittime":30,
                     "total":5,
                     "type":[0],
-                    "num":[5]
+                    "num":[10]
                 },
                 {
-                    "waittime":10,
+                    "waittime":30,
                     "total":1,
                     "type":[0,1],
                     "num":[7,6]
@@ -66,49 +66,49 @@
             "lifes": 1,
             "waveconfig":[
                 {
-                    "waittime":0,
+                    "waittime":30,
                     "total":5,
                     "type":[0],
                     "num":[10]
                 },
                 {
-                    "waittime":10,
+                    "waittime":30,
                     "total":2,
                     "type":[0],
                     "num":[12]
                 },
                 {
-                    "waittime":10,
+                    "waittime":30,
                     "total":3,
                     "type":[0,1],
                     "num":[10,8]
                 },
                 {
-                    "waittime":10,
+                    "waittime":30,
                     "total":1,
                     "type":[0,1],
                     "num":[6,16]
                 },
                 {
-                    "waittime":10,
+                    "waittime":30,
                     "total":6,
                     "type":[0],
                     "num":[12]
                 },
                 {
-                    "waittime":10,
+                    "waittime":30,
                     "total":3,
                     "type":[1],
                     "num":[12]
                 },
                 {
-                    "waittime":10,
+                    "waittime":30,
                     "total":5,
                     "type":[0],
                     "num":[10]
                 },
                 {
-                    "waittime":10,
+                    "waittime":30,
                     "total":1,
                     "type":[0,1],
                     "num":[14,12]
@@ -127,49 +127,49 @@
             "lifes": 20,
             "waveconfig":[
                 {
-                    "waittime":0,
+                    "waittime":30,
                     "total":5,
                     "type":[0],
                     "num":[5]
                 },
                 {
-                    "waittime":10,
+                    "waittime":30,
                     "total":2,
                     "type":[0],
                     "num":[6]
                 },
                 {
-                    "waittime":10,
+                    "waittime":30,
                     "total":3,
                     "type":[0,1],
                     "num":[5,4]
                 },
                 {
-                    "waittime":10,
+                    "waittime":30,
                     "total":1,
                     "type":[0,1],
                     "num":[3,8]
                 },
                 {
-                    "waittime":10,
+                    "waittime":30,
                     "total":6,
                     "type":[0],
                     "num":[6]
                 },
                 {
-                    "waittime":10,
+                    "waittime":30,
                     "total":3,
                     "type":[1],
                     "num":[6]
                 },
                 {
-                    "waittime":10,
+                    "waittime":30,
                     "total":5,
                     "type":[0],
                     "num":[5]
                 },
                 {
-                    "waittime":10,
+                    "waittime":30,
                     "total":1,
                     "type":[0,1],
                     "num":[7,6]
@@ -183,49 +183,49 @@
             "lifes": 1,
             "waveconfig":[
                 {
-                    "waittime":0,
+                    "waittime":30,
                     "total":5,
                     "type":[0],
                     "num":[10]
                 },
                 {
-                    "waittime":10,
+                    "waittime":30,
                     "total":2,
                     "type":[0],
                     "num":[12]
                 },
                 {
-                    "waittime":10,
+                    "waittime":30,
                     "total":3,
                     "type":[0,1],
                     "num":[10,8]
                 },
                 {
-                    "waittime":10,
+                    "waittime":30,
                     "total":1,
                     "type":[0,1],
                     "num":[6,16]
                 },
                 {
-                    "waittime":10,
+                    "waittime":30,
                     "total":6,
                     "type":[0],
                     "num":[12]
                 },
                 {
-                    "waittime":10,
+                    "waittime":30,
                     "total":3,
                     "type":[1],
                     "num":[12]
                 },
                 {
-                    "waittime":10,
+                    "waittime":30,
                     "total":5,
                     "type":[0],
                     "num":[10]
                 },
                 {
-                    "waittime":10,
+                    "waittime":30,
                     "total":1,
                     "type":[0,1],
                     "num":[14,12]
@@ -244,49 +244,49 @@
             "lifes": 20,
             "waveconfig":[
                 {
-                    "waittime":0,
+                    "waittime":30,
                     "total":5,
                     "type":[0,1],
                     "num":[5,3]
                 },
                 {
-                    "waittime":10,
+                    "waittime":30,
                     "total":2,
                     "type":[1],
                     "num":[2]
                 },
                 {
-                    "waittime":10,
+                    "waittime":30,
                     "total":3,
                     "type":[0],
                     "num":[3]
                 },
                 {
-                    "waittime":10,
+                    "waittime":30,
                     "total":1,
                     "type":[0],
                     "num":[1]
                 },
                 {
-                    "waittime":10,
+                    "waittime":30,
                     "total":6,
                     "type":[0],
                     "num":[6]
                 },
                 {
-                    "waittime":10,
+                    "waittime":30,
                     "total":3,
                     "type":[0],
                     "num":[3]
                 },
                 {
-                    "waittime":10,
+                    "waittime":30,
                     "total":5,
                     "type":[0],
                     "num":[5]
                 },
                 {
-                    "waittime":10,
+                    "waittime":30,
                     "total":1,
                     "type":[0],
                     "num":[1]
@@ -300,49 +300,49 @@
             "lifes": 5,
             "waveconfig":[
                 {
-                    "waittime":0,
+                    "waittime":30,
                     "total":5,
                     "type":[0],
                     "num":[10]
                 },
                 {
-                    "waittime":10,
+                    "waittime":30,
                     "total":2,
                     "type":[0],
                     "num":[12]
                 },
                 {
-                    "waittime":10,
+                    "waittime":30,
                     "total":3,
                     "type":[0,1],
                     "num":[10,8]
                 },
                 {
-                    "waittime":10,
+                    "waittime":30,
                     "total":1,
                     "type":[0,1],
                     "num":[6,16]
                 },
                 {
-                    "waittime":10,
+                    "waittime":30,
                     "total":6,
                     "type":[0],
                     "num":[12]
                 },
                 {
-                    "waittime":10,
+                    "waittime":30,
                     "total":3,
                     "type":[1],
                     "num":[12]
                 },
                 {
-                    "waittime":10,
+                    "waittime":30,
                     "total":5,
                     "type":[0],
                     "num":[10]
                 },
                 {
-                    "waittime":10,
+                    "waittime":30,
                     "total":1,
                     "type":[0,1],
                     "num":[14,12]
@@ -361,19 +361,19 @@
             "lifes": 20,
             "waveconfig":[
                 {
-                    "waittime":0,
+                    "waittime":30,
                     "total":5,
                     "type":[0,1],
                     "num":[5,3]
                 },
                 {
-                    "waittime":10,
+                    "waittime":30,
                     "total":2,
                     "type":[1],
                     "num":[2]
                 },
                 {
-                    "waittime":10,
+                    "waittime":30,
                     "total":3,
                     "type":[0],
                     "num":[3]
@@ -385,25 +385,25 @@
                     "num":[1]
                 },
                 {
-                    "waittime":10,
+                    "waittime":30,
                     "total":6,
                     "type":[0],
                     "num":[6]
                 },
                 {
-                    "waittime":10,
+                    "waittime":30,
                     "total":3,
                     "type":[0],
                     "num":[3]
                 },
                 {
-                    "waittime":10,
+                    "waittime":30,
                     "total":5,
                     "type":[0],
                     "num":[5]
                 },
                 {
-                    "waittime":10,
+                    "waittime":30,
                     "total":1,
                     "type":[0],
                     "num":[1]
@@ -417,49 +417,49 @@
             "lifes": 3,
             "waveconfig":[
                 {
-                    "waittime":0,
+                    "waittime":30,
                     "total":5,
                     "type":[0],
                     "num":[10]
                 },
                 {
-                    "waittime":10,
+                    "waittime":30,
                     "total":2,
                     "type":[0],
                     "num":[12]
                 },
                 {
-                    "waittime":10,
+                    "waittime":30,
                     "total":3,
                     "type":[0,1],
                     "num":[10,8]
                 },
                 {
-                    "waittime":10,
+                    "waittime":30,
                     "total":1,
                     "type":[0,1],
                     "num":[6,16]
                 },
                 {
-                    "waittime":10,
+                    "waittime":30,
                     "total":6,
                     "type":[0],
                     "num":[12]
                 },
                 {
-                    "waittime":10,
+                    "waittime":30,
                     "total":3,
                     "type":[1],
                     "num":[12]
                 },
                 {
-                    "waittime":10,
+                    "waittime":30,
                     "total":5,
                     "type":[0],
                     "num":[10]
                 },
                 {
-                    "waittime":10,
+                    "waittime":30,
                     "total":1,
                     "type":[0,1],
                     "num":[14,12]
@@ -478,49 +478,49 @@
             "lifes": 20,
             "waveconfig":[
                 {
-                    "waittime":0,
+                    "waittime":30,
                     "total":5,
                     "type":[0,1],
                     "num":[5,3]
                 },
                 {
-                    "waittime":10,
+                    "waittime":30,
                     "total":2,
                     "type":[1],
                     "num":[2]
                 },
                 {
-                    "waittime":10,
+                    "waittime":30,
                     "total":3,
                     "type":[0],
                     "num":[3]
                 },
                 {
-                    "waittime":10,
+                    "waittime":30,
                     "total":1,
                     "type":[0],
                     "num":[1]
                 },
                 {
-                    "waittime":10,
+                    "waittime":30,
                     "total":6,
                     "type":[0],
                     "num":[6]
                 },
                 {
-                    "waittime":10,
+                    "waittime":30,
                     "total":3,
                     "type":[0],
                     "num":[3]
                 },
                 {
-                    "waittime":10,
+                    "waittime":30,
                     "total":5,
                     "type":[0],
                     "num":[5]
                 },
                 {
-                    "waittime":10,
+                    "waittime":30,
                     "total":1,
                     "type":[0],
                     "num":[1]

@@ -2,17 +2,25 @@
     {
         "id":0,
         "name":"cavecat",
-        "hp":20,
-        "att":1,
-        "speed":3,
+        "hp":30,
+        "att":2,
+        "speed":4,
         "gear":5
     },
     {
         "id":1,
         "name":"soldier",
-        "hp":20,
+        "hp":30,
         "att":1,
-        "speed":3,
+        "speed":4,
+        "gear":5
+    },
+    {
+        "id":2,
+        "name":"soldier2",
+        "hp":30,
+        "att":2,
+        "speed":4,
         "gear":5
     }
 ]

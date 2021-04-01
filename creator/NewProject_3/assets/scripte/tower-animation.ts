@@ -14,6 +14,9 @@ export default class NewClass extends cc.Component {
     @property(cc.Prefab)
     fire_prefab:cc.Prefab = null;
 
+    @property(cc.Node)
+    bullet_point:cc.Node = null;
+
     bullet:cc.Node = null;
 
     anim:cc.Animation = null;
@@ -44,33 +47,37 @@ export default class NewClass extends cc.Component {
                     let arrow = cc.instantiate(prefab);
                     this.node.parent.parent.addChild(arrow,0)
                 
-                    let point = this.node.parent.getPosition();
+                    //let point = this.node.parent.getPosition();
         
-                    switch(this.tower.tower_dir)
-                    {
-                        case 0:
+                    // switch(this.tower.tower_dir)
+                    // {
+                    //     case 0:
         
-                            break;
-                        case 1: //left_down
-                            point.x += -25;
-                            point.y += 97;
-                            break;
-                        case 2: //right_down
-                            point.x += 50;
-                            point.y += 92;
-                            break;
-                        case 3: //left_up
-                            point.x += -28;
-                            point.y += 129;
-                            break;
-                        case 4: //right_up
-                            point.x += 35;
-                            point.y += 129;
-                            break;
-                        default:
-                            break;
-                    }
+                    //         break;
+                    //     case 1: //left_down
+                    //         point.x += -25;
+                    //         point.y += 97;
+                    //         break;
+                    //     case 2: //right_down
+                    //         point.x += 50;
+                    //         point.y += 92;
+                    //         break;
+                    //     case 3: //left_up
+                    //         point.x += -28;
+                    //         point.y += 129;
+                    //         break;
+                    //     case 4: //right_up
+                    //         point.x += 35;
+                    //         point.y += 129;
+                    //         break;
+                    //     default:
+                    //         break;
+                    // }
         
+                    let point = this.bullet_point.getPosition();
+                    point = this.node.convertToWorldSpaceAR(point);
+                    point = this.node.parent.parent.convertToNodeSpaceAR(point);
+
                     arrow.setPosition(point);
         
                     arrow.zIndex = this.node.parent.zIndex + 2;
@@ -84,7 +91,7 @@ export default class NewClass extends cc.Component {
                     arrow.setRotation(-90 + angle * 180 / 3.1415926);
         
                     this.enemy = this.tower.enemy;
-                    let enemy:Enemy = this.tower.enemy.getComponent("enemy-action");
+                    let enemy:Enemy = this.tower.enemy.getComponentInChildren("enemy-action");
                     //    enemy.startFire();
                      let callfunc_2 = cc.callFunc(()=>{
                             enemy.hurt(this.tower.att);
@@ -101,33 +108,10 @@ export default class NewClass extends cc.Component {
                     let arrow = cc.instantiate(prefab);
                     this.node.parent.parent.addChild(arrow,0)
                 
-                    let point = this.node.parent.getPosition();
-        
-                    switch(this.tower.tower_dir)
-                    {
-                        case 0:
-        
-                            break;
-                        case 1: //left_down
-                            point.x += -31;
-                            point.y += 88;
-                            break;
-                        case 2: //right_down
-                            point.x += 22;
-                            point.y += 88;
-                            break;
-                        case 3: //left_up
-                            point.x += -30;
-                            point.y += 124;
-                            break;
-                        case 4: //right_up
-                            point.x += -4;
-                            point.y += 132;
-                            break;
-                        default:
-                            break;
-                    }
-        
+                    let point = this.bullet_point.getPosition();
+                    point = this.node.convertToWorldSpaceAR(point);
+                    point = this.node.parent.parent.convertToNodeSpaceAR(point);
+                    point.x -= 20;
                     arrow.setPosition(point);
         
                     arrow.zIndex = this.node.parent.zIndex + 2;
@@ -141,7 +125,7 @@ export default class NewClass extends cc.Component {
                     arrow.setRotation(-90 + angle * 180 / 3.1415926);
         
                     this.enemy = this.tower.enemy;
-                    let enemy:Enemy = this.tower.enemy.getComponent("enemy-action");
+                    let enemy:Enemy = this.tower.enemy.getComponentInChildren("enemy-action");
                     //    enemy.startFire();
                      let callfunc_2 = cc.callFunc(()=>{
                             enemy.hurt(this.tower.att);
@@ -157,33 +141,11 @@ export default class NewClass extends cc.Component {
                     let arrow = cc.instantiate(prefab);
                     this.node.parent.parent.addChild(arrow,0)
                 
-                    let point = this.node.parent.getPosition();
-        
-                    switch(this.tower.tower_dir)
-                    {
-                        case 0:
-        
-                            break;
-                        case 1: //left_down
-                            point.x += 13;
-                            point.y += 88;
-                            break;
-                        case 2: //right_down
-                            point.x += 68;
-                            point.y += 88;
-                            break;
-                        case 3: //left_up
-                            point.x += 22;
-                            point.y += 131;
-                            break;
-                        case 4: //right_up
-                            point.x += 44;
-                            point.y += 120;
-                            break;
-                        default:
-                            break;
-                    }
-        
+                    let point = this.bullet_point.getPosition();
+                    point = this.node.convertToWorldSpaceAR(point);
+                    point = this.node.parent.parent.convertToNodeSpaceAR(point);
+                    point.x += 20;
+
                     arrow.setPosition(point);
         
                     arrow.zIndex = this.node.parent.zIndex + 2;
@@ -197,7 +159,7 @@ export default class NewClass extends cc.Component {
                     arrow.setRotation(-90 + angle * 180 / 3.1415926);
         
                     this.enemy = this.tower.enemy;
-                    let enemy:Enemy = this.tower.enemy.getComponent("enemy-action");
+                    let enemy:Enemy = this.tower.enemy.getComponentInChildren("enemy-action");
                     //    enemy.startFire();
                      let callfunc_2 = cc.callFunc(()=>{
                             enemy.hurt(this.tower.att);
@@ -245,7 +207,7 @@ export default class NewClass extends cc.Component {
             ice.setRotation(-90 + angle * 180 / 3.1415926);
     
             this.enemy = this.tower.enemy;
-            let enemy:Enemy = this.tower.enemy.getComponent("enemy-action");
+            let enemy:Enemy = this.tower.enemy.getComponentInChildren("enemy-action");
             //    enemy.startFire();
             let act1 = cc.delayTime(1);
             let callfunc_2 = cc.callFunc(()=>{
@@ -280,7 +242,7 @@ export default class NewClass extends cc.Component {
             ball.setRotation(-90 + angle * 180 / 3.1415926);
     
             this.enemy = this.tower.enemy;
-            let enemy:Enemy = this.tower.enemy.getComponent("enemy-action");
+            let enemy:Enemy = this.tower.enemy.getComponentInChildren("enemy-action");
             //    enemy.startFire();
             let act1 = cc.delayTime(0.5);
             let callfunc_2 = cc.callFunc(()=>{
@@ -299,9 +261,12 @@ export default class NewClass extends cc.Component {
             let magic = cc.instantiate(prefab);
             magic.parent = this.node.parent.parent;
            
-            let point = this.node.parent.getPosition();
-            point.y += 95;
+            let point = this.bullet_point.getPosition();
+            point = this.node.convertToWorldSpaceAR(point);
+            point = this.node.parent.parent.convertToNodeSpaceAR(point);
+
             magic.setPosition(point);
+            magic.zIndex = 21;
     
             let enemy_point = this.tower.enemy.getPosition();
     
@@ -316,7 +281,7 @@ export default class NewClass extends cc.Component {
             magic.setRotation(-90 + angle * 180 / 3.1415926);
     
             this.enemy = this.tower.enemy;
-            let enemy:Enemy = this.tower.enemy.getComponent("enemy-action");
+            let enemy:Enemy = this.tower.enemy.getComponentInChildren("enemy-action");
             //    enemy.startFire();
             let act1 = cc.delayTime(0.5);
             let callfunc_2 = cc.callFunc(()=>{
@@ -349,7 +314,7 @@ export default class NewClass extends cc.Component {
         fire.setRotation(-90 + angle * 180 / 3.1415926);
 
         this.enemy = this.tower.enemy;
-        let enemy:Enemy = this.tower.enemy.getComponent("enemy-action");
+        let enemy:Enemy = this.tower.enemy.getComponentInChildren("enemy-action");
         //    enemy.startFire();
         let act1 = cc.delayTime(1);
         let callfunc_2 = cc.callFunc(()=>{
@@ -383,7 +348,7 @@ export default class NewClass extends cc.Component {
             laser.setRotation(-90 + angle * 180 / 3.1415926);
     
             this.enemy = this.tower.enemy;
-            let enemy:Enemy = this.tower.enemy.getComponent("enemy-action");
+            let enemy:Enemy = this.tower.enemy.getComponentInChildren("enemy-action");
             //    enemy.startFire();
             let act1 = cc.delayTime(0.3);
             let callfunc_2 = cc.callFunc(()=>{
@@ -398,12 +363,14 @@ export default class NewClass extends cc.Component {
     //动画回调
     onAnimationFinished()
     {
-        console.log("动画事件");
-       
-        let enemy:Enemy = this.tower.enemy.getComponent("enemy-action");
+    //    console.log("动画事件");
+        this.tower.node.getComponent(cc.AudioSource).clip = this.tower.att_sound;
+        this.tower.node.getComponent(cc.AudioSource).play();
+        
+        let enemy:Enemy = this.tower.enemy.getComponentInChildren("enemy-action");
         if(enemy.islive)
         {
-            console.log(this.tower.choice_tower_id)
+  //          console.log(this.tower.choice_tower_id)
            switch(this.tower.choice_tower_id)
            {
                case 1:

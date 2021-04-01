@@ -1,0 +1,34 @@
+{
+  "ver": "1.2.4",
+  "uuid": "c01f698a-8e07-486a-a72b-319bbde8faab",
+  "rawTextureUuid": "d77c0039-359a-4e46-803c-5ff025e48cff",
+  "size": {
+    "width": 60,
+    "height": 15
+  },
+  "type": "Texture Packer",
+  "subMetas": {
+    "helicopter_shadow.png": {
+      "ver": "1.0.4",
+      "uuid": "03e16eda-22e3-42ab-98a0-e6b7b45fca2f",
+      "rawTextureUuid": "d77c0039-359a-4e46-803c-5ff025e48cff",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 2,
+      "trimY": 2,
+      "width": 56,
+      "height": 11,
+      "rawWidth": 56,
+      "rawHeight": 11,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "spriteType": "normal",
+      "subMetas": {}
+    }
+  }
+}

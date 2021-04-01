@@ -6,6 +6,8 @@
 //  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 import LoadingBattel from "./loadingBattel"
 import Bullet from "./bullet"
+import SkillRole from "./skill_role"
+import Hero from "./hero"
 
 const { ccclass, property } = cc._decorator;
 
@@ -37,7 +39,7 @@ export default class Enemy extends cc.Component {
     addspeed:number = 1;
 
     animnum:number = 0;
-    
+
     anim:cc.Animation = null;
 
     att:number = 0;
@@ -45,10 +47,16 @@ export default class Enemy extends cc.Component {
     persistent_harm:number = 0;
 
     harm_time:number = 0;
+
+    att_role:cc.Node = null;
+
+    hero:cc.Node = null;
+
+    is_crash:boolean = false;
     onLoad(){
-        this.anim = this.node.getComponent(cc.Animation); 
+        this.anim = this.node.getComponent(cc.Animation);
         let a:cc.BoxCollider;
-       
+
     }
 
     start(){
@@ -85,23 +93,21 @@ export default class Enemy extends cc.Component {
             }
         }
 
-        this.node.setPosition(this.road[0]);
+        this.node.parent.setPosition(this.road[0]);
     }
 
 
 
     startMove() {
-        this.schedule(() => {
-            this.move();
-        }, 0.08);
-      
+        this.schedule(this.move, 0.1,cc.macro.REPEAT_FOREVER,0);
+
     }
 
-    //持续掉血  
+    //持续掉血
     persistentSubHp(dt)
     {
-        console.log("hp",this.hp)
-      
+  //      console.log("hp",this.hp)
+
         this.hp -= this.persistent_harm;
         this.harm_time--;
         this.hpBar.active = true;
@@ -111,7 +117,7 @@ export default class Enemy extends cc.Component {
         {
             this.fire.getComponent(cc.Animation).stop();
             this.fire.active = false;
-        } 
+        }
 
         if(this.hp <= 0)
         {
@@ -125,13 +131,13 @@ export default class Enemy extends cc.Component {
             return;
         }
 
-     
+
     }
 
     //冰冻
     startIce()
     {
-     
+
     }
 
     //燃烧
@@ -155,18 +161,24 @@ export default class Enemy extends cc.Component {
 
     //到达终点
     inEnd(){
-        let tmp:LoadingBattel = this.node.parent.getComponent("loadingBattel");
+        let tmp:LoadingBattel = this.node.parent.parent.getComponent("loadingBattel");
         tmp.present_hp -= this.att;
-
+        if(tmp.present_hp <=0)
+        {
+            tmp.present_hp = 0;
+            tmp.game_over = true;
+            this.unscheduleAllCallbacks();
+            this.anim.stop();
+        }
         this.islive = false;
-        this.node.active = false;
+        this.node.parent.active = false;
         this.unscheduleAllCallbacks();
         this.node.dispatchEvent(new cc.Event.EventCustom("updateMesseg",true));
     }
 
-    move() {
-        let point = new cc.Vec2(this.node.position.x, this.node.position.y);
-
+    move(dt:number) {
+        let point = new cc.Vec2(this.node.parent.position.x, this.node.parent.position.y);
+      
         let v: cc.Vec2 = cc.Vec2.ZERO;
 
         let offset_y = this.road[this.nextpoint].y - point.y;
@@ -212,21 +224,24 @@ export default class Enemy extends cc.Component {
         }
 
         v.normalizeSelf();
-        let next_x = this.node.position.x + v.x * this.speed * this.addspeed;
-        let next_y = this.node.position.y + v.y * this.speed * this.addspeed;
-        this.node.setPosition(next_x, next_y);
+        let next_x = this.node.parent.position.x + v.x * this.speed * this.addspeed;
+        let next_y = this.node.parent.position.y + v.y * this.speed * this.addspeed;
+        this.node.parent.setPosition(next_x, next_y);
     }
 
     //受伤
     hurt(harm:number){
         this.hp -= harm;
-        if(this.hp <= 0 && this.node)
+        if(this.hp <= 0 && this.islive)
         {
+            this.node.getComponent(cc.AudioSource).play();
             this.islive = false;
+            this.hp = 0;
 
             let clip: cc.AnimationClip[] = this.node.getComponent(cc.Animation).getClips();
             clip[4].speed = 4 ;
             this.anim.play(clip[4].name);
+            
         }
 
         if( this.node){
@@ -238,26 +253,29 @@ export default class Enemy extends cc.Component {
 
     die()
     {
+
         this.unscheduleAllCallbacks();
-        this.node.active = false;
+        this.node.parent.active = false;
 
         if(this.hp <=0)
         {
-            let tmp:LoadingBattel = this.node.parent.getComponent("loadingBattel");
+            let tmp:LoadingBattel = this.node.parent.parent.getComponent("loadingBattel");
             tmp.present_gear += this.gear;
+
+            this.islive = false;
 
             this.node.dispatchEvent(new cc.Event.EventCustom("updateMesseg",true));
         }
-      
+
         //this.node.destroy();
     }
 
 
     onCollisionEnter(other,self)
     {
-        
-        console.log(other.node.group);
-      
+
+   //     console.log(other.node.group);
+
         if(other.node.group == "fire")
         {
             this.startFire();
@@ -269,7 +287,7 @@ export default class Enemy extends cc.Component {
             this.hurt(bullet.harm);
         }
 
-        if(other.node.group == "prop")
+        if(other.node.group == "prop" || other.node.group == "fireball")
         {
             this.islive = false;
             this.hpBar.active = true;
@@ -280,17 +298,158 @@ export default class Enemy extends cc.Component {
             clip[4].speed = 3;
             this.anim.play(clip[4].name);
         }
- 
+
+        if(other.node.group == "kitty")
+        {
+
+            if(this.node.group == "enemy")
+            {
+                this.hero = null;
+
+                this.att_role = other.node.parent;
+    
+                this.unscheduleAllCallbacks();
+                let clip: cc.AnimationClip[] = this.anim.getClips();
+                this.anim.play(clip[3].name)
+    
+                if(other.node.parent.x>this.node.parent.x)
+                {
+                    this.node.scaleX = -1;
+                }
+                else
+                {
+                    this.node.scaleX = 1;
+                }
+            }
+          
+        }
+
+        if(other.node.group == "hero")
+        {
+            if(this.node.group == "enemy")
+            {
+                this.att_role = null;
+                this.hero = other.node.parent;
+    
+                this.unscheduleAllCallbacks();
+                let clip: cc.AnimationClip[] = this.anim.getClips();
+
+                let hero:Hero = this.hero.getComponentInChildren("hero");
+                if(hero.is_live)
+                {
+                    this.anim.play(clip[3].name)
+                }
+    
+                if(other.node.parent.x>this.node.parent.x)
+                {
+                    this.node.scaleX = -1;
+                }
+                else
+                {
+                    this.node.scaleX = 1;
+                }
+            }
+        }
+    }
+
+    onCollisionExit(other)
+    {
+        if(this.islive)
+        {
+            this.hero = null;
+            this.att_role = null;
+
+            let clip: cc.AnimationClip[] = this.anim.getClips();
+            this.anim.play(clip[this.animnum].name)
+            this.startMove();
+        }
+    }
+
+    attRole()
+    {
+        if(this.att_role){
+                if(this.att_role.active)
+                {
+                    let kitty:SkillRole = this.att_role.getComponentInChildren("skill_role");
+                    kitty.Hurt(this.att);
+                }
+
+            return;
+        }
+
+        if(this.hero)
+        {
+            if(this.hero.active)
+            {
+                let hero:Hero = this.hero.getComponentInChildren("hero");
+                if(hero.is_live)
+                {
+                    hero.Hurt(this.att);
+                }
+            }
+        } 
     }
 
     update()
     {
-        let tmp:LoadingBattel = this.node.parent.getComponent("loadingBattel");
+        if(!this.islive)
+        {
+            this.unscheduleAllCallbacks();
+            return;
+        }
+        let tmp:LoadingBattel = this.node.parent.parent.getComponent("loadingBattel");
+        if(tmp.present_hp <= 0)
+        {
+            this.unscheduleAllCallbacks();
+            this.anim.stop();
+        }
         if(tmp.speed != this.addspeed)
         {
             this.addspeed = tmp.speed;
             let clip: cc.AnimationClip[] = this.anim.getClips();
             this.anim.play(clip[this.animnum].name).speed = this.speed * this.addspeed;
+        }
+
+        if(this.att_role)
+        {
+            if(!this.att_role.active)
+            {
+                let clip: cc.AnimationClip[] = this.node.getComponent(cc.Animation).getClips();
+                this.startMove();
+                if(this.anim.currentClip.name != clip[this.animnum].name)
+                {
+                    this.anim.play(clip[this.animnum].name);
+                }
+                
+            }
+
+            // if(!this.is_crash)
+            // {
+            //     let clip: cc.AnimationClip[] = this.node.getComponent(cc.Animation).getClips();
+            //     this.anim.play(clip[this.animnum].name);
+            //     this.startMove();
+            // }
+        }
+
+        if(this.hero)
+        {
+            let hero:Hero = this.hero.getComponentInChildren("hero");
+            if(!hero.is_live)
+            { this.startMove();
+                let clip: cc.AnimationClip[] = this.node.getComponent(cc.Animation).getClips();
+                if(this.anim.currentClip.name != clip[this.animnum].name)
+                {
+                    this.anim.play(clip[this.animnum].name);
+                }
+               
+            }
+
+            // if(!this.is_crash)
+            // {
+            //     let clip: cc.AnimationClip[] = this.node.getComponent(cc.Animation).getClips();
+            //     this.anim.play(clip[this.animnum].name);
+            //     this.startMove();
+            // }
         }
     }
 }

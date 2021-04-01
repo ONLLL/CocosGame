@@ -11,9 +11,9 @@ interface TowerConfig {
     menu_selectable: string;
     menu_noselectable: string;
     describe: string;
-    config: tower[];
+    config: Tower[];
 }
-interface tower {
+interface Tower {
     atlas: string;
     sprite_frame: string;
     lv: number;
@@ -116,6 +116,19 @@ export default class BaseCreate extends cc.Component {
 
     //升级价格
     upgrade_price:number = 0;
+
+    //建塔音效
+    create_sound:cc.AudioClip = null;
+
+    //拆塔音效
+    delete_sound:cc.AudioClip = null;
+
+    //攻击音效
+    att_sound:cc.AudioClip = null;
+
+    //范围
+    circle_rang:number = 900;
+
     onLoad() {
         this.tower_messege = JSON.parse(localStorage.getItem("tower_messege"));
 
@@ -141,6 +154,24 @@ export default class BaseCreate extends cc.Component {
     
     }
     start() {
+        //加载建塔音效
+        cc.resources.load("audio/sound_ogg/Building",cc.AudioClip,(err:Error,audioClip:cc.AudioClip)=>
+        {
+            this.create_sound = audioClip;
+
+             //加载完成
+             this.node.dispatchEvent(new cc.Event.EventCustom("loading_finished",true));
+        });
+        //加载拆塔音效
+        cc.resources.load("audio/sound_ogg/Clearing",cc.AudioClip,(err:Error,audioClip:cc.AudioClip)=>
+        {
+            this.delete_sound = audioClip;
+
+             //加载完成
+             this.node.dispatchEvent(new cc.Event.EventCustom("loading_finished",true));
+        });
+
+        //加载塔配置
         cc.resources.load("config/towerConfig", cc.JsonAsset, (err, jsonAsset: cc.JsonAsset) => {
 
             this.towerConfig = jsonAsset.json;
@@ -163,11 +194,17 @@ export default class BaseCreate extends cc.Component {
            let menu6_price: cc.Label = this.menu6.getComponentInChildren(cc.Label);
            menu6_price.string = "" + this.towerConfig[5].config[0].upgrand_price;
 
+            //加载完成
+            this.node.dispatchEvent(new cc.Event.EventCustom("loading_finished",true));
         });
 
+        //加载地图配置
         cc.resources.load("config/mapConfig",cc.JsonAsset,(err:Error,jsonAsset:cc.JsonAsset)=>{
             let map = jsonAsset.json;
             //this.lifes_count = map[]
+            
+             //加载完成
+             this.node.dispatchEvent(new cc.Event.EventCustom("loading_finished",true));
         });
     }
 
@@ -401,6 +438,13 @@ export default class BaseCreate extends cc.Component {
            {
             tower_other.zIndex = 18;
             tower_other.getChildByName("toggleContainer").active = false;
+
+            let tower = tower_other.getChildByName("toggleContainer").children;
+            for(let i=0;i<tower.length;i++)
+            {
+                tower[i].getComponent(cc.Toggle).isChecked = false;
+            }
+
             tower_other.getChildByName("hint_panel").active = false;
             tower_other.getChildByName("show").active = false;
             tower_other.getChildByName("circle").active = false;
@@ -416,17 +460,59 @@ export default class BaseCreate extends cc.Component {
         }
         else {
             this.toggleContainer.getComponent(cc.Animation).play('showWeaponAnimRe')
-            let act = cc.delayTime(0.1);
+            let act = cc.delayTime(0.05);
             let callfunc = cc.callFunc(() => {
-                this.toggleContainer.active = !this.toggleContainer.active;
+                this.toggleContainer.active = false;
                 this.hint.active = false;
+
             }, this);
+
             this.toggleContainer.runAction(cc.sequence(act, callfunc));
+
+            
+            let tower =   this.toggleContainer.children;
+            for(let i=0;i<tower.length;i++)
+            {
+                tower[i].getComponent(cc.Toggle).isChecked = false;
+            }
+            this.circle.active = false;
         }
 
     }
 
-    
+    //加载攻击音效
+    loadAttSound()
+    {
+        let name:string = "";
+        switch (this.choice_tower_id) {
+            case 1:
+                name = "arrow_lvl_1";
+                break;
+            case 2:
+                name = "kitty_litter_lvl_1"
+                break;
+            case 3:
+                name = "Teslagun"
+                break;
+            case 4:
+                name = "magic_tower_lvl1"
+                break;
+            case 5:
+                name = "Firegun";
+                break;
+            case 6:
+                name = "Sniper";
+                break;
+            default:
+                break;
+        }
+
+        cc.resources.load(`audio/sound_ogg/${name}`,cc.AudioClip,(err:Error,audioClip:cc.AudioClip)=>{
+            this.att_sound = audioClip;
+            this.node.getComponent(cc.AudioSource).clip = this.att_sound;
+        });
+    }
+    //生成塔
     loadTower(id: number) {
     this.unlockTower()
     if(!this.tower_messege[id - 1].unlock)
@@ -436,6 +522,9 @@ export default class BaseCreate extends cc.Component {
     if (this.battel_message.present_gear < this.towerConfig[id - 1].config[0].upgrand_price) {
         return;
     }
+        this.node.getComponent(cc.AudioSource).clip = this.create_sound;
+        this.node.getComponent(cc.AudioSource).play();
+        
         cc.resources.load(this.towerConfig[id - 1].config[0].atlas, cc.SpriteAtlas, (err, atlas: cc.SpriteAtlas) => {
            
                 this.battel_message.present_gear -= this.towerConfig[id - 1].config[0].upgrand_price;
@@ -454,13 +543,13 @@ export default class BaseCreate extends cc.Component {
                 this.tower_lv++;
                 this.hint.active = false;
                 this.land.active = false;
+                this.circle.active = false;
                 this.choice_tower.active = true;
                 this.choice_tower_id = id;
 
                 this.updateAnim();
-            
+                this.loadAttSound();
         });
-      
     }
 
     loadBaseAnimRe() {
@@ -472,13 +561,14 @@ export default class BaseCreate extends cc.Component {
         this.toggleContainer.runAction(cc.sequence(act, callfunc));
     }
 
-    loadHintPanel(id: number) {
+    loadHintPanel(id: number,lv:number) {
         this.hint.active = true;
         this.hint.getChildByName("name").getComponent(cc.Label).string = this.towerConfig[id - 1].name;
         this.hint.getChildByName("detail").getComponent(cc.Label).string = this.towerConfig[id - 1].describe;
-        this.hint.getChildByName("atk").getComponent(cc.Label).string = "" + this.towerConfig[id - 1].config[this.tower_lv].att;
-        this.hint.getChildByName("speed").getComponent(cc.Label).string = "" + this.towerConfig[id - 1].config[this.tower_lv].speed;
-        this.hint.getChildByName("rang").getComponent(cc.Label).string = "" + this.towerConfig[id - 1].config[this.tower_lv].rang;
+ //       console.log(this.tower_lv);
+        this.hint.getChildByName("atk").getComponent(cc.Label).string = "" + this.towerConfig[id - 1].config[lv].att;
+        this.hint.getChildByName("speed").getComponent(cc.Label).string = "" + this.towerConfig[id - 1].config[lv].speed;
+        this.hint.getChildByName("rang").getComponent(cc.Label).string = "" + this.towerConfig[id - 1].config[lv].rang;
     }
 
     //Archer-tower
@@ -488,12 +578,19 @@ export default class BaseCreate extends cc.Component {
 
             this.loadTower(1);
 
+
             this.menu1.getComponent(cc.Toggle).isChecked = false;
 
             //this.arrowAnimation();
         }
         else {
-            this.loadHintPanel(1);
+            let rang = this.towerConfig[0].config[0].rang;
+            
+            this.circle.width = this.circle_rang / 4 * rang;
+            this.circle.height = this.circle_rang / 4 * rang;
+            this.circle.active = true;
+
+            this.loadHintPanel(1,0);
         }
     }
 
@@ -508,7 +605,13 @@ export default class BaseCreate extends cc.Component {
          //   this.kittyAnimation();
         }
         else {
-            this.loadHintPanel(2);
+            let rang = this.towerConfig[1].config[0].rang;
+            
+            this.circle.width = this.circle_rang / 4 * rang;
+            this.circle.height = this.circle_rang / 4 * rang;
+            this.circle.active = true;
+
+            this.loadHintPanel(2,0);
         }
     }
 
@@ -524,7 +627,13 @@ export default class BaseCreate extends cc.Component {
    //         this.ballAnimation();
         }
         else {
-            this.loadHintPanel(3);
+            let rang = this.towerConfig[2].config[0].rang;
+            
+            this.circle.width = this.circle_rang / 4 * rang;
+            this.circle.height = this.circle_rang / 4 * rang;
+            this.circle.active = true;
+
+            this.loadHintPanel(3,0);
         }
     }
 
@@ -540,7 +649,13 @@ export default class BaseCreate extends cc.Component {
    //         this.magicAnimation();
         }
         else {
-            this.loadHintPanel(4);
+            let rang = this.towerConfig[3].config[0].rang;
+            
+            this.circle.width = this.circle_rang / 4 * rang;
+            this.circle.height = this.circle_rang / 4 * rang;
+            this.circle.active = true;
+
+            this.loadHintPanel(4,0);
         }
     }
 
@@ -556,7 +671,13 @@ export default class BaseCreate extends cc.Component {
     //        this.fireAnimation();
         }
         else {
-            this.loadHintPanel(5);
+            let rang = this.towerConfig[4].config[0].rang;
+            
+            this.circle.width = this.circle_rang / 4 * rang;
+            this.circle.height = this.circle_rang / 4 * rang;
+            this.circle.active = true;
+
+            this.loadHintPanel(5,0);
         }
     }
 
@@ -572,7 +693,14 @@ export default class BaseCreate extends cc.Component {
  //           this.sniperAnimation();
         }
         else {
-            this.loadHintPanel(6);
+            let rang = this.towerConfig[5].config[0].rang;
+            
+            this.circle.width = this.circle_rang / 4 * rang;
+            this.circle.height = this.circle_rang / 4 * rang;
+
+            this.circle.active = true;
+
+            this.loadHintPanel(6,0);
         }
     }
 
@@ -600,13 +728,17 @@ export default class BaseCreate extends cc.Component {
         if (!this.show.active) {
             this.loadShow();
             this.show.getComponent(cc.Animation).play('clickTowerAnim')
-            this.loadHintPanel(this.choice_tower_id);
+            this.loadHintPanel(this.choice_tower_id,this.tower_lv - 1);
+
+            
+            this.circle.width = this.circle_rang / 4 * this.rang;
+            this.circle.height = this.circle_rang / 4 * this.rang;
             this.circle.active = true;
         }
         else {
 
             this.show.getComponent(cc.Animation).play('clickTowerAnimRe')
-            let act = cc.delayTime(0.1);
+            let act = cc.delayTime(0.05);
             let callfunc = cc.callFunc(() => {
                 this.hint.active = false;
                 this.show.active = false;
@@ -625,7 +757,8 @@ export default class BaseCreate extends cc.Component {
         let gear =  this.upgrade_price;
        
         let tower:LocalTowerMessege[] = JSON.parse(localStorage.getItem("tower_messege"));
-        if(this.tower_lv == tower[this.choice_tower_id -1].lv)
+
+        if(this.tower_lv == tower[this.choice_tower_id -1].max_lv)
         {
            
            
@@ -715,42 +848,50 @@ export default class BaseCreate extends cc.Component {
     }
     //升级
     onClickUpgrand() {
-     
+
 
         if (!this.show.getChildByName('upgrand').getComponent(cc.Toggle).isChecked && this.isUpgrade) {
 
             //if (this.gold_count >= this.towerConfig[this.choice_tower_id - 1].config[this.tower_lv - 1].upgrand_price) {
-             //   this.gold_count -= this.towerConfig[this.choice_tower_id - 1].config[this.tower_lv - 1].upgrand_price;
-         
-             cc.resources.load(this.towerConfig[this.choice_tower_id - 1].config[this.tower_lv].atlas, cc.SpriteAtlas, (err, atlas: cc.SpriteAtlas) => {
+            //   this.gold_count -= this.towerConfig[this.choice_tower_id - 1].config[this.tower_lv - 1].upgrand_price;
+            this.node.getComponent(cc.AudioSource).clip = this.create_sound;
+            this.node.getComponent(cc.AudioSource).play();
+
+            cc.resources.load(this.towerConfig[this.choice_tower_id - 1].config[this.tower_lv].atlas, cc.SpriteAtlas, (err, atlas: cc.SpriteAtlas) => {
                 this.isUpgrade = false;
 
-                    let fram = atlas.getSpriteFrame(this.towerConfig[this.choice_tower_id - 1].config[this.tower_lv].sprite_frame);
-                    this.choice_tower.getComponent(cc.Sprite).spriteFrame = fram;
+                let fram = atlas.getSpriteFrame(this.towerConfig[this.choice_tower_id - 1].config[this.tower_lv].sprite_frame);
+                this.choice_tower.getComponent(cc.Sprite).spriteFrame = fram;
 
-                    this.att = this.towerConfig[this.choice_tower_id - 1].config[this.tower_lv].att;
-                    this.speed = this.towerConfig[this.choice_tower_id - 1].config[this.tower_lv].speed;
-                    this.rang = this.towerConfig[this.choice_tower_id - 1].config[this.tower_lv].rang;
-                    this.upgrade_price = this.towerConfig[this.choice_tower_id - 1].config[this.tower_lv].upgrand_price;
+                this.att = this.towerConfig[this.choice_tower_id - 1].config[this.tower_lv].att;
+                this.speed = this.towerConfig[this.choice_tower_id - 1].config[this.tower_lv].speed;
+                this.rang = this.towerConfig[this.choice_tower_id - 1].config[this.tower_lv].rang;
+                this.upgrade_price = this.towerConfig[this.choice_tower_id - 1].config[this.tower_lv].upgrand_price;
 
-                    this.battel_message.present_gear -= this.towerConfig[this.choice_tower_id - 1].config[this.tower_lv].upgrand_price; 
-                    this.node.dispatchEvent(new cc.Event.EventCustom("updateMesseg",true));
-                    
-                    this.tower_lv++;
+                this.battel_message.present_gear -= this.towerConfig[this.choice_tower_id - 1].config[this.tower_lv].upgrand_price;
+                this.node.dispatchEvent(new cc.Event.EventCustom("updateMesseg", true));
 
-                    this.show.getComponent(cc.Animation).play('clickTowerAnimRe')
-                    let act = cc.delayTime(0.1);
-                    let callfunc = cc.callFunc(() => {
-                        this.show.active = false;
-                    });
-                    this.show.runAction(cc.sequence(act, callfunc));
-        
-                    this.hint.active = false;       
-                    
-                    this.updateAnim();
+                this.tower_lv++;
+            
+     
+                // this.circle.width = this.circle_rang / 4 * this.rang;
+                // this.circle.height = this.circle_rang / 4 * this.rang;
+                this.circle.active = false;
+                this.enabledUpgrade();
+
+                this.show.getComponent(cc.Animation).play('clickTowerAnimRe')
+                let act = cc.delayTime(0.1);
+                let callfunc = cc.callFunc(() => {
+                    this.show.active = false;
                 });
-          //  }
-           
+                this.show.runAction(cc.sequence(act, callfunc));
+
+                this.hint.active = false;
+
+                this.updateAnim();
+            });
+            //  }
+
         }
         // else
         // {
@@ -764,30 +905,33 @@ export default class BaseCreate extends cc.Component {
 
         if (!this.show.getChildByName('delete').getComponent(cc.Toggle).isChecked) {
 
+            this.node.getComponent(cc.AudioSource).clip = this.delete_sound;
+            this.node.getComponent(cc.AudioSource).play();
+
             this.show.getComponent(cc.Animation).play('clickTowerAnimRe')
             let act = cc.delayTime(0.1);
             let callfunc = cc.callFunc(() => {
                 this.show.active = !this.show.active;
-            
+
                 this.land.active = true;
                 this.choice_tower.active = false;
                 this.hint.active = false;
                 this.battel_message.present_gear += Math.floor(this.towerConfig[this.choice_tower_id - 1].config[this.tower_lv - 1].upgrand_price * 0.8);
-                this.node.dispatchEvent(new cc.Event.EventCustom("updateMesseg",true));
+                this.node.dispatchEvent(new cc.Event.EventCustom("updateMesseg", true));
 
                 this.tower_lv = 0;
                 this.choice_tower_id = 0;
                 this.speed = 0;
                 this.upgrade_price = 0;
-                
+
                 this.node.getChildByName("circle").active = false;
             });
             this.show.runAction(cc.sequence(act, callfunc));
 
 
-           
+
         }
-        else{
+        else {
             this.hint.active = false;
         }
     }
@@ -837,30 +981,7 @@ export default class BaseCreate extends cc.Component {
     }
 
 
-    //加速
-    addSpeed()
-    {
-        if(this.mutiple == 1)
-        {
-            this.mutiple = 2;
-        }
-        else if(this.mutiple == 2)
-        {
-            this.mutiple = 4;
-        }
-        else if(this.mutiple == 4)
-        {
-            this.mutiple = 1;
-        }
-        console.log("mutiple: ",this.mutiple);
-        let clips = this.anim.getClips();
-        for (let i = 0; i < clips.length; i++) {
-            
-            clips[i].speed = this.speed * this.mutiple;
-          
-        }
-
-    }
+    
 
     stopAttack()
     {
@@ -873,9 +994,9 @@ export default class BaseCreate extends cc.Component {
     
     towerAttackDir(enemyPoint:cc.Vec2,towerPoint:cc.Vec2)
     {
+
         this.is_attack = true;
        
-
         let dir:towerDir = towerDir.none;
 
         //右上
@@ -900,11 +1021,16 @@ export default class BaseCreate extends cc.Component {
         }
 
         let tmp:LoadingBattel = this.battel_message;
+
+        if(tmp.present_hp <= 0)
+        {
+            this.unscheduleAllCallbacks();
+            this.anim.stop();
+            return;
+        }
         if (dir != this.tower_dir || this.mutiple != tmp.speed ||
              !this.anim.getAnimationState( this.anim_name).isPlaying ) {
            
-        
-
             this.tower_dir = dir;
             this.mutiple = tmp.speed;
            

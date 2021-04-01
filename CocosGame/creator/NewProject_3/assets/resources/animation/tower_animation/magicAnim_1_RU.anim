@@ -1,0 +1,91 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "magicAnim_1_RU",
+  "_objFlags": 0,
+  "_native": "",
+  "_duration": 2.3333333333333335,
+  "sample": 60,
+  "speed": 1,
+  "wrapMode": 1,
+  "curveData": {
+    "comps": {
+      "cc.Sprite": {
+        "spriteFrame": [
+          {
+            "frame": 0,
+            "value": {
+              "__uuid__": "864e1528-d9ef-4a21-8fd5-bc5f3e0ab436"
+            }
+          },
+          {
+            "frame": 0.16666666666666666,
+            "value": {
+              "__uuid__": "4a85e600-fe38-49b8-98af-6f3ab0b3a1a2"
+            }
+          },
+          {
+            "frame": 0.3333333333333333,
+            "value": {
+              "__uuid__": "7786af61-e33b-4f94-a313-d9e96e4cb760"
+            }
+          },
+          {
+            "frame": 0.5,
+            "value": {
+              "__uuid__": "0592ee79-a9d4-4cac-a1a6-cd551a763f02"
+            }
+          },
+          {
+            "frame": 0.6666666666666666,
+            "value": {
+              "__uuid__": "7e8b3678-2a43-40dc-8ea5-df178ac44141"
+            }
+          },
+          {
+            "frame": 0.8333333333333334,
+            "value": {
+              "__uuid__": "e6c72596-a337-48ec-9e58-168d2f69a752"
+            }
+          },
+          {
+            "frame": 1,
+            "value": {
+              "__uuid__": "4613b73a-2b1d-421f-b02f-291c841642e0"
+            }
+          },
+          {
+            "frame": 1.1666666666666667,
+            "value": {
+              "__uuid__": "056bb0f9-2e56-4508-8070-c1d42f4f77a5"
+            }
+          },
+          {
+            "frame": 1.3333333333333333,
+            "value": {
+              "__uuid__": "6c7e2643-6f41-4bd1-aeec-6857406c450b"
+            }
+          },
+          {
+            "frame": 1.5,
+            "value": {
+              "__uuid__": "26535afe-d454-4388-9e6a-325e35295a95"
+            }
+          },
+          {
+            "frame": 2.316666666666667,
+            "value": {
+              "__uuid__": "48c6c993-89da-4b6e-b5cf-813ef73964f3"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "events": [
+    {
+      "frame": 0.5,
+      "func": "onAnimationFinished",
+      "params": []
+    }
+  ]
+}

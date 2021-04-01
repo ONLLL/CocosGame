@@ -1,0 +1,146 @@
+
+bianyi_monster11_1.png
+size: 2048,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+ball
+  rotate: false
+  xy: 822, 249
+  size: 245, 234
+  orig: 245, 234
+  offset: 0, 0
+  index: -1
+dead/dead0005
+  rotate: false
+  xy: 554, 3
+  size: 214, 220
+  orig: 214, 220
+  offset: 0, 0
+  index: -1
+dead/dead0007
+  rotate: true
+  xy: 1354, 269
+  size: 214, 220
+  orig: 214, 220
+  offset: 0, 0
+  index: -1
+dead/dead0009
+  rotate: true
+  xy: 1576, 269
+  size: 214, 220
+  orig: 214, 220
+  offset: 0, 0
+  index: -1
+dead/dead0011
+  rotate: true
+  xy: 1798, 269
+  size: 214, 220
+  orig: 214, 220
+  offset: 0, 0
+  index: -1
+dead/dead0013
+  rotate: true
+  xy: 1069, 110
+  size: 214, 220
+  orig: 214, 220
+  offset: 0, 0
+  index: -1
+dead/dead0015
+  rotate: true
+  xy: 1291, 53
+  size: 214, 220
+  orig: 214, 220
+  offset: 0, 0
+  index: -1
+dead/dead0017
+  rotate: true
+  xy: 1513, 53
+  size: 214, 220
+  orig: 214, 220
+  offset: 0, 0
+  index: -1
+dead/dead0019
+  rotate: true
+  xy: 1735, 53
+  size: 214, 220
+  orig: 214, 220
+  offset: 0, 0
+  index: -1
+dead/dead0021
+  rotate: false
+  xy: 770, 3
+  size: 214, 220
+  orig: 214, 220
+  offset: 0, 0
+  index: -1
+di/di0001
+  rotate: true
+  xy: 1957, 166
+  size: 101, 68
+  orig: 101, 68
+  offset: 0, 0
+  index: -1
+di/di0002
+  rotate: true
+  xy: 1957, 63
+  size: 101, 68
+  orig: 101, 68
+  offset: 0, 0
+  index: -1
+di/di0003
+  rotate: true
+  xy: 986, 146
+  size: 101, 68
+  orig: 101, 68
+  offset: 0, 0
+  index: -1
+di/di0004
+  rotate: true
+  xy: 986, 43
+  size: 101, 68
+  orig: 101, 68
+  offset: 0, 0
+  index: -1
+di/di0005
+  rotate: true
+  xy: 986, 43
+  size: 101, 68
+  orig: 101, 68
+  offset: 0, 0
+  index: -1
+neihe
+  rotate: false
+  xy: 554, 225
+  size: 266, 258
+  orig: 266, 258
+  offset: 0, 0
+  index: -1
+neihe_fx
+  rotate: false
+  xy: 2, 3
+  size: 550, 480
+  orig: 550, 480
+  offset: 0, 0
+  index: -1
+qiuqiu_1
+  rotate: true
+  xy: 986, 2
+  size: 39, 50
+  orig: 39, 50
+  offset: 0, 0
+  index: -1
+qiuqiu_2
+  rotate: false
+  xy: 1291, 276
+  size: 42, 48
+  orig: 42, 48
+  offset: 0, 0
+  index: -1
+xiaohua
+  rotate: false
+  xy: 1069, 326
+  size: 283, 157
+  orig: 283, 157
+  offset: 0, 0
+  index: -1

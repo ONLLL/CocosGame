@@ -1,0 +1,146 @@
+
+bianyi_monster6_1.png
+size: 2048,128
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+baodai_f
+  rotate: true
+  xy: 1082, 22
+  size: 104, 113
+  orig: 104, 113
+  offset: 0, 0
+  index: -1
+beibao_b
+  rotate: true
+  xy: 2, 29
+  size: 97, 163
+  orig: 97, 163
+  offset: 0, 0
+  index: -1
+beibao_f
+  rotate: true
+  xy: 167, 29
+  size: 97, 163
+  orig: 97, 163
+  offset: 0, 0
+  index: -1
+body
+  rotate: false
+  xy: 500, 28
+  size: 150, 98
+  orig: 150, 98
+  offset: 0, 0
+  index: -1
+bozi
+  rotate: false
+  xy: 2, 10
+  size: 35, 17
+  orig: 35, 17
+  offset: 0, 0
+  index: -1
+dabi_f
+  rotate: true
+  xy: 1445, 75
+  size: 51, 87
+  orig: 51, 87
+  offset: 0, 0
+  index: -1
+eye
+  rotate: false
+  xy: 913, 61
+  size: 167, 65
+  orig: 167, 65
+  offset: 0, 0
+  index: -1
+gebo_b
+  rotate: false
+  xy: 1312, 29
+  size: 62, 97
+  orig: 62, 97
+  offset: 0, 0
+  index: -1
+guanzi
+  rotate: false
+  xy: 332, 37
+  size: 166, 89
+  orig: 166, 89
+  offset: 0, 0
+  index: -1
+hand_b
+  rotate: false
+  xy: 1662, 91
+  size: 28, 35
+  orig: 28, 35
+  offset: 0, 0
+  index: -1
+hand_f
+  rotate: true
+  xy: 956, 4
+  size: 55, 70
+  orig: 55, 70
+  offset: 0, 0
+  index: -1
+head
+  rotate: false
+  xy: 791, 10
+  size: 120, 116
+  orig: 120, 116
+  offset: 0, 0
+  index: -1
+jiekou
+  rotate: false
+  xy: 913, 2
+  size: 41, 57
+  orig: 41, 57
+  offset: 0, 0
+  index: -1
+lingzi
+  rotate: true
+  xy: 1601, 75
+  size: 51, 59
+  orig: 51, 59
+  offset: 0, 0
+  index: -1
+qiang_body
+  rotate: true
+  xy: 1028, 5
+  size: 54, 37
+  orig: 54, 37
+  offset: 0, 0
+  index: -1
+qiang_head
+  rotate: false
+  xy: 1376, 51
+  size: 67, 75
+  orig: 67, 75
+  offset: 0, 0
+  index: -1
+tui_b
+  rotate: true
+  xy: 1197, 25
+  size: 101, 113
+  orig: 101, 113
+  offset: 0, 0
+  index: -1
+tui_f
+  rotate: false
+  xy: 652, 10
+  size: 137, 116
+  orig: 137, 116
+  offset: 0, 0
+  index: -1
+xiaobi_f
+  rotate: false
+  xy: 1534, 80
+  size: 65, 46
+  orig: 65, 46
+  offset: 0, 0
+  index: -1
+zui
+  rotate: true
+  xy: 1376, 39
+  size: 10, 22
+  orig: 10, 22
+  offset: 0, 0
+  index: -1

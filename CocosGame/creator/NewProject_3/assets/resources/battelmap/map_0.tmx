@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="1" height="1" tilewidth="1920" tileheight="1080" nextobjectid="43">
+ <tileset firstgid="1" name="Friendly_Map" tilewidth="1920" tileheight="1080" tilecount="1">
+  <image source="../images/map/Friendly_Map.jpg" width="1920" height="1080"/>
+ </tileset>
+ <layer name="map" width="1" height="1">
+  <data encoding="csv">
+1
+</data>
+ </layer>
+ <objectgroup name="flag">
+  <object id="12" name="1" x="1468" y="514"/>
+  <object id="20" name="2" x="1483" y="390.5"/>
+  <object id="28" name="3" x="1450.5" y="290.5"/>
+  <object id="29" name="4" x="1332" y="208"/>
+  <object id="30" name="5" x="1168" y="177"/>
+  <object id="31" name="6" x="1021" y="157.5"/>
+  <object id="32" name="7" x="846" y="130"/>
+  <object id="33" name="8" x="653" y="142"/>
+  <object id="34" name="9" x="501.5" y="194.5"/>
+  <object id="35" name="10" x="576" y="322"/>
+  <object id="36" name="11" x="744.5" y="327"/>
+  <object id="37" name="12" x="900" y="330"/>
+  <object id="38" name="13" x="1026" y="372"/>
+  <object id="39" name="14" x="1077" y="496.5"/>
+  <object id="40" name="15" x="1036.5" y="612.5"/>
+  <object id="41" name="16" x="968" y="704"/>
+  <object id="42" name="17" x="852" y="828"/>
+ </objectgroup>
+</map>

@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.5",
+  "uuid": "5ccdc949-0d31-4bec-95ef-2696c8681c8b",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 136,
+  "height": 136,
+  "platformSettings": {},
+  "subMetas": {
+    "Magic-wizard-tower-L1-0029": {
+      "ver": "1.0.4",
+      "uuid": "82d10f32-091c-4daf-b4d2-701414caeca5",
+      "rawTextureUuid": "5ccdc949-0d31-4bec-95ef-2696c8681c8b",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 1.5,
+      "offsetY": 0,
+      "trimX": 3,
+      "trimY": 0,
+      "width": 133,
+      "height": 136,
+      "rawWidth": 136,
+      "rawHeight": 136,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

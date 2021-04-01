@@ -1,0 +1,140 @@
+{
+    "atlas": "images/heroroom/heroroom",
+    "hero": [
+        {
+            "id": 0,
+            "name": "SAMURAL",
+            "background":"hero1-hero1_1",
+            "checkmark":"hero1-hero1_2",
+            "skin":"hero1-skin",
+            "upgrade_price":[0,50,120,200,300,514],
+            "skill": [
+                {
+                    "id": 0,
+                    "name": "Health",
+                    "background":"hero1-i11",
+                    "checkmark":"hero1-i12",
+                    "detail": "Passive skill : Increases helth"
+                },
+                {
+                    "id": 1,
+                    "name": "Damage",
+                    "background":"hero1-i21",
+                    "checkmark":"hero1-i22",
+                    "detail": "Passive skil : Inscreases damage"
+                },
+                {
+                    "id": 2,
+                    "name": "Armor",
+                    "background":"hero1-i31",
+                    "checkmark":"hero1-i32",
+                    "detail": "Passive skil : Inscreases armor"
+                },
+                {
+                    "id": 3,
+                    "name": "Wind-up Mouse",
+                    "background":"hero1-i41",
+                    "checkmark":"hero1-i42",
+                    "detail": "Passive skil : Launches an exploding mouse"
+                },
+                {
+                    "id": 4,
+                    "name": "Exploding Mouse",
+                    "background":"hero1-i51",
+                    "checkmark":"hero1-i52",
+                    "detail": "Active skil : Set stationry exploding mouse"
+                }
+            ]
+        },
+        {
+            "id": 1,
+            "name": "WIZARD",
+            "background":"hero2-hero2_1",
+            "checkmark":"hero2-hero2_2",
+            "skin":"hero2-skin",
+            "upgrade_price":[50,120,200,300,514],
+            "skill": [
+                {
+                    "id": 0,
+                    "name": "Health",
+                    "background":"hero2-i11",
+                    "checkmark":"hero2-i12",
+                    "detail": "Passive skill : Increases helth"
+                },
+                {
+                    "id": 1,
+                    "name": "Damage",
+                    "background":"hero2-i21",
+                    "checkmark":"hero2-i22",
+                    "detail": "Passive skil : Inscreases damage"
+                },
+                {
+                    "id": 2,
+                    "name": "Armor",
+                    "background":"hero2-i31",
+                    "checkmark":"hero2-i32",
+                    "detail": "Passive skil : Inscreases armor"
+                },
+                {
+                    "id": 3,
+                    "name": "Hex",
+                    "background":"hero2-i41",
+                    "checkmark":"hero2-i42",
+                    "detail": "Passive skil : Casts spell on enemy which deals damage"
+                },
+                {
+                    "id": 4,
+                    "name": "Ghost Kitty",
+                    "background":"hero2-i51",
+                    "checkmark":"hero2-i52",
+                    "detail": "Active skil : Call Ghost Kitty"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "name": "MONK",
+            "background":"hero3-hero3_1",
+            "checkmark":"hero3-hero3_2",
+            "skin":"hero3-skin",
+            "upgrade_price":[50,120,200,300,514],
+            "skill": [
+                {
+                    "id": 0,
+                    "name": "Health",
+                    "background":"hero3-i11",
+                    "checkmark":"hero3-i12",
+                    "detail": "Passive skill : Increases helth"
+                },
+                {
+                    "id": 1,
+                    "name": "Damage",
+                    "background":"hero3-i21",
+                    "checkmark":"hero3-i22",
+                    "detail": "Passive skil : Inscreases damage"
+                },
+                {
+                    "id": 2,
+                    "name": "Armor",
+                    "background":"hero3-i31",
+                    "checkmark":"hero3-i32",
+                    "detail": "Passive skil : Inscreases armor"
+                },
+                {
+                    "id": 3,
+                    "name": "Shield",
+                    "background":"hero3-i41",
+                    "checkmark":"hero3-i42",
+                    "detail": "Passive skil : Temporary decreases damage"
+                },
+                {
+                    "id": 4,
+                    "name": "Monk Spirits",
+                    "background":"hero3-i51",
+                    "checkmark":"hero3-i52",
+                    "detail": "Active skil : Call 3 Monk Spirits"
+                }
+            ]
+        }
+    ]
+}

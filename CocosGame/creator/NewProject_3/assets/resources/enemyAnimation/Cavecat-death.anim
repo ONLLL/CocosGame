@@ -1,0 +1,78 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "Cavecat-death",
+  "_objFlags": 0,
+  "_native": "",
+  "_duration": 1.1833333333333333,
+  "sample": 60,
+  "speed": 1,
+  "wrapMode": 1,
+  "curveData": {
+    "comps": {
+      "cc.Sprite": {
+        "spriteFrame": [
+          {
+            "frame": 0,
+            "value": {
+              "__uuid__": "674de0e2-52ea-4a18-a4e8-d3e18e1716fa"
+            }
+          },
+          {
+            "frame": 0.16666666666666666,
+            "value": {
+              "__uuid__": "392697b2-ce49-401f-ac7e-3a8255de7b1a"
+            }
+          },
+          {
+            "frame": 0.3333333333333333,
+            "value": {
+              "__uuid__": "db36b3ae-b26b-4be5-8190-2963d746a106"
+            }
+          },
+          {
+            "frame": 0.5,
+            "value": {
+              "__uuid__": "78325925-e1f6-40a4-9f2d-3de240e723be"
+            }
+          },
+          {
+            "frame": 0.6666666666666666,
+            "value": {
+              "__uuid__": "fb38bca1-2ca9-48cf-b23a-57c93b9d378b"
+            }
+          },
+          {
+            "frame": 0.8333333333333334,
+            "value": {
+              "__uuid__": "ae1fe148-cdbe-477b-b111-b2e04c6b524e"
+            }
+          },
+          {
+            "frame": 1,
+            "value": {
+              "__uuid__": "6807a967-d806-4e83-abfb-77733d39585c"
+            }
+          },
+          {
+            "frame": 1.1666666666666667,
+            "value": {
+              "__uuid__": "1e01b836-39c1-4383-ac51-52301894cdb9"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "events": [
+    {
+      "frame": 0,
+      "func": "",
+      "params": []
+    },
+    {
+      "frame": 1.1666666666666667,
+      "func": "die",
+      "params": []
+    }
+  ]
+}

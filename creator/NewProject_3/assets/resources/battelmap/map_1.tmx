@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="19" height="14" tilewidth="100" tileheight="100" nextobjectid="82">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="19" height="14" tilewidth="100" tileheight="100" nextobjectid="88">
  <tileset firstgid="1" name="map1" tilewidth="100" tileheight="100" tilecount="266">
   <image source="../images/maps/map1.jpg" width="1920" height="1440"/>
  </tileset>
@@ -31,13 +31,16 @@
   <object id="7" x="324" y="316"/>
  </objectgroup>
  <objectgroup name="way">
-  <object id="79" name="111" x="600" y="-54.5455">
-   <polyline points="0,0 0,612.121 54.5455,757.576 209.091,827.273 948.485,809.091 1096.97,900 1090.91,1115.15 927.273,1227.27 560.606,1260.61 457.576,1475.76"/>
+  <object id="87" name="111" x="593.939" y="-30.303">
+   <polyline points="0,0 -6.06061,563.636 66.6667,690.909 221.212,772.727 1003.03,812.121 1115.15,918.182 1115.15,1096.97 848.485,1209.09 518.182,1257.58 448.485,1451.52"/>
   </object>
  </objectgroup>
  <objectgroup name="click">
   <object id="76" name="test" x="475.758" y="-2.84217e-14">
    <polygon points="0,0 215.152,3.0303 221.212,536.364 266.667,621.212 421.212,648.485 942.424,636.364 1069.7,645.455 1181.82,681.818 1269.7,760.606 1342.42,896.97 1342.42,1027.27 1290.91,1130.3 1175.76,1224.24 1051.52,1272.73 863.636,1245.45 712.121,1281.82 687.879,1393.94 484.848,1396.97 518.182,1218.18 639.394,1103.03 796.97,1057.58 963.636,1066.67 1045.45,1057.58 1106.06,1027.27 1139.39,954.545 1124.24,872.727 1036.36,836.364 887.879,851.515 712.121,836.364 521.212,836.364 324.242,851.515 227.273,803.03 118.182,751.515 27.2727,609.091 -9.09091,466.667"/>
   </object>
+ </objectgroup>
+ <objectgroup name="birth">
+  <object id="82" name="point" x="578.788" y="78.7879"/>
  </objectgroup>
 </map>
